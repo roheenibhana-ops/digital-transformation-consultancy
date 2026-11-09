@@ -19,7 +19,7 @@ Standard fields: name, email, phone, company_name.
 
 ## 2. Pipeline: "Lead Leak Audit"
 
-New lead -> Call booked -> Audit done -> Blueprint proposed -> Won / Lost / Cold
+New lead -> Call booked -> Audit done -> Specification proposed -> Won / Lost / Cold
 
 ## 3. Calendar
 
@@ -82,7 +82,7 @@ Hi {{contact.first_name}}, missed you today. No stress, rebook here: [BOOKING LI
 ### D. After the audit (trigger: opportunity moved to "Audit done")
 
 1. Immediately: email findings summary (you write it per lead, use a manual task reminder to yourself).
-2. +2 days (email): "Did the findings make sense? Happy to scope the fix as a written blueprint with a fixed price. The fee is [BLUEPRINT FEE] and it's credited if you go ahead."
+2. +2 days (email): "Did the findings make sense? Happy to scope the fix as a written specification with a fixed price. The Discovery & Design fee is [DISCOVERY & DESIGN FEE] and it's credited if you go ahead."
 3. +5 days (SMS): Hi {{contact.first_name}}, any questions on the audit? Happy to jump on a quick call. Reply STOP to opt out.
 4. +10 days: task to you to call; if no reply, move to Cold.
 

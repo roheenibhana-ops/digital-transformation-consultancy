@@ -15,9 +15,9 @@ Static two-page funnel for a done-for-you digital transformation consultancy tha
 
 The owner is a consultant, not a template seller. Positioning: "I redesign how your business handles leads, build it around the tools you already use, and test it on real leads before you rely on it." Every build is custom.
 
-Process: free audit -> paid discovery and blueprint (credited if they sign) -> build -> live test -> support.
+Process: free audit -> paid Discovery & Design, a fixed-scope specification (fee credited if they sign) -> build -> live test -> support.
 
-Typical engagements (final price always set in the written blueprint):
+Typical engagements (final price always set in the written specification):
 
 - Foundation: from $5,000, support from $1,000/mo
 - Growth (most popular): from $9,500, support from $1,500/mo
