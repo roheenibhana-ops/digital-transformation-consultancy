@@ -21,7 +21,7 @@ Typical engagements (final price always set in the written blueprint):
 
 - Foundation: from $5,000, support from $1,000/mo
 - Growth (most popular): from $9,500, support from $1,500/mo
-- Full Operating System: from $15,000, support from $2,500/mo
+- Bigger or multi-brand work: no published price. Shown as "Something bigger? Let's talk" and scoped on the audit call (the $15,000 / $2,500-per-month tier was dropped from the page)
 
 Platform-agnostic: works with the client's own CRM and field software (Jobber, Housecall Pro, JobNimbus, ServiceTitan, HubSpot, GoHighLevel, etc.) as long as there is a usable API. If no CRM exists, one is set up.
 
