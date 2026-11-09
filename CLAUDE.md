@@ -4,8 +4,9 @@ Static two-page funnel for a done-for-you digital transformation consultancy tha
 
 ## Files
 
-- `index.html`: landing page with the free "Lead Leak Audit" form (self-contained: inline CSS and JS)
-- `thanks.html`: post-submit page with booking embed placeholder and "what happens next"
+- `public/index.html`: landing page with the free "Lead Leak Audit" form (self-contained: inline CSS and JS)
+- `public/thanks.html`: post-submit page with booking embed placeholder and "what happens next"
+- `wrangler.jsonc`: Cloudflare config; serves the `public/` folder
 - `CLAUDE.md`: this brief
 - `README.md`: deploy steps
 - `GHL-SETUP.md`: GHL build sheet (custom fields, pipeline, calendar, workflows, follow-up copy)
