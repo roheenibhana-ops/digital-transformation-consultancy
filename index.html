@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Lead Leak Audit for Contractors | [Your Brand]</title>
+<meta name="description" content="Your leads aren't the problem, your follow-up is. Get a free audit of where your contractor business is losing leads, and a custom system to fix it.">
+<!-- TODO: delete the next line when you go live -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0e0f11">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- BASE PIXEL / TAG CODE GOES HERE (Meta, Google, etc.). Add the same block to thanks.html -->
+<style>
+  :root{
+    --bg:#0e0f11; --bg-2:#141619; --card:#1a1d21; --card-2:#202429; --line:#2a2e34;
+    --text:#f3f1ec; --muted:#a9adb3; --amber:#ffb400; --amber-d:#e29f00;
+    --red:#ff5a4d; --ok:#6fd08c; --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:"Barlow",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+  h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.012em;line-height:1}
+  h1{font-size:clamp(50px,7.4vw,96px)}
+  h2{font-size:clamp(36px,4.8vw,60px);margin-bottom:18px}
+  h3{font-size:28px;margin-bottom:8px}
+  p{color:var(--muted)}
+  p strong,li strong{color:var(--text);font-weight:600}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  .eyebrow:before{content:"";width:28px;height:3px;background:var(--amber);border-radius:2px}
+  .hazard{height:12px;background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,#0e0f11 14px 28px)}
+  section{padding:92px 0}
+  .alt{background:var(--bg-2)}
+  .lead-in{max-width:42em;font-size:20px}
+
+  .todo{background:rgba(255,180,0,.16);outline:1px dashed var(--amber);outline-offset:2px;color:var(--amber);padding:0 4px;border-radius:3px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--amber);color:#111;font-weight:700;font-size:18px;text-decoration:none;padding:17px 30px;border-radius:12px;border:0;cursor:pointer;transition:transform .12s ease,background .12s ease,box-shadow .12s ease;font-family:inherit;box-shadow:0 8px 24px -10px rgba(255,180,0,.55)}
+  .btn:hover{background:var(--amber-d);transform:translateY(-1px)}
+  .btn:after{content:"\2192";font-weight:700}
+  .btn.plain:after{content:none}
+  .btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .btn.block{width:100%}
+  .btn[disabled]{opacity:.6;cursor:wait;transform:none}
+
+  header.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,15,17,.92);backdrop-filter:blur(8px);z-index:30}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+  .top .btn{padding:10px 18px;font-size:16px;white-space:nowrap;box-shadow:none}
+
+  /* hero */
+  .hero{padding:60px 0 84px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:-20% -10% auto auto;width:640px;height:640px;background:radial-gradient(closest-side,rgba(255,180,0,.14),transparent);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;position:relative}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero .sub{font-size:21px;margin:22px 0 30px;max-width:33em;color:#d2d4d8}
+  .hero .micro{margin-top:16px;font-size:15px}
+  .ticks{list-style:none;margin-top:30px;display:grid;gap:12px}
+  .ticks li{padding-left:32px;position:relative;color:#d2d4d8}
+  .ticks li:before{content:"";position:absolute;left:0;top:.42em;width:16px;height:9px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
+
+  .form-card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:var(--radius);padding:28px;box-shadow:0 40px 70px -35px rgba(0,0,0,.8);scroll-margin-top:90px}
+  .form-card h2{font-size:40px;margin-bottom:6px}
+  .form-card .note{font-size:15px;margin-bottom:12px}
+  label{display:block;font-weight:600;font-size:14px;color:var(--text);margin:14px 0 6px}
+  input,select,textarea{width:100%;background:#101215;color:var(--text);border:1px solid #3a3f46;border-radius:10px;padding:13px 14px;font:inherit;font-size:16px}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+  input::placeholder,textarea::placeholder{color:#6f747b}
+  input:focus,select:focus,textarea:focus{border-color:var(--amber)}
+  textarea{min-height:84px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
+  label.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;color:var(--muted);margin:16px 0;line-height:1.45;cursor:pointer}
+  .check input{width:auto;margin-top:3px;flex:none;accent-color:var(--amber)}
+  .form-msg{margin-top:12px;font-size:15px;color:var(--red);display:none}
+
+  /* missed-lead timeline */
+  .night{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  .night .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:99px;margin-bottom:14px}
+  .tl{list-style:none;position:relative;display:grid;gap:18px;padding-left:34px}
+  .tl:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl li{position:relative}
+  .tl li:before{content:"";position:absolute;left:-34px;top:5px;width:20px;height:20px;border-radius:50%;background:var(--card);border:3px solid var(--amber)}
+  .tl li.bad:before{border-color:var(--red);background:var(--red)}
+  .tl time{display:block;font-family:"Bebas Neue",sans-serif;font-size:22px;color:var(--amber);letter-spacing:.04em}
+  .tl .bad time{color:var(--red)}
+  .tl span{color:#d2d4d8}
+
+  /* journey */
+  .journey{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:40px;position:relative}
+  .journey:before{content:"";position:absolute;left:8%;right:8%;top:23px;height:4px;background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 18px)}
+  .journey li{position:relative;text-align:center;padding:0 8px}
+  .journey .dot{position:relative;z-index:1;display:grid;place-items:center;width:48px;height:48px;margin:0 auto 14px;border-radius:50%;background:var(--card-2);border:3px solid var(--line);font-family:"Bebas Neue",sans-serif;font-size:24px}
+  .journey .leak .dot{background:#2a1415;border-color:var(--red);color:var(--red)}
+  .journey b{display:block;font-size:17px;font-weight:600;line-height:1.25}
+  .journey small{display:block;color:var(--red);font-size:13px;font-weight:600;margin-top:6px;letter-spacing:.04em;text-transform:uppercase}
+
+  .pain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0 0;list-style:none}
+  .pain li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:18px 20px;color:#d7d9dd}
+  .callout{margin-top:28px;font-size:24px;color:var(--text);font-weight:600}
+
+  .statement{font-size:clamp(26px,3.4vw,42px);line-height:1.22;color:var(--text);font-weight:500;max-width:27em}
+  .statement span{color:var(--amber)}
+
+  /* before / after */
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  .vs>div{border-radius:var(--radius);padding:26px;border:1px solid var(--line);background:var(--card)}
+  .vs .before{border-top:4px solid var(--red)}
+  .vs .after{border-top:4px solid var(--amber);background:#1f1d14}
+  .vs h3{font-size:32px}
+  .vs ul{list-style:none;display:grid;gap:12px;margin-top:12px}
+  .vs li{padding-left:26px;position:relative;color:#d2d4d8}
+  .vs .before li:before{content:"\00d7";position:absolute;left:0;top:-2px;color:var(--red);font-weight:700;font-size:24px;line-height:1.3}
+  .vs .after li:before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
+
+  .steps{display:grid;gap:16px;margin-top:34px;list-style:none;counter-reset:s}
+  .steps li{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .steps li:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--amber);color:#111;font-family:"Bebas Neue",sans-serif;font-size:30px;line-height:1}
+  .steps h3{font-size:30px;margin-bottom:4px}
+  .steps p{margin:0}
+  .steps .free{display:inline-block;margin-left:10px;font-family:"Barlow",sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,180,0,.16);color:var(--amber);padding:3px 9px;border-radius:99px;vertical-align:middle}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:34px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .15s}
+  .feat:hover{border-color:var(--amber)}
+  .feat i{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:rgba(255,180,0,.14);color:var(--amber);font-style:normal;font-family:"Bebas Neue",sans-serif;font-size:22px;margin-bottom:14px}
+  .feat h3{font-size:27px}
+  .feat p{font-size:16.5px}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .stat b{display:block;font-family:"Bebas Neue",sans-serif;font-size:64px;font-weight:400;color:var(--amber);line-height:1}
+  .stat span{color:var(--muted);font-size:16px}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .shot{aspect-ratio:4/3;border:2px dashed #3a3f46;border-radius:var(--radius);display:grid;place-items:center;text-align:center;padding:16px;color:var(--muted);font-size:15px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}
+  .plan.hot{border:2px solid var(--amber);position:relative;background:#1f1d14;box-shadow:0 30px 60px -35px rgba(255,180,0,.35)}
+  .plan .tag{position:absolute;top:-14px;left:26px;background:var(--amber);color:#111;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
+  .plan h3{font-size:36px}
+  .plan .for{font-size:15px;margin-bottom:16px}
+  .plan .price{font-family:"Bebas Neue",sans-serif;font-size:58px;color:var(--text);line-height:1}
+  .plan .price small{font-family:"Barlow",sans-serif;font-size:15px;color:var(--muted);font-weight:500}
+  .plan .support{font-size:15px;margin:6px 0 20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .plan ul{list-style:none;display:grid;gap:11px;margin:0 0 26px;flex:1}
+  .plan li{padding-left:26px;position:relative;font-size:16.5px;color:#d2d4d8}
+  .plan li:before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
+  .fine{font-size:15px;margin-top:26px;max-width:52em}
+
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+  .fit>div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .fit h3{font-size:32px}
+  .fit .yes{border-top:4px solid var(--ok)} .fit .no{border-top:4px solid var(--red)}
+  .fit .yes h3{color:var(--ok)} .fit .no h3{color:var(--red)}
+  .fit ul{list-style:none;display:grid;gap:12px;margin-top:12px}
+  .fit li{color:#d2d4d8;padding-left:22px;position:relative}
+  .fit .yes li:before{content:"+";position:absolute;left:0;color:var(--ok);font-weight:700}
+  .fit .no li:before{content:"\2013";position:absolute;left:0;color:var(--red);font-weight:700}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+  details[open]{border-color:#3a3f46}
+  summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--amber);font-size:26px;line-height:1}
+  details[open] summary:after{content:"\2013"}
+  details p{padding:0 22px 20px}
+
+  .final{text-align:center;padding:100px 0;background:radial-gradient(60% 80% at 50% 0%,rgba(255,180,0,.12),transparent)}
+  .final h2{font-size:clamp(42px,6.4vw,80px);max-width:14em;margin-inline:auto}
+  .final p{max-width:32em;margin:0 auto 30px;font-size:20px}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:14px;color:var(--muted)}
+
+  /* mobile sticky CTA */
+  .sticky{display:none}
+
+  @media (max-width:1000px){
+    .grid2{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:900px){
+    section{padding:62px 0}
+    .hero-grid,.fit,.cards,.stats,.shots,.vs,.night,.pain,.grid2{grid-template-columns:1fr}
+    .hero{padding-top:40px}
+    .row{grid-template-columns:1fr}
+    .night{gap:26px;padding:24px}
+    .journey{grid-template-columns:1fr;gap:18px;margin-top:30px}
+    .journey:before{left:23px;right:auto;top:10px;bottom:10px;width:4px;height:auto;background:repeating-linear-gradient(180deg,var(--line) 0 10px,transparent 10px 18px)}
+    .journey li{display:grid;grid-template-columns:48px 1fr;gap:16px;text-align:left;padding:0;align-items:center}
+    .journey .dot{margin:0}
+    .journey small{margin-top:2px}
+    .sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(14,15,17,.96);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .2s ease}
+    .sticky.show{transform:none}
+    .sticky .btn{width:100%;padding:14px}
+    body{padding-bottom:0}
+    footer{padding-bottom:90px}
+  }
+  @media (max-width:520px){
+    .top .btn .long{display:none}
+    .brand{font-size:24px}
+    .form-card{padding:22px}
+    .plan .price{font-size:52px}
+    .steps li{grid-template-columns:44px 1fr;gap:14px;padding:18px}
+    .steps li:before{width:42px;height:42px;font-size:26px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.sticky,.feat{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="todo">[Your Brand]</span></a>
+    <a class="btn plain" href="#audit">Free <span class="long">&nbsp;lead leak&nbsp;</span> audit</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">For established contractors</span>
+      <h1>You're not short on leads. <em>You're losing them.</em></h1>
+      <p class="sub">Customer texts at 7pm. Your crew's on a roof. The quote goes out and nobody follows up. I redesign how your business handles leads, build it around the tools you already use, and test it on real leads before you rely on it.</p>
+      <a class="btn" href="#audit">Get my free lead leak audit</a>
+      <p class="micro">Free. No pitch deck. I look at your real lead data and show you where it leaks.</p>
+      <ul class="ticks">
+        <li><strong>Built to answer every lead in under a minute,</strong> day or night</li>
+        <li><strong>Quote follow-up</strong> that doesn't depend on anyone's memory</li>
+        <li><strong>Built custom</strong> around how your business actually runs</li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="audit">
+      <h2>Get your free lead leak audit</h2>
+      <p class="note">I'll review your last 60-90 days of leads and show you where they leaked and what it likely cost.</p>
+      <form id="auditForm" novalidate>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required placeholder="First and last name">
+
+        <label for="company">Business name</label>
+        <input id="company" name="company" type="text" autocomplete="organization" required placeholder="Your business">
+
+        <div class="row">
+          <div>
+            <label for="phone">Mobile</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(555) 555-5555">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@business.com">
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="trade">Trade</label>
+            <select id="trade" name="trade" required>
+              <option value="">Select…</option>
+              <option>Roofing</option>
+              <option>HVAC</option>
+              <option>Concrete</option>
+              <option>Solar</option>
+              <option>Builder / remodeler</option>
+              <option>Gutters / exterior</option>
+              <option>Landscaping</option>
+              <option>Other home services</option>
+            </select>
+          </div>
+          <div>
+            <label for="leads">Leads a month</label>
+            <select id="leads" name="leads_per_month" required>
+              <option value="">Select…</option>
+              <option>Under 40</option>
+              <option>40-80</option>
+              <option>80-150</option>
+              <option>150-300</option>
+              <option>300+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="software">Job / field software</label>
+            <select id="software" name="field_software" required>
+              <option value="">Select…</option>
+              <option>Jobber</option>
+              <option>Housecall Pro</option>
+              <option>JobNimbus</option>
+              <option>ServiceTitan</option>
+              <option>AccuLynx</option>
+              <option>Other</option>
+              <option>None yet</option>
+            </select>
+          </div>
+          <div>
+            <label for="crm">CRM (if different)</label>
+            <input id="crm" name="crm" type="text" placeholder="HubSpot, GHL, none…">
+          </div>
+        </div>
+
+        <label for="leak">Where do you think you lose the most?</label>
+        <textarea id="leak" name="biggest_leak" placeholder="Slow first reply, quotes going quiet, after-hours leads, reps not following up…"></textarea>
+
+        <label class="check"><input type="checkbox" name="sms_consent" value="yes" required><span id="consentText">I agree to receive calls, texts and emails from <span class="todo">[Your Brand]</span> about my audit and related follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.</span></label>
+        <button class="btn block" type="submit" id="submitBtn">Send me my free audit</button>
+        <p class="form-msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- A TYPICAL NIGHT -->
+<section class="alt">
+  <div class="wrap">
+    <div class="night">
+      <div>
+        <span class="eyebrow">A familiar night</span>
+        <h2>The lead didn't go cold. It went to someone who answered.</h2>
+        <p>You paid to get the call or the form. What happens in the next few hours decides whether it becomes a job.</p>
+      </div>
+      <div>
+        <span class="tag">Illustrative example</span>
+        <ol class="tl">
+          <li><time>7:02 PM</time><span>A homeowner sends a message asking for a quote.</span></li>
+          <li><time>7:02 PM</time><span>Your crew's finishing a roof. Nobody's near a phone.</span></li>
+          <li class="bad"><time>7:40 PM</time><span>They message the next contractor on the list.</span></li>
+          <li class="bad"><time>Next morning</time><span>You reply. They've already booked someone else.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE LEADS LEAK -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Where the money goes</span>
+    <h2>Every lead takes the same trip. Most leak somewhere.</h2>
+    <p class="lead-in">What happens between that first message and a signed job is where the revenue disappears.</p>
+    <ol class="journey">
+      <li><span class="dot">1</span><b>Lead comes in</b></li>
+      <li class="leak"><span class="dot">2</span><b>First reply</b><small>Slow, or after hours</small></li>
+      <li class="leak"><span class="dot">3</span><b>Photos &amp; details</b><small>Nobody chases them</small></li>
+      <li><span class="dot">4</span><b>Quote goes out</b></li>
+      <li class="leak"><span class="dot">5</span><b>Quote follow-up</b><small>Goes quiet</small></li>
+      <li><span class="dot">6</span><b>Job sold</b></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SOUND FAMILIAR -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Sound familiar?</span>
+    <h2>That's not a marketing problem. It's a system problem.</h2>
+    <ul class="pain">
+      <li>You paid for the lead and nobody called back for two days.</li>
+      <li>Quotes go out and die in someone's inbox.</li>
+      <li>Your best rep closes twice what the others do, because follow-up depends on who's having a good week.</li>
+      <li>Jobber here, texts there, a spreadsheet nobody trusts.</li>
+      <li>You spend nights doing admin that software should be doing.</li>
+    </ul>
+    <p class="callout">It's costing you jobs you already paid to win.</p>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section>
+  <div class="wrap">
+    <p class="statement">Anyone can ask an AI to build a website. <span>The hard part is knowing what your business needs,</span> wiring it into how you actually work, and making sure it doesn't drop a lead when you're busiest.</p>
+    <p style="margin-top:24px;max-width:40em;font-size:20px">That's what I do. Every build is custom. I learn how your business runs, design the system around it, build it, and test it on real leads.</p>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">The difference</span>
+    <h2>Same leads. Different system.</h2>
+    <div class="vs">
+      <div class="before">
+        <h3>How it runs now</h3>
+        <ul>
+          <li>Replies depend on who sees the phone first</li>
+          <li>Photos and details get asked for, or forgotten</li>
+          <li>Quotes sit until somebody remembers</li>
+          <li>Software that doesn't talk to each other</li>
+        </ul>
+      </div>
+      <div class="after">
+        <h3>With a system built for you</h3>
+        <ul>
+          <li>Every lead gets a reply, with a person looped in when it matters</li>
+          <li>Photos and job details requested automatically</li>
+          <li>Quote follow-up that runs every time</li>
+          <li>Your tools connected, so nobody types it twice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2>Five steps. No surprises.</h2>
+    <ol class="steps">
+      <li><div><h3>Free lead leak audit <span class="free">Free</span></h3><p>I look at your last 60-90 days of leads and show you where they leaked and what it likely cost.</p></div></li>
+      <li><div><h3>Discovery and blueprint</h3><p>I map how your business really runs, check your software and integrations, and give you a written plan with a fixed price. It's credited toward the build if you go ahead.</p></div></li>
+      <li><div><h3>Build</h3><p>Lead bots, CRM, field-software sync, pages and alerts, all designed around your process.</p></div></li>
+      <li><div><h3>Live test</h3><p>Real leads, handoffs checked, and your sign-off before anything goes live.</p></div></li>
+      <li><div><h3>Support</h3><p>I monitor it, fix it when platforms change, and tune it as your business does.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">What you get</span>
+    <h2>A system that does the chasing for you.</h2>
+    <div class="grid2">
+      <div class="feat"><i>1</i><h3>Fast first reply</h3><p>Day or night. It asks for photos, reads their notes, and responds to their actual situation, not a canned "thanks for reaching out."</p></div>
+      <div class="feat"><i>2</i><h3>Quotes that get chased</h3><p>Follow-up after the quote goes out, every time, without relying on anyone's memory.</p></div>
+      <div class="feat"><i>3</i><h3>Your software talking</h3><p>Your field software and CRM synced (Jobber, Housecall Pro, JobNimbus, HubSpot, or whatever you use, provided it has an API), so nobody types the same thing twice.</p></div>
+      <div class="feat"><i>4</i><h3>"Waiting on us" alerts</h3><p>If a customer message sits unanswered, the right person gets pinged before the lead goes to the next guy.</p></div>
+      <div class="feat"><i>5</i><h3>Your own stack</h3><p>Your website, hosting, domain, tracking and AI assistant set up properly, on your own accounts, so you control it and pay almost nothing to run it.</p></div>
+      <div class="feat"><i>6</i><h3>Your team uses it</h3><p>A walkthrough video and a one-page guide, so it sticks after I'm gone from the day-to-day.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <span class="eyebrow">Proof</span>
+    <h2 class="todo" style="display:inline-block">[Proof headline]</h2>
+    <p class="lead-in" style="margin-top:14px"><span class="todo">[One or two lines on a real build. Only publish after the client confirms permission.]</span></p>
+    <!-- TODO: replace every [X] with real numbers, and get the client's OK before publishing anything from their account. Do not name the client. -->
+    <div class="stats">
+      <div class="stat"><b class="todo">[X]</b><span>leads in one week</span></div>
+      <div class="stat"><b class="todo">[X]%</b><span>answered in under <span class="todo">[X]</span> minutes</span></div>
+      <div class="stat"><b class="todo">[X]</b><span>quotes followed up automatically</span></div>
+    </div>
+    <div class="shots">
+      <div class="shot">Screenshot: bot replying to a new lead<br>(names and numbers redacted)</div>
+      <div class="shot">Screenshot: photos received, pipeline updated<br>(redacted)</div>
+      <div class="shot">Screenshot: scoreboard / "waiting on us"<br>(redacted)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="alt" id="packages">
+  <div class="wrap">
+    <span class="eyebrow">Investment</span>
+    <h2>Three typical engagements.</h2>
+    <p class="lead-in">Every build is custom. These are starting points, and your exact price is set in your written blueprint before you commit to the build.</p>
+    <div class="cards">
+      <div class="plan">
+        <h3>Foundation</h3>
+        <p class="for">Smaller teams that need the core fixed properly.</p>
+        <div class="price">$5,000 <small>from</small></div>
+        <p class="support">Support from $1,000/mo</p>
+        <ul>
+          <li>Requirements and process mapping</li>
+          <li>CRM set up, synced to your field software</li>
+          <li>Core lead bot: instant reply, photos, booking</li>
+          <li>"Waiting on us" alert</li>
+          <li>Up to 3 landing pages</li>
+          <li>Your AI assistant set up</li>
+        </ul>
+        <a class="btn block" href="#audit">Start with the audit</a>
+      </div>
+      <div class="plan hot">
+        <span class="tag">Most popular</span>
+        <h3>Growth</h3>
+        <p class="for">Established teams with real lead volume.</p>
+        <div class="price">$9,500 <small>from</small></div>
+        <p class="support">Support from $1,500/mo</p>
+        <ul>
+          <li>Everything in Foundation</li>
+          <li>Full bot flow: notes, quote follow-up, objections</li>
+          <li>Website and your full stack on your own accounts</li>
+          <li>Up to 2 ad funnels with matched landing pages</li>
+          <li>1 extra integration</li>
+        </ul>
+        <a class="btn block" href="#audit">Start with the audit</a>
+      </div>
+      <div class="plan">
+        <h3>Full Operating System</h3>
+        <p class="for">Multi-crew or multi-brand operations.</p>
+        <div class="price">$15,000 <small>from</small></div>
+        <p class="support">Support from $2,500/mo</p>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Live KPI scoreboard with custom metrics</li>
+          <li>SOPs and a help bot for your team</li>
+          <li>Custom flows per brand or service</li>
+          <li>2-3 integrations included</li>
+        </ul>
+        <a class="btn block" href="#audit">Start with the audit</a>
+      </div>
+    </div>
+    <p class="fine"><span class="todo">[Payment terms: confirm with the owner]</span> Paid discovery and blueprint is credited toward your build. Software and tool costs (CRM, automation, AI, hosting) run on your own accounts and I'll give you the real numbers before you commit. I don't promise leads, rankings or traffic.</p>
+  </div>
+</section>
+
+<!-- FIT -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Fit check</span>
+    <h2>Is this for you?</h2>
+    <div class="fit">
+      <div class="yes">
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You run an established contractor business with a team and steady leads</li>
+          <li>Leads come in but follow-up is inconsistent</li>
+          <li>You want it done properly, not another tool to figure out</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>This isn't for you if</h3>
+        <ul>
+          <li>You want me to promise you leads. I don't sell leads, I stop you losing the ones you have</li>
+          <li>You want the cheapest option</li>
+          <li>You can't spare a few hours to explain how your business works</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt" id="faq">
+  <div class="wrap" style="max-width:820px">
+    <span class="eyebrow">Questions</span>
+    <h2>Straight answers.</h2>
+    <details><summary>Will customers know it's a bot?</summary><p>It writes in your voice and hands off to a person when it should. Anything it can't answer gets flagged so someone on your team replies.</p></details>
+    <details><summary>What if I don't use Jobber?</summary><p>I work with the tools you already have. If it has an API, we can usually connect it, and I'll tell you straight in the audit if it can't. If you don't have a CRM, I'll set one up.</p></details>
+    <details><summary>Who owns it?</summary><p>It runs on your own accounts, and you get the documentation. The build is designed for you, and I keep admin access until the final invoice is paid.</p></details>
+    <details><summary>What do the tools cost to run?</summary><p>They run on your accounts, and I'll give you the real numbers before you commit. Hosting costs very little.</p></details>
+    <details><summary>Do I need to be technical?</summary><p>No. I do the setup, testing and handover, and you get a walkthrough video and a one-page guide for your team.</p></details>
+    <details><summary>What do I do after launch?</summary><p>You run your business. I monitor the system, fix it when platforms change, and tune it as your numbers come in, under a support plan.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Every day you wait is another lead that went to the next guy.</h2>
+    <p>Get the free audit and see exactly where your leads are leaking.</p>
+    <a class="btn" href="#audit">Get my free lead leak audit</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="todo">[Your Brand]</span> · <span class="todo">[City, State / Country]</span> · <span class="todo">[email]</span><br>
+    <a href="#" class="todo" style="text-decoration:none">[Privacy policy]</a> · <a href="#" class="todo" style="text-decoration:none">[Terms]</a>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn plain block" href="#audit">Get my free lead leak audit</a></div>
+
+<script>
+  // ---- CONFIG: set these before launch ----
+  var CONFIG = {
+    // Lead destination. GHL: Inbound Webhook URL. No CRM: your /api/lead endpoint.
+    webhookUrl: "",
+    thanksUrl: "thanks.html"
+  };
+
+  var form = document.getElementById('auditForm');
+  var btn = document.getElementById('submitBtn');
+  var msg = document.getElementById('formMsg');
+
+  function getParams(){
+    var out = {}, p = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','gbraid','wbraid','msclkid'].forEach(function(k){ if(p.get(k)) out[k] = p.get(k); });
+    return out;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.style.display = 'none';
+    if (form.company_website.value) { return; }
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var data = {};
+    new FormData(form).forEach(function(v,k){ if(k !== 'company_website') data[k] = v; });
+    data.page_url = window.location.href;
+    data.submitted_at = new Date().toISOString();
+    data.referrer = document.referrer || '';
+    data.consent_text = document.getElementById('consentText').textContent.trim();
+    data.consent_at = data.submitted_at;
+    var utm = getParams();
+    Object.keys(utm).forEach(function(k){ data[k] = utm[k]; });
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    if (!CONFIG.webhookUrl) {
+      console.warn('No webhookUrl set in CONFIG. Form data NOT sent anywhere:', data);
+      window.location.href = CONFIG.thanksUrl;
+      return;
+    }
+
+    // Form-encoded + no-cors keeps this a "simple" request, so it works from any host without CORS setup.
+    fetch(CONFIG.webhookUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    }).then(function(){
+      window.location.href = CONFIG.thanksUrl;
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'Send me my free audit';
+      msg.style.display = 'block';
+    });
+  });
+
+  // Mobile sticky CTA: show once the form has scrolled out of view
+  (function(){
+    var s = document.getElementById('sticky'), card = document.getElementById('audit');
+    if (!('IntersectionObserver' in window)) return;
+    var heroPassed = false, formVisible = true;
+    function update(){ s.classList.toggle('show', heroPassed && !formVisible); }
+    new IntersectionObserver(function(en){ formVisible = en[0].isIntersecting; if(!formVisible && en[0].boundingClientRect.top < 0) heroPassed = true; if(formVisible) heroPassed = heroPassed; update(); }).observe(card);
+  })();
+</script>
+</body>
+</html>
