@@ -30,18 +30,13 @@ export default {
     for (const k of REQUIRED) if (!row[k]) return new Response('Missing ' + k, { status: 400 });
     if (!/^\S+@\S+\.\S+$/.test(row.email)) return new Response('Bad email', { status: 400 });
 
-    const res = await fetch(env.SUPABASE_URL + '/rest/v1/leads', {
-      method: 'POST',
-      headers: {
-        apikey: env.SUPABASE_SERVICE_KEY,
-        Authorization: 'Bearer ' + env.SUPABASE_SERVICE_KEY,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal'
-      },
-      body: JSON.stringify(row)
-    });
-    if (!res.ok) {
-      console.error('Supabase insert failed', res.status, await res.text());
+    try {
+      const cols = Object.keys(row);
+      await env.DB.prepare(
+        'INSERT INTO leads (' + cols.join(',') + ') VALUES (' + cols.map(() => '?').join(',') + ')'
+      ).bind(...cols.map(k => row[k])).run();
+    } catch (e) {
+      console.error('D1 insert failed', e);
       return new Response('Could not save', { status: 502 });
     }
     return new Response('ok');

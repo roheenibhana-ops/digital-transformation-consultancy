@@ -2,7 +2,7 @@
 
 Static site. Two files do the work: `public/index.html` and `public/thanks.html`. Cloudflare serves the `public/` folder straight from GitHub (config in `wrangler.jsonc`).
 
-> **Current plan:** GoHighLevel is deferred until there are paying customers. Leads will go to a small Cloudflare Pages Function that stores them in Supabase (see section 3). `GHL-SETUP.md` is kept for when GHL is adopted. Name the Supabase columns after the form fields so a later GHL import is a straight CSV upload.
+> **Current plan:** GoHighLevel is deferred until there are paying customers. Leads will go to a small Cloudflare Worker that stores them in a D1 database (`src/worker.js`, table in `db/schema.sql`). `GHL-SETUP.md` is kept for when GHL is adopted. Columns are named after the form fields so a later GHL import is a straight CSV upload.
 
 ## 1. Put it on GitHub
 
