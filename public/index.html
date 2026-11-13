@@ -122,7 +122,7 @@
   .method{padding:0 0 120px}
   .method h2{margin-bottom:12px}
   .method .p{margin-bottom:40px;max-width:640px;color:var(--muted)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .step{border-top:4px solid var(--amber);background:var(--panel);border-radius:0 0 16px 16px;padding:24px}
   .step .s{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:1.5px;color:var(--amber)}
   .step h3{margin:4px 0 8px;font-size:44px;line-height:1}
@@ -130,7 +130,7 @@
 
   .fam{background:var(--blue);padding:96px 0}
   .fam h2{font-size:clamp(56px,8vw,104px);line-height:.9;color:var(--bg);margin-bottom:40px}
-  .fam .grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .fam .grid{grid-template-columns:repeat(3,1fr)}
   .fam .it{display:flex;gap:14px;align-items:flex-start;background:var(--panel2);border-radius:16px;padding:22px}
   .fam .it svg{flex:0 0 auto}
   .fam .it span{color:var(--muted)}
@@ -157,7 +157,7 @@
   .ph .c{margin-top:8px;font-size:14px;color:var(--soft)}
   .steps3{padding:96px 0}
   .steps3 h2{margin-bottom:40px}
-  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:10px}
   .card.hot{background:var(--amber);color:var(--ink);border:0}
   .card .no{font-family:"Bebas Neue",sans-serif;font-size:64px;line-height:1;color:var(--amber)}
@@ -172,7 +172,7 @@
   .proof{background:var(--panel);padding:96px 0}
   .proof h2{margin-bottom:12px}
   .proof .p{margin-bottom:40px;color:var(--muted)}
-  .grid3b{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+  .grid3b{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .case{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:32px}
   .case .k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
   .case h3{font-size:40px;line-height:1;margin-bottom:16px}
@@ -181,10 +181,15 @@
   .case strong{color:var(--text)}
 
   .faq{padding:96px 0}
+  .faqg details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+  .faqg details[open]{border-color:var(--line2)}
+  .faqg summary{cursor:pointer;padding:20px 24px;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  .faqg summary::-webkit-details-marker{display:none}
+  .faqg summary:after{content:"+";color:var(--amber);font-size:28px;line-height:1;font-weight:400;flex:0 0 auto}
+  .faqg details[open] summary:after{content:"\2013"}
+  .faqg details p{padding:0 24px 22px;margin:0;color:var(--muted);font-size:17px;max-width:46em}
   .faq h2{margin-bottom:40px}
-  .faqg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px 48px}
-  .faqg h3{font-family:Inter,sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
-  .faqg p{color:var(--muted);font-size:16px}
+  .faqg{max-width:860px}
 
   .apply{background:var(--amber);color:var(--ink);padding:96px 0}
   .apply .wrap{display:flex;flex-wrap:wrap;gap:48px}
@@ -206,6 +211,16 @@
   footer a{color:var(--dim)}
 
   @media (max-width:520px){.pill .long{display:none}.brand{font-size:26px}}
+  @media (max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .grid3,.grid3b{grid-template-columns:1fr}
+    .fam .grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .grid,.fam .grid{grid-template-columns:1fr}
+    .faqg summary{padding:18px 18px;font-size:18px}
+    .faqg details p{padding:0 18px 20px}
+  }
   @media (max-width:700px){
     .sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(11,12,15,.96);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .2s ease}
     .sticky.show{transform:none}
@@ -419,12 +434,11 @@
   <div class="wrap">
     <h2 class="big">Straight answers</h2>
     <div class="faqg">
-      <div><h3>Couldn't we just hire a developer?</h3><p>Sure, and the plan is yours either way. A developer builds what you tell them. I find what's worth building.</p></div>
-      <div><h3>We already tried AI.</h3><p>Most AI fails because nobody mapped the problem first. That's the step I do.</p></div>
-      <div><h3>We're flat out.</h3><p>Discovery takes about four hours of your team's time over two weeks.</p></div>
-      <div><h3>You're in New Zealand. How does that work?</h3><p>Everything runs remotely: video interviews, screen-shares and access to your tools. My mornings are your afternoons in the US, so we overlap every working day, and work keeps moving while you sleep.</p></div>
-      <div><h3>$2,500 for a plan?</h3><p>It's credited to your build, and one plugged leak usually pays for it.</p></div>
-      
+      <details open><summary>Couldn't we just hire a developer?</summary><p>Sure, and the plan is yours either way. A developer builds what you tell them. I find what's worth building.</p></details>
+      <details><summary>We already tried AI.</summary><p>Most AI fails because nobody mapped the problem first. That's the step I do.</p></details>
+      <details><summary>We're flat out.</summary><p>Discovery takes about four hours of your team's time over two weeks.</p></details>
+      <details><summary>You're in New Zealand. How does that work?</summary><p>Everything runs remotely: video interviews, screen-shares and access to your tools. My mornings are your afternoons in the US, so we overlap every working day, and work keeps moving while you sleep.</p></details>
+      <details><summary>$2,500 for a plan?</summary><p>It's credited to your build, and one plugged leak usually pays for it.</p></details>
     </div>
     <div class="cta-row"><a class="btn" href="#apply">Apply for discovery</a><span class="hint">Questions? Put them in the form and I'll answer them.</span></div>
   </div>
