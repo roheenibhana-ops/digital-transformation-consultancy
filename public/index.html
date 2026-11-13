@@ -127,6 +127,26 @@
   .fam .it svg{flex:0 0 auto}
   .fam .it span{color:var(--muted)}
 
+  .sample{padding:96px 0;background:var(--panel)}
+  .sample h2{margin-bottom:12px}
+  .sample .p{margin-bottom:40px;max-width:640px;color:var(--muted)}
+  .boards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:20px}
+  .board{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:28px}
+  .board .bh{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .board .bh h3{font-size:36px;line-height:1}
+  .board .bh span{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);padding:4px 10px;border-radius:999px}
+  .lk{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}
+  .lk:first-of-type{border-top:0}
+  .lk .r{flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:var(--blue);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:22px}
+  .lk b{display:block;font-size:17px}
+  .lk em{font-style:normal;color:var(--muted);font-size:15px;display:block}
+  @media (max-width:520px){.lk{flex-wrap:wrap}.lk>div:nth-child(2){flex:1 1 0;min-width:0}.lk .pay{margin-left:50px}.board{padding:22px 18px}}
+  .lk .pay{margin-left:auto;flex:0 0 auto;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,176,32,.14);color:var(--amber)}
+  .lk .pay.m{background:rgba(59,130,246,.16);color:var(--blue)}
+  .ph{border-left:4px solid var(--amber);background:var(--panel);border-radius:0 14px 14px 0;padding:16px 18px;margin-bottom:12px}
+  .ph .t{font-family:"Bebas Neue",sans-serif;font-size:26px;letter-spacing:1px;color:var(--amber);line-height:1}
+  .ph ul{margin:8px 0 0 18px;color:var(--muted);font-size:15px}
+  .ph .c{margin-top:8px;font-size:14px;color:var(--soft)}
   .steps3{padding:96px 0}
   .steps3 h2{margin-bottom:40px}
   .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
@@ -313,6 +333,30 @@
       <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You can't see the numbers.</strong> <span>Nobody knows which ad actually makes money.</span></div></div>
       <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You bought AI before a plan.</strong> <span>Nobody asked what needed fixing first.</span></div></div>
       <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>It all runs through you.</strong> <span>If you stepped away for a month, things would slip.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sample">
+  <div class="wrap">
+    <p class="eyebrow">What you get</p>
+    <h2 class="big">A plan you keep.</h2>
+    <p class="p">At the end of discovery you get two things: a leak map and a phased system plan. This is the shape of them. Yours is specific to your business, and it's yours whether or not you hire me to build it.</p>
+    <div class="boards">
+      <div class="board" aria-label="Sample layout of a leak map">
+        <div class="bh"><h3>The leak map</h3><span>Sample layout</span></div>
+        <div class="lk"><div class="r">1</div><div><b>Quotes go cold</b><em>No follow-up after the quote goes out</em></div><div class="pay">High payoff</div></div>
+        <div class="lk"><div class="r">2</div><div><b>Tools that don't talk</b><em>CRM, job system and phones hold half the story each</em></div><div class="pay">High payoff</div></div>
+        <div class="lk"><div class="r">3</div><div><b>Past customers left alone</b><em>Repeat work nobody is asking for</em></div><div class="pay m">Medium</div></div>
+        <div class="lk"><div class="r">4</div><div><b>Marketing nobody can measure</b><em>No cost per sold job, by channel</em></div><div class="pay m">Medium</div></div>
+        <div class="lk"><div class="r">5</div><div><b>Middleman fees</b><em>Per-task automation and marked-up AI</em></div><div class="pay m">Medium</div></div>
+      </div>
+      <div class="board" aria-label="Sample layout of a system plan">
+        <div class="bh"><h3>The system plan</h3><span>Sample layout</span></div>
+        <div class="ph"><div class="t">Phase 1 · weeks 1 to <span class="todo">[X]</span></div><ul><li>Follow-up on every quote, with the right person alerted</li><li>CRM and job system connected</li></ul><div class="c">Cost: <span class="todo">[X]</span></div></div>
+        <div class="ph"><div class="t">Phase 2</div><ul><li>Scoreboard tying every lead to a sold job</li><li>Past customers contacted automatically</li></ul><div class="c">Cost: <span class="todo">[X]</span></div></div>
+        <div class="ph"><div class="t">Phase 3</div><ul><li>Cut the middlemen, move the automations onto your own accounts</li></ul><div class="c">Cost: <span class="todo">[X]</span></div></div>
+      </div>
     </div>
   </div>
 </section>
