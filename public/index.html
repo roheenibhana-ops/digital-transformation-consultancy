@@ -3,618 +3,437 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Find Where Your Business Leaks Time and Money | [Your Brand]</title>
-<meta name="description" content="I find where your business leaks time and money, then build the system that fixes it. Discovery, build and ongoing support for established service businesses.">
+<title>Your Business Is Leaking Money | [Your Brand]</title>
+<meta name="description" content="I'm a business analyst who builds. I find exactly where your business leaks time and money, then build the fix.">
 <!-- TODO: delete the next line when you go live -->
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0e0f11">
+<meta name="theme-color" content="#0B0C0F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- BASE PIXEL / TAG CODE GOES HERE (Meta, Google, etc.). Add the same block to thanks.html -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- BASE PIXEL / TAG CODE GOES HERE (Meta, Google, etc.). Add the same block to thanks.html and scorecard.html -->
 <style>
-  :root{
-    --bg:#0e0f11; --bg-2:#141619; --card:#1a1d21; --card-2:#22262b; --line:#2a2e34;
-    --text:#f3f1ec; --muted:#a9adb3; --amber:#ffb400; --amber-d:#e29f00;
-    --red:#ff5a4d; --ok:#6fd08c; --radius:16px;
-  }
+  :root{--bg:#0B0C0F;--panel:#15171C;--panel2:#1D2027;--line:#2A2D35;--line2:#3A3D46;--text:#F4F1EA;--soft:#D9D4CA;--muted:#A8A399;--dim:#8C877E;--amber:#FFB020;--blue:#3B82F6;--ink:#121006}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;overflow-x:hidden}
-  body{background:var(--bg);color:var(--text);font-family:"Barlow",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  img,svg{max-width:100%;display:block}
-  a{color:inherit}
-  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
-  h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.012em;line-height:.98}
-  h1{font-size:clamp(54px,8vw,112px)}
-  h2{font-size:clamp(38px,5.2vw,68px);margin-bottom:18px}
-  h3{font-size:28px;margin-bottom:8px}
-  p{color:var(--muted)}
-  p strong,li strong{color:var(--text);font-weight:600}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
-  .eyebrow:before{content:"";width:28px;height:3px;background:var(--amber);border-radius:2px}
-  .hazard{height:14px;background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,#0e0f11 14px 28px)}
-  section{padding:100px 0}
-  .alt{background:var(--bg-2)}
-  .lead-in{max-width:42em;font-size:20px}
-  .todo{background:rgba(255,180,0,.16);outline:1px dashed var(--amber);outline-offset:2px;color:var(--amber);padding:0 4px;border-radius:3px}
-
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--amber);color:#111;font-weight:700;font-size:18px;text-decoration:none;padding:17px 30px;border-radius:12px;border:0;cursor:pointer;transition:transform .12s ease,background .12s ease;font-family:inherit;box-shadow:0 10px 28px -10px rgba(255,180,0,.6)}
-  .btn:hover{background:var(--amber-d);transform:translateY(-2px)}
-  .btn:after{content:"\2192";font-weight:700}
-  .btn.plain:after{content:none}
-  .btn.ghost{background:transparent;color:var(--muted);box-shadow:none;border:1px solid #3a3f46;padding:17px 22px;font-weight:600}
-  .btn.ghost:after{content:none}
-  .btn.ghost:hover{background:transparent;color:var(--text);border-color:var(--muted)}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:var(--amber)}a:hover{color:#FFC85C}
+  h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400}
+  .wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+  .todo{background:rgba(255,176,32,.16);outline:1px dashed var(--amber);outline-offset:2px;color:var(--amber);padding:0 4px;border-radius:3px}
+  .eyebrow{font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+  .eyebrow.blue{color:var(--blue)}
+  h2.big{font-size:clamp(44px,6vw,72px);line-height:.95}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;border-radius:999px;border:0;background:var(--amber);color:var(--ink);font-weight:700;font-size:18px;text-decoration:none;cursor:pointer;font-family:inherit;transition:transform .12s ease,background .12s}
+  .btn:hover{background:#FFC85C;color:var(--ink);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;border:2px solid var(--line2);color:var(--text);font-weight:600}
+  .btn.ghost:hover{background:transparent;border-color:var(--muted);color:var(--text)}
+  .btn.dark{background:var(--bg);color:var(--text)}
+  .btn.dark:hover{background:#000;color:var(--text)}
   .btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
-  .btn.block{width:100%}
-  .btn[disabled]{opacity:.6;cursor:wait;transform:none}
+  .btn[disabled]{opacity:.6;cursor:wait}
 
-  header.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,15,17,.92);backdrop-filter:blur(8px);z-index:30}
-  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
-  .top .btn{padding:10px 18px;font-size:16px;white-space:nowrap;box-shadow:none}
+  .spots{background:var(--amber);color:var(--ink);text-align:center;padding:10px 16px;font-weight:600;font-size:15px}
+  .spots a{color:var(--ink);text-decoration:underline}
+  .spots .todo{color:var(--ink);background:rgba(18,16,6,.12);outline-color:var(--ink)}
+  header.top{padding:20px 0}
+  header.top .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+  .brand{font-family:"Bebas Neue",sans-serif;font-size:30px;letter-spacing:1px;text-decoration:none;color:var(--text)}
+  .pill{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;background:var(--text);color:var(--bg);border-radius:999px;text-decoration:none;font-weight:600;font-size:16px}
+  .pill:hover{background:#fff;color:var(--bg)}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:64px 0 90px;position:relative;overflow:hidden;
-    background:
-      radial-gradient(700px 500px at 85% 0%,rgba(255,180,0,.16),transparent 70%),
-      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/56px 56px,
-      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/56px 56px,
-      var(--bg)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative}
-  .hero h1 em{font-style:normal;color:var(--amber);display:block}
-  .hero .sub{font-size:22px;margin:24px 0 8px;max-width:30em;color:#d9dbde}
-  .ticks{list-style:none;margin-top:28px;display:grid;gap:12px}
-  .ticks li{padding-left:34px;position:relative;color:#d2d4d8}
-  .ticks li:before{content:"";position:absolute;left:0;top:.42em;width:16px;height:9px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
+  .hero{padding:48px 0 96px}
+  .hero .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+  .hero .l{flex:999 1 520px;min-width:0}
+  .hero h1{font-size:clamp(64px,10vw,132px);line-height:.92;letter-spacing:1px}
+  .hero h1 span{color:var(--blue)}
+  .hero .lede{margin-top:28px;max-width:560px;font-size:22px;color:var(--soft)}
+  .hero .sub{margin-top:12px;max-width:560px;color:var(--muted)}
+  .hero .ctas{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+  .report{flex:1 1 340px;min-width:0;position:relative;transform:rotate(1.5deg);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .report .badge{position:absolute;top:-20px;right:-6px;background:var(--blue);color:var(--bg);font-family:"Bebas Neue",sans-serif;font-size:28px;line-height:1;padding:10px 18px;border-radius:8px;transform:rotate(7deg);letter-spacing:1.5px}
+  .report .k{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
+  .report .s{margin:4px 0 20px;font-size:15px;color:var(--muted)}
+  .report .row{background:var(--panel2);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  .report .row:last-child{margin-bottom:0}
+  .report .n.todo{display:inline-block}
+  .report .n{font-family:"Bebas Neue",sans-serif;font-size:52px;line-height:1;color:var(--blue)}
+  .report .row.a .n{color:var(--amber)}
+  .report .d{font-size:15px;color:var(--soft)}
 
-  .form-card{background:var(--card);border:1px solid #343940;border-radius:20px;padding:30px;box-shadow:0 0 0 6px rgba(255,180,0,.07),0 50px 80px -40px rgba(0,0,0,.9);scroll-margin-top:90px;position:relative}
-  .form-card:before{content:"FREE CALL";position:absolute;top:-14px;right:24px;background:var(--amber);color:#111;font-weight:700;font-size:12px;letter-spacing:.14em;padding:5px 14px;border-radius:99px}
-  .form-card h2{font-size:42px;margin-bottom:6px}
-  .form-card .note{font-size:15px;margin-bottom:6px}
-  .progress{display:flex;gap:8px;margin:16px 0 4px}
-  .progress i{flex:1;height:5px;border-radius:4px;background:var(--line)}
-  .progress i.on{background:var(--amber)}
-  .stepno{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  label{display:block;font-weight:600;font-size:14px;color:var(--text);margin:14px 0 6px}
-  input,select,textarea{width:100%;background:#101215;color:var(--text);border:1px solid #3a3f46;border-radius:10px;padding:14px;font:inherit;font-size:16px}
-  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
-  input::placeholder,textarea::placeholder{color:#6f747b}
-  input:focus,select:focus,textarea:focus{border-color:var(--amber)}
-  textarea{min-height:84px;resize:vertical}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .marq{background:var(--blue);color:var(--bg);overflow:hidden;padding:16px 0;transform:rotate(-1.5deg);margin:0 -40px}
+  .marq .t{display:flex;width:max-content;animation:slmarq 28s linear infinite;font-family:"Bebas Neue",sans-serif;font-size:34px;letter-spacing:1.5px;white-space:nowrap}
+  .marq span{padding-right:48px}
+  @keyframes slmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .calc{background:var(--panel);padding:120px 0 96px}
+  .calc .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:stretch}
+  .calc .l{flex:999 1 520px;min-width:0}
+  .calc h2{margin-bottom:8px}
+  .calc .hint{color:var(--muted);margin-bottom:32px}
+  .sl{margin-bottom:26px}
+  .sl label{display:flex;justify-content:space-between;font-weight:600}
+  .sl label b{color:var(--amber);font-weight:700}
+  input[type=range]{width:100%;height:32px;accent-color:var(--amber)}
+  .out{flex:1 1 340px;min-width:0;background:var(--bg);border:2px solid var(--blue);border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:center}
+  .out .k{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .out .big{font-family:"Bebas Neue",sans-serif;font-size:clamp(64px,8vw,96px);line-height:1;color:var(--blue);margin:8px 0 20px}
+  .out .ln{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+  .out .ln span{color:var(--muted)}
+  .out .note{margin:16px 0 24px;color:var(--dim);font-size:14px}
+
+  .scorecta{padding:72px 0 0}
+  .scorecta .box{background:var(--blue);color:var(--bg);border-radius:24px;padding:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+  .scorecta .tx{flex:999 1 480px;min-width:0}
+  .scorecta h2{font-size:clamp(40px,5vw,64px);line-height:.95;margin:0 0 8px}
+  .scorecta p{font-size:18px}
+  .scorecta .k{font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+
+  .claim{padding:120px 0;text-align:center}
+  .claim h2{font-size:clamp(52px,8vw,104px);line-height:.95;max-width:1000px;margin:0 auto}
+  .claim h2 span{color:var(--amber)}
+  .claim p{margin:28px auto 0;max-width:640px;color:var(--muted);font-size:20px}
+
+  .who{padding:0 0 120px}
+  .who .box{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,5vw,56px);display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+  .who .l{flex:1 1 320px;min-width:0}
+  .who h2{font-size:clamp(48px,6vw,80px);line-height:.92}
+  .who .r{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px}
+  .who .r p{color:var(--muted)}
+  .who .r p.first{font-size:20px;color:var(--soft)}
+  .who .quote{padding:18px 22px;background:var(--bg);border-radius:14px;font-family:"Bebas Neue",sans-serif;font-size:clamp(28px,3vw,36px);line-height:1.05;letter-spacing:.5px;color:var(--text)!important}
+  .who .quote span{color:var(--amber)}
+  .tags{display:flex;flex-wrap:wrap;gap:10px}
+  .tags span{padding:8px 14px;border:1px solid var(--line2);border-radius:999px;font-size:15px}
+
+  .method{padding:0 0 120px}
+  .method h2{margin-bottom:12px}
+  .method .p{margin-bottom:40px;max-width:640px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .step{border-top:4px solid var(--amber);background:var(--panel);border-radius:0 0 16px 16px;padding:24px}
+  .step .s{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:1.5px;color:var(--amber)}
+  .step h3{margin:4px 0 8px;font-size:44px;line-height:1}
+  .step p{color:var(--muted);font-size:16px}
+
+  .fam{background:var(--blue);padding:96px 0}
+  .fam h2{font-size:clamp(56px,8vw,104px);line-height:.9;color:var(--bg);margin-bottom:40px}
+  .fam .grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .fam .it{display:flex;gap:14px;align-items:flex-start;background:var(--panel2);border-radius:16px;padding:22px}
+  .fam .it svg{flex:0 0 auto}
+  .fam .it span{color:var(--muted)}
+
+  .steps3{padding:96px 0}
+  .steps3 h2{margin-bottom:40px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:10px}
+  .card.hot{background:var(--amber);color:var(--ink);border:0}
+  .card .no{font-family:"Bebas Neue",sans-serif;font-size:64px;line-height:1;color:var(--amber)}
+  .card.hot .no{color:var(--ink)}
+  .card h3{font-family:Inter,sans-serif;font-size:26px;font-weight:700}
+  .card p{font-size:16px;color:var(--muted)}
+  .card.hot p{color:var(--ink)}
+  .card .price{margin-top:auto;padding-top:14px;font-weight:700;font-size:20px;color:var(--text)}
+  .card.hot .price{color:var(--ink)}
+  .fine{margin-top:26px;font-size:15px;color:var(--dim);max-width:52em}
+
+  .proof{background:var(--panel);padding:96px 0}
+  .proof h2{margin-bottom:12px}
+  .proof .p{margin-bottom:40px;color:var(--muted)}
+  .grid3b{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+  .case{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:32px}
+  .case .k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+  .case h3{font-size:40px;line-height:1;margin-bottom:16px}
+  .case p{color:var(--muted);font-size:16px;margin-bottom:12px}
+  .case p:last-child{margin-bottom:0}
+  .case strong{color:var(--text)}
+
+  .faq{padding:96px 0}
+  .faq h2{margin-bottom:40px}
+  .faqg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px 48px}
+  .faqg h3{font-family:Inter,sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
+  .faqg p{color:var(--muted);font-size:16px}
+
+  .apply{background:var(--amber);color:var(--ink);padding:96px 0}
+  .apply .wrap{display:flex;flex-wrap:wrap;gap:48px}
+  .apply .l{flex:1 1 360px;min-width:0}
+  .apply h2{font-size:clamp(52px,7vw,88px);line-height:.92;margin-bottom:16px}
+  .apply .l p{margin-bottom:16px;font-size:20px}
+  .apply .l p.s{font-size:16px;font-weight:600;margin:0}
+  .apply .todo{color:var(--ink);background:rgba(18,16,6,.12);outline-color:var(--ink)}
+  .formbox{flex:999 1 480px;min-width:0;background:var(--bg);color:var(--text);border-radius:20px;padding:32px;scroll-margin-top:20px}
+  .f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+  .f label{font-weight:600;font-size:15px}
+  .f input,.f select,.f textarea{min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--line2);background:var(--panel);color:var(--text);font-size:16px;font-family:inherit}
+  .f textarea{padding:12px 14px;resize:vertical;min-height:90px}
   .hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
-  .step[hidden]{display:none}
-  .step .btn{margin-top:22px}
-  .btnrow{display:flex;gap:10px;margin-top:22px}
-  .btnrow .btn{margin-top:0}
-  .btnrow .btn:not(.ghost){flex:1}
-  label.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;color:var(--muted);margin:16px 0 0;line-height:1.45;cursor:pointer}
-  .check input{width:auto;margin-top:3px;flex:none;accent-color:var(--amber)}
-  .form-msg{margin-top:12px;font-size:15px;color:var(--red);display:none}
-  .secure{margin-top:14px;font-size:13px;color:#7d828a;text-align:center}
+  .consent{margin:0 0 16px;font-size:13px;color:var(--dim)}
+  .formbox .btn{width:100%}
+  .msg{margin-top:12px;color:var(--amber);font-size:15px;display:none}
+  footer{padding:32px 0;color:var(--dim);font-size:14px}
+  footer a{color:var(--dim)}
 
-  /* ---------- TICKER ---------- */
-  .ticker{background:var(--amber);color:#111;overflow:hidden;border-block:3px solid #111;padding:14px 0}
-  .ticker .track{display:flex;width:max-content;animation:slide 36s linear infinite}
-  .ticker span{font-family:"Bebas Neue",sans-serif;font-size:26px;letter-spacing:.06em;white-space:nowrap;padding:0 22px;display:inline-flex;align-items:center;gap:44px}
-  .ticker span:after{content:"\25C6";font-size:14px}
-  @keyframes slide{to{transform:translateX(-50%)}}
-
-  /* ---------- NO-REPLY PHONE ---------- */
-  .night{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-  .night h2{font-size:clamp(40px,5.6vw,76px)}
-  .phone{width:min(340px,100%);margin-inline:auto;background:#0a0b0d;border:2px solid #343940;border-radius:40px;padding:14px;box-shadow:0 50px 80px -30px rgba(0,0,0,.9),0 0 0 8px rgba(255,255,255,.02)}
-  .phone .screen{background:#15181b;border-radius:28px;padding:18px 16px 22px;min-height:430px;display:flex;flex-direction:column;gap:12px}
-  .phone .bar{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600}
-  .bubble{max-width:86%;padding:12px 14px;border-radius:18px;font-size:15.5px;line-height:1.35;color:#e9e9e9}
-  .bubble.in{background:#262b31;border-bottom-left-radius:5px}
-  .bubble small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
-  .photo{width:150px;height:86px;border-radius:12px;background:linear-gradient(135deg,#3a3f46,#262b31);display:grid;place-items:center;color:#8c9199;font-size:12px;font-weight:600;letter-spacing:.06em;margin-top:6px}
-  .waiting{margin-top:auto;border:2px solid var(--red);background:rgba(255,90,77,.1);border-radius:16px;padding:14px 16px;text-align:center}
-  .waiting b{display:block;font-family:"Bebas Neue",sans-serif;font-size:46px;line-height:1;color:var(--red);letter-spacing:.04em;font-variant-numeric:tabular-nums}
-  .waiting span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ff9b92}
-  .notice{background:#262b31;border-left:4px solid var(--amber);border-radius:10px;padding:10px 12px;font-size:13.5px;color:#d2d4d8}
-  .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:99px;margin-top:22px}
-
-  /* ---------- LEAK PATH ---------- */
-  .journey{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);margin-top:54px;position:relative}
-  .journey:before{content:"";position:absolute;left:8%;right:8%;top:29px;height:5px;background:repeating-linear-gradient(90deg,#3a3f46 0 12px,transparent 12px 20px)}
-  .journey li{position:relative;text-align:center;padding:0 8px}
-  .journey .dot{position:relative;z-index:1;display:grid;place-items:center;width:60px;height:60px;margin:0 auto 14px;border-radius:50%;background:var(--card-2);border:3px solid #3a3f46;font-family:"Bebas Neue",sans-serif;font-size:30px}
-  .journey .leak .dot{background:#2a1415;border-color:var(--red);color:var(--red);box-shadow:0 0 0 8px rgba(255,90,77,.1)}
-  .journey b{display:block;font-size:18px;font-weight:600;line-height:1.25}
-  .journey small{display:block;color:var(--red);font-size:13px;font-weight:700;margin-top:6px;letter-spacing:.05em;text-transform:uppercase}
-  .journey .leak .dot:after{content:"";position:absolute;left:50%;top:100%;width:8px;height:12px;margin-left:-4px;background:var(--red);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:0;animation:drip 2.4s ease-in infinite}
-  .journey .leak:nth-child(3) .dot:after{animation-delay:.8s}
-  .journey .leak:nth-child(5) .dot:after{animation-delay:1.6s}
-  @keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(46px);opacity:0}}
-
-  .pain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:44px 0 0;list-style:none}
-  .pain li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:18px 20px;color:#d7d9dd}
-  .callout{margin-top:28px;font-size:26px;color:var(--text);font-weight:600}
-
-  /* ---------- AMBER STATEMENT ---------- */
-  .band{background:var(--bg-2);padding:84px 0;position:relative}
-  .band:before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,#0e0f11 14px 28px)}
-  .band .wrap{border-left:6px solid var(--amber);padding-left:32px}
-  .band .statement{font-family:"Bebas Neue",Impact,sans-serif;font-size:clamp(34px,4.4vw,58px);line-height:1.08;color:var(--text);max-width:22em;letter-spacing:.012em}
-  .band .statement span{color:var(--amber)}
-  .band p{color:var(--muted);font-size:20px;max-width:36em;margin-top:22px}
-
-  /* ---------- BEFORE / AFTER ---------- */
-  .vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
-  .vs>div{border-radius:20px;padding:32px;border:1px solid var(--line);background:var(--card)}
-  .vs .before{border-top:5px solid var(--red)}
-  .vs .after{border-top:5px solid var(--amber);background:#1f1d14;box-shadow:0 30px 60px -40px rgba(255,180,0,.4)}
-  .vs h3{font-size:36px}
-  .vs ul{list-style:none;display:grid;gap:14px;margin-top:16px}
-  .vs li{padding-left:28px;position:relative;color:#d2d4d8}
-  .vs .before li:before{content:"\00d7";position:absolute;left:0;top:-3px;color:var(--red);font-weight:700;font-size:26px;line-height:1.3}
-  .vs .after li:before{content:"";position:absolute;left:2px;top:.5em;width:13px;height:8px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
-
-  /* ---------- STEPS (split layout) ---------- */
-  .split{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
-  .split .sticky-h{position:sticky;top:100px}
-  .steps{display:grid;gap:0;list-style:none;counter-reset:s;position:relative}
-  .steps:before{content:"";position:absolute;left:25px;top:30px;bottom:30px;width:3px;background:repeating-linear-gradient(180deg,#3a3f46 0 10px,transparent 10px 18px)}
-  .steps li{display:grid;grid-template-columns:54px 1fr;gap:22px;align-items:start;padding:0 0 34px;position:relative}
-  .steps li:last-child{padding-bottom:0}
-  .steps li:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--amber);color:#111;font-family:"Bebas Neue",sans-serif;font-size:32px;line-height:1;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg)}
-  .steps h3{font-size:34px;margin:4px 0 6px}
-  .steps p{margin:0;font-size:18px}
-  .steps .free{display:inline-block;margin-left:10px;font-family:"Barlow",sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--amber);color:#111;padding:3px 10px;border-radius:99px;vertical-align:middle}
-
-  /* ---------- FEATURES ---------- */
-  .grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-  .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:border-color .15s,transform .15s;position:relative;overflow:hidden}
-  .feat:hover{border-color:var(--amber);transform:translateY(-3px)}
-  .feat i{position:absolute;right:14px;top:-6px;font-style:normal;font-family:"Bebas Neue",sans-serif;font-size:96px;line-height:1;color:rgba(255,180,0,.1)}
-  .feat h3{font-size:30px;color:var(--amber);position:relative}
-  .feat p{font-size:16.5px;position:relative}
-
-  /* ---------- PROOF ---------- */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-  .stat b{display:block;font-family:"Bebas Neue",sans-serif;font-size:68px;font-weight:400;color:var(--amber);line-height:1}
-  .stat span{color:var(--muted);font-size:16px}
-  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .shot{aspect-ratio:4/3;border:2px dashed #3a3f46;border-radius:var(--radius);display:grid;place-items:center;text-align:center;padding:16px;color:var(--muted);font-size:15px}
-
-  /* ---------- PRICING ---------- */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;align-items:stretch}
-  .plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column}
-  .plan.hot{border:2px solid var(--amber);position:relative;background:#1f1d14;box-shadow:0 40px 70px -40px rgba(255,180,0,.45)}
-  .plan .tagp{position:absolute;top:-15px;left:26px;background:var(--amber);color:#111;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:99px}
-  .plan h3{font-size:38px}
-  .plan .for{font-size:15px;margin-bottom:16px;min-height:3.1em}
-  .plan .price{font-family:"Bebas Neue",sans-serif;font-size:64px;color:var(--text);line-height:1}
-  .plan .price small{font-family:"Barlow",sans-serif;font-size:15px;color:var(--muted);font-weight:500}
-  .plan .support{font-size:15px;margin:6px 0 20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
-  .plan ul{list-style:none;display:grid;gap:11px;margin:0 0 26px;flex:1}
-  .plan li{padding-left:26px;position:relative;font-size:16.5px;color:#d2d4d8}
-  .plan li:before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
-  .plan.big .price{font-size:46px;padding-top:10px}
-  .plan.big ul{align-content:start}
-  .plan.hot .tag{position:absolute;top:-14px;left:24px;margin:0;border:0;background:var(--amber);color:#111;padding:5px 12px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-  .fine{font-size:15px;margin-top:26px;max-width:52em}
-
-  .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
-  .fit>div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
-  .fit h3{font-size:34px}
-  .fit .yes{border-top:5px solid var(--ok)} .fit .no{border-top:5px solid var(--red)}
-  .fit .yes h3{color:var(--ok)} .fit .no h3{color:var(--red)}
-  .fit ul{list-style:none;display:grid;gap:12px;margin-top:12px}
-  .fit li{color:#d2d4d8;padding-left:22px;position:relative}
-  .fit .yes li:before{content:"+";position:absolute;left:0;color:var(--ok);font-weight:700}
-  .fit .no li:before{content:"\2013";position:absolute;left:0;color:var(--red);font-weight:700}
-
-  details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
-  details[open]{border-color:#3a3f46}
-  summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-  summary::-webkit-details-marker{display:none}
-  summary:after{content:"+";color:var(--amber);font-size:26px;line-height:1}
-  details[open] summary:after{content:"\2013"}
-  details p{padding:0 22px 20px}
-
-  .final{text-align:center;padding:120px 0;background:radial-gradient(60% 90% at 50% 0%,rgba(255,180,0,.18),transparent),var(--bg)}
-  .final h2{font-size:clamp(46px,7.4vw,104px);max-width:12em;margin-inline:auto}
-  .final p{max-width:32em;margin:0 auto 32px;font-size:21px}
-
-  footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:14px;color:var(--muted)}
-  .sticky{display:none}
-
-  @media (max-width:1000px){ .grid2{grid-template-columns:1fr 1fr} }
-  @media (max-width:900px){
-    section{padding:66px 0}
-    .band{padding:80px 0}
-    .hero-grid,.fit,.cards,.stats,.shots,.vs,.night,.pain,.grid2,.split{grid-template-columns:1fr}
-    .hero{padding-top:40px}
-    .hero-grid{gap:36px}
-    .night{gap:40px}
-    .split{gap:30px}
-    .split .sticky-h{position:static}
-    .row{grid-template-columns:1fr}
-    .plan .for{min-height:0}
-    .journey{grid-template-columns:1fr;gap:18px;margin-top:34px}
-    .journey:before{left:29px;right:auto;top:10px;bottom:10px;width:5px;height:auto;background:repeating-linear-gradient(180deg,#3a3f46 0 10px,transparent 10px 18px)}
-    .journey li{display:grid;grid-template-columns:60px 1fr;gap:18px;text-align:left;padding:0;align-items:center}
-    .journey .dot{margin:0;grid-row:1 / span 2}
-    .journey li>b,.journey li>small{grid-column:2}
-    .journey small{margin-top:2px}
-    .journey .leak .dot:after{display:none}
-    .sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(14,15,17,.96);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .2s ease}
-    .sticky.show{transform:none}
-    .sticky .btn{width:100%;padding:14px}
-    footer{padding-bottom:90px}
+  @media (max-width:520px){.pill .long{display:none}.brand{font-size:26px}}
+  @media (max-width:700px){
+    .hero{padding:32px 0 72px}
+    .report{transform:none}
+    .report .badge{right:12px}
+    .marq{margin:0 -20px}
+    .calc{padding:96px 0 72px}
+    .claim{padding:80px 0}
+    .who,.method{padding-bottom:80px}
+    .formbox{padding:24px 20px}
   }
-  @media (max-width:520px){
-    .top .btn .long{display:none}
-    .brand{font-size:24px}
-    .form-card{padding:24px 20px}
-    .plan .price{font-size:56px}
-    .steps li{grid-template-columns:44px 1fr;gap:16px}
-    .steps:before{left:21px}
-    .steps li:before{width:44px;height:44px;font-size:28px}
-    .ticker span{font-size:22px;gap:30px;padding:0 15px}
-  }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.sticky,.feat{transition:none}.ticker .track,.journey .leak .dot:after{animation:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq .t{animation:none}.btn{transition:none}}
 </style>
 </head>
 <body>
 
+<div class="spots"><span class="todo">Only [X] discovery spots open each month.</span> <a href="#apply">Apply now</a></div>
+
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><span class="todo">[Your Brand]</span></a>
-    <a class="btn plain" href="#audit">Request a <span class="long">fit </span>call</a>
+    <a class="pill" href="#apply"><span>Apply<span class="long"> for discovery</span></span></a>
   </div>
 </header>
 
 <main id="top">
 
-<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">For established service businesses</span>
-      <h1>Your business leaks time and money. <em>I find where, then build the fix.</em></h1>
-      <p class="sub">I'm a business analyst who builds. I map how your business really runs, find where leads, time and money drop out, and build the system that fixes it, on your own accounts and tested before you rely on it.</p>
-      <ul class="ticks">
-        <li><strong>A written plan you keep,</strong> whether or not you hire me to build it</li>
-        <li><strong>Built phase by phase,</strong> each one live on its own</li>
-        <li><strong>It's yours.</strong> Your accounts, your documentation, no lock-in</li>
-      </ul>
+  <div class="wrap">
+    <div class="l">
+      <p class="eyebrow blue">For businesses doing $1M+</p>
+      <h1>Your business is <span>leaking</span> money.</h1>
+      <p class="lede">I'm a business analyst who builds. I find exactly where. Then I build the fix.</p>
+      <p class="sub">Leads that never get a follow-up. Staff copying data between tools. Ads nobody can prove make money. It adds up every single month.</p>
+      <div class="ctas">
+        <a class="btn" href="#calc">Calculate my leak</a>
+        <a class="btn ghost" href="#apply">Apply for discovery</a>
+      </div>
     </div>
-
-    <div class="form-card" id="audit">
-      <h2>Request a fit call</h2>
-      <p class="note">A 20-minute call to confirm there's a real problem worth solving and that we're a good fit.</p>
-      <div class="progress" aria-hidden="true"><i class="on" id="p1"></i><i id="p2"></i></div>
-      <div class="stepno" id="stepno">Step 1 of 2 &middot; Where do I reach you?</div>
-      <form id="auditForm" novalidate>
-        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
-
-        <div class="step" id="step1">
-          <label for="name">Your name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required placeholder="First and last name">
-          <label for="phone">Mobile</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(555) 555-5555">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@business.com">
-          <button class="btn block" type="button" id="nextBtn">Next: your business</button>
-        </div>
-
-        <div class="step" id="step2" hidden>
-          <label for="company">Business name</label>
-          <input id="company" name="company" type="text" autocomplete="organization" required placeholder="Your business">
-          <label for="trade">Industry</label>
-          <select id="trade" name="trade" required>
-            <option value="">Select…</option>
-            <option>Roofing</option>
-            <option>HVAC</option>
-            <option>Concrete</option>
-            <option>Solar</option>
-            <option>Builder / remodeler</option>
-            <option>Gutters / exterior</option>
-            <option>Landscaping</option>
-            <option>Other home services</option>
-            <option>Clinic / allied health</option>
-            <option>Professional services</option>
-            <option>Other</option>
-          </select>
-          <label for="software">Main tools you use</label>
-          <input id="software" name="field_software" type="text" placeholder="CRM, job software, phones, spreadsheets…">
-          <label for="leak">Where does it hurt most?</label>
-          <textarea id="leak" name="biggest_leak" placeholder="Leads going quiet, copy and pasting between tools, can't see the numbers, AI that didn't deliver…"></textarea>
-
-          <label class="check"><input type="checkbox" name="sms_consent" value="yes" required><span id="consentText">I agree to receive calls, texts and emails from <span class="todo">[Your Brand]</span> about my fit call and related follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.</span></label>
-          <div class="btnrow">
-            <button class="btn ghost" type="button" id="backBtn">Back</button>
-            <button class="btn" type="submit" id="submitBtn">Request my fit call</button>
-          </div>
-        </div>
-        <p class="form-msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
-      </form>
-      <p class="secure">No pitch deck. No obligation.</p>
+    <div class="report" aria-label="Example layout of a leak report">
+      <div class="badge">Leaks found</div>
+      <p class="k">Leak report</p>
+      <p class="s">Example layout. <span class="todo">Numbers to come from real, approved work.</span></p>
+      <div class="row"><div class="n todo">[X]</div><div class="d">leads that never got a real follow-up</div></div>
+      <div class="row a"><div class="n todo">[X]%</div><div class="d">of revenue from past customers nobody was working</div></div>
+      <div class="row"><div class="n todo">[X] hrs</div><div class="d">a week of staff time on copy-paste admin</div></div>
     </div>
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker" aria-label="Who I work with">
-  <div class="track">
-    <span>Home services</span><span>Clinics</span><span>Professional firms</span><span>Built around the tools you already use</span><span>CRM</span><span>Job software</span><span>Phones</span><span>Ads</span><span>Spreadsheets</span>
-    <span>Home services</span><span>Clinics</span><span>Professional firms</span><span>Built around the tools you already use</span><span>CRM</span><span>Job software</span><span>Phones</span><span>Ads</span><span>Spreadsheets</span>
-  </div>
-</div>
+<div class="marq" aria-hidden="true"><div class="t"><span>Leads never followed up • Copy-paste admin • Middleman fees • Ads nobody can measure • Quotes going cold • Tools that don't talk •</span><span>Leads never followed up • Copy-paste admin • Middleman fees • Ads nobody can measure • Quotes going cold • Tools that don't talk •</span></div></div>
 
-<!-- THE PROBLEM -->
-<section>
+<section class="calc" id="calc">
   <div class="wrap">
-    <span class="eyebrow">The problem</span>
-    <h2>You're not short of tools. You're short of someone who knows how they fit together.</h2>
-    <div class="grid2">
-      <div class="feat"><i>01</i><h3>Tools don't talk</h3><p>Your CRM, job system, phones and ads each hold half the story, so your staff copy and paste between them.</p></div>
-      <div class="feat"><i>02</i><h3>Leads and customers slip</h3><p>Follow-up depends on someone remembering. Quotes go cold.</p></div>
-      <div class="feat"><i>03</i><h3>You pay middlemen forever</h3><p>Per-task automation fees and marked-up AI add up every month.</p></div>
-      <div class="feat"><i>04</i><h3>You can't see the numbers</h3><p>Nobody can say which channel or which ad actually makes money.</p></div>
-      <div class="feat"><i>05</i><h3>AI got bought first</h3><p>Tools were added before anyone asked what needed fixing.</p></div>
-      <div class="feat"><i>06</i><h3>It's costing you</h3><p>Not a tools problem. A "how it all fits together" problem, and it shows up in time and money.</p></div>
+    <div class="l">
+      <h2 class="big">How much are you leaking?</h2>
+      <p class="hint">Move the sliders. Be honest.</p>
+      <div class="sl"><label for="leads"><span>New leads per month</span><b id="v-leads">200</b></label><input id="leads" type="range" min="10" max="1000" step="10" value="200"></div>
+      <div class="sl"><label for="value"><span>Average job value</span><b id="v-value">$2,500</b></label><input id="value" type="range" min="200" max="20000" step="100" value="2500"></div>
+      <div class="sl"><label for="close"><span>Close rate when followed up properly</span><b id="v-close">30%</b></label><input id="close" type="range" min="5" max="60" step="1" value="30"></div>
+      <div class="sl"><label for="missed"><span>Leads that slip without real follow-up</span><b id="v-missed">25%</b></label><input id="missed" type="range" min="0" max="60" step="1" value="25"></div>
+      <div class="sl"><label for="hours"><span>Staff hours a week lost to copy-paste and admin</span><b id="v-hours">15 hrs</b></label><input id="hours" type="range" min="0" max="80" step="1" value="15"></div>
+    </div>
+    <div class="out">
+      <p class="k">Estimated yearly leak</p>
+      <div class="big" id="o-total">$0</div>
+      <div class="ln"><span>Lost sales</span><strong id="o-lost">$0</strong></div>
+      <div class="ln"><span>Wasted staff time</span><strong id="o-time">$0</strong></div>
+      <p class="note">A rough estimate from your own numbers, using $40 an hour for staff time. It isn't a promise. Discovery finds the real number.</p>
+      <a class="btn" href="#apply">Find my real leaks</a>
     </div>
   </div>
 </section>
 
-<!-- STATEMENT -->
-<section class="band">
+<section class="scorecta">
   <div class="wrap">
-    <p class="statement" style="margin:0">Anyone can ask an AI to build something. <span>The hard part is knowing what your business needs,</span> and wiring it into how you actually work.</p>
-    <p>I ask the right questions, map how the business really runs, then use AI to build the fix fast. Every build is custom.</p>
+    <div class="box">
+      <div class="tx">
+        <p class="k">Not ready to apply?</p>
+        <h2>Take the free Leak Scorecard.</h2>
+        <p>11 questions, 3 minutes. Get your score out of 100 and your top three leaks.</p>
+      </div>
+      <a class="btn dark" href="scorecard.html">Get my score</a>
+    </div>
   </div>
 </section>
 
-<!-- THE OFFER: THREE STEPS -->
-<section class="alt" id="packages">
+<section class="claim">
   <div class="wrap">
-    <span class="eyebrow">How it works</span>
-    <h2>Three steps. You see the plan before you commit to the build.</h2>
-    <p class="lead-in">Prices are starting points. Your exact build price comes from the plan we write in discovery.</p>
-    <div class="cards">
-      <div class="plan hot">
-        <span class="tag">Start here</span>
-        <h3>1. Discovery</h3>
-        <p class="for">Two weeks. About four hours of your team's time.</p>
-        <div class="price">$2,500</div>
-        <p class="support">Credited to the build if you go ahead</p>
-        <ul>
-          <li>Owner kickoff and stakeholder interviews</li>
-          <li>Tool and data audit</li>
-          <li>Leak map: where leads, time and money drop out</li>
-          <li>A phased system plan with costs</li>
-          <li>You keep the plan either way</li>
-        </ul>
-        <a class="btn block" href="#audit">Request a fit call</a>
+    <h2>Anyone can prompt AI.<br><span>Few know what to ask your business.</span></h2>
+    <p>The hard part was never the code. It's getting the real problem out of a busy owner and their team, then designing a fix that works.</p>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <div class="box">
+      <div class="l">
+        <p class="eyebrow">Who you're working with</p>
+        <h2>Business analyst.<br>Builder.</h2>
       </div>
-      <div class="plan">
-        <h3>2. Build</h3>
-        <p class="for">2 to 6 weeks per phase.</p>
-        <div class="price">$5,000 <small>from, per phase</small></div>
-        <p class="support">Quoted from the discovery plan</p>
-        <ul>
-          <li>The plan built phase by phase</li>
-          <li>Each phase live on its own</li>
-          <li>Your tools connected, so nobody types it twice</li>
-          <li>Automation and AI where they earn their place</li>
-          <li>Tested on real data before you rely on it</li>
-        </ul>
-        <a class="btn block" href="#audit">Request a fit call</a>
+      <div class="r">
+        <p class="first">I'm a business analyst first. My job is to get inside how your business really runs: video calls with the people doing the work, screen-shares of their day, your call recordings and your numbers. I find what's really broken, not what looks broken from the owner's chair.</p>
+        <p>Then I design the fix and build it, using AI to do in weeks what used to take a dev team months. Agencies sell you tactics. Developers build what you tell them. I work out what's worth building, then build it.</p>
+        <p class="quote">I'll tell you when your idea won't work.<br><span>Then I'll show you what will.</span></p>
+        <div class="tags"><span>Stakeholder interviews</span><span>Process mapping</span><span>Requirements</span><span>System design</span><span>AI build</span></div>
       </div>
-      <div class="plan">
-        <h3>3. Run + coach</h3>
-        <p class="for">Keep it running and improving.</p>
-        <div class="price">$1,500 <small>from, per month</small></div>
-        <p class="support">Ongoing</p>
-        <ul>
-          <li>Agents and scoreboard kept running</li>
-          <li>Fixes when platforms change</li>
-          <li>Tuned as your numbers come in</li>
-          <li>Monthly team coaching</li>
-        </ul>
-        <a class="btn block" href="#audit">Request a fit call</a>
-      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method">
+  <div class="wrap">
+    <p class="eyebrow">The method</p>
+    <h2 class="big">Most people skip straight to build.</h2>
+    <p class="p">That's why so much AI work flops. I do it in order.</p>
+    <div class="grid">
+      <div class="step"><div class="s">Step 1</div><h3>Gather</h3><p>Talk to your people, pull your numbers, map how work really flows.</p></div>
+      <div class="step"><div class="s">Step 2</div><h3>Solve</h3><p>Find the real problems and rank the fixes by what they're worth.</p></div>
+      <div class="step"><div class="s">Step 3</div><h3>Design</h3><p>Plan the system before a line of code: what connects, what's automated, who does what.</p></div>
+      <div class="step"><div class="s">Step 4</div><h3>Build</h3><p>Then build it fast with AI, phase by phase, tested on your real data.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="fam">
+  <div class="wrap">
+    <h2>Sound familiar?</h2>
+    <div class="grid">
+      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>Your tools don't talk.</strong> <span>Your team copies and pastes between them all day.</span></div></div>
+      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>Quotes go cold.</strong> <span>Follow-up depends on someone remembering.</span></div></div>
+      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You pay middlemen forever.</strong> <span>Per-task fees and marked-up AI, every month.</span></div></div>
+      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You can't see the numbers.</strong> <span>Nobody knows which ad actually makes money.</span></div></div>
+      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You bought AI before a plan.</strong> <span>Nobody asked what needed fixing first.</span></div></div>
+      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>It all runs through you.</strong> <span>If you stepped away for a month, things would slip.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps3" id="packages">
+  <div class="wrap">
+    <h2 class="big">Three steps. Start with one.</h2>
+    <div class="grid3">
+      <div class="card hot"><div class="no">01</div><h3>Discovery</h3><p>I interview your team over video, audit your tools and numbers, map every leak and hand you a phased plan with costs. Yours to keep.</p><div class="price">$2,500 · 2 weeks</div><p>Credited in full to your build</p></div>
+      <div class="card"><div class="no">02</div><h3>Build</h3><p>The plan, built phase by phase. Each phase goes live on its own, so you see results early.</p><div class="price">From $5,000 a phase</div></div>
+      <div class="card"><div class="no">03</div><h3>Run + coach</h3><p>I keep your agents and scoreboard running and coach your team to get better every month.</p><div class="price">From $1,500 a month</div></div>
     </div>
     <p class="fine"><span class="todo">[Payment terms and support term: confirm with the owner]</span> Software and tool costs (CRM, automation, AI, hosting) run on your own accounts and I'll give you the real numbers before you commit. I don't promise leads, rankings or traffic.</p>
   </div>
 </section>
 
-<!-- WHAT HAPPENS IN DISCOVERY -->
-<section id="how">
-  <div class="wrap split">
-    <div class="sticky-h">
-      <span class="eyebrow">Inside discovery</span>
-      <h2>Two weeks. You walk away with a plan you own.</h2>
-      <p class="lead-in">About four hours of your team's time, spread over two weeks.</p>
-      <a class="btn" href="#audit" style="margin-top:22px">Request a fit call</a>
-    </div>
-    <ol class="steps">
-      <li><div><h3>Kickoff with the owner</h3><p>Your goals, your revenue, and where it hurts.</p></div></li>
-      <li><div><h3>Stakeholder interviews</h3><p>Office, sales and field staff: what they copy and paste, what slows them down, what slips.</p></div></li>
-      <li><div><h3>Tool and data audit</h3><p>CRM, job system, phones, ads, spreadsheets. What talks to what, and what it costs.</p></div></li>
-      <li><div><h3>Leak map</h3><p>A one-page view of where leads, time and money drop out.</p></div></li>
-      <li><div><h3>System plan</h3><p>A visual board with the fixes ranked by payoff, split into phases, with costs.</p></div></li>
-      <li><div><h3>Handover call</h3><p>We walk through it and I answer your questions. If you want the build, I quote it then.</p></div></li>
-    </ol>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="alt" id="proof">
+<section class="proof" id="proof">
   <div class="wrap">
-    <span class="eyebrow">Proof</span>
-    <h2 class="todo" style="display:inline-block">[Proof headline]</h2>
-    <p class="lead-in" style="margin-top:14px"><span class="todo">[One or two lines on real builds. Publish only what the client has confirmed.]</span></p>
-    <!-- TODO: fill each card from real work. Do not name clients and do not publish numbers or screenshots without the client's written OK. -->
-    <div class="stats">
-      <div class="stat"><b class="todo">[X]</b><span>A home services company: <span class="todo">[problem found]</span>, <span class="todo">[what was built]</span></span></div>
-      <div class="stat"><b class="todo">[X]</b><span>A second business on the same engine: <span class="todo">[problem found]</span>, <span class="todo">[what was built]</span></span></div>
-      <div class="stat"><b class="todo">[X]</b><span>A health app built end to end: <span class="todo">[what it does]</span></span></div>
-    </div>
-    <div class="shots">
-      <div class="shot">Screenshot: the leak map<br>(redacted)</div>
-      <div class="shot">Screenshot: the system plan<br>(redacted)</div>
-      <div class="shot">Screenshot: the live scoreboard<br>(redacted)</div>
+    <h2 class="big">Real businesses. Real leaks found.</h2>
+    <p class="p"><span class="todo">[Fill from real work. Do not name clients, and publish numbers or screenshots only with the client's written OK.]</span></p>
+    <div class="grid3b">
+      <div class="case"><p class="k">Home services</p><h3 class="todo">[Business type]</h3><p><strong>Found:</strong> <span class="todo">[X]</span></p><p><strong>Built:</strong> <span class="todo">[X]</span></p></div>
+      <div class="case"><p class="k">Home services</p><h3 class="todo">[Business type]</h3><p><strong>Found:</strong> <span class="todo">[X]</span></p><p><strong>Built:</strong> <span class="todo">[X]</span></p></div>
+      <div class="case"><p class="k">Health app · Australia + NZ</p><h3><a href="https://osliehealth.com" style="color:var(--text);text-decoration:none">Oslie</a></h3><p><strong>Found:</strong> patients repeating their history at every clinic they visit.</p><p><strong>Built:</strong> an app joining every clinic's records into one plain-language record.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FIT -->
-<section>
+<section class="faq">
   <div class="wrap">
-    <span class="eyebrow">Fit check</span>
-    <h2>Is this for you?</h2>
-    <div class="fit">
-      <div class="yes">
-        <h3>This is for you if</h3>
-        <ul>
-          <li>You run an established service business with a team and real revenue</li>
-          <li>You have tools and data, but they don't add up to a clear picture</li>
-          <li>You want it done properly, and you'll make time to explain how the business works</li>
-        </ul>
-      </div>
-      <div class="no">
-        <h3>This isn't for you if</h3>
-        <ul>
-          <li>You're a startup with no revenue yet</li>
-          <li>You only want ads run</li>
-          <li>You want new tech without changing how you work</li>
-        </ul>
-      </div>
+    <h2 class="big">Straight answers</h2>
+    <div class="faqg">
+      <div><h3>Couldn't we just hire a developer?</h3><p>Sure, and the plan is yours either way. A developer builds what you tell them. I find what's worth building.</p></div>
+      <div><h3>We already tried AI.</h3><p>Most AI fails because nobody mapped the problem first. That's the step I do.</p></div>
+      <div><h3>We're flat out.</h3><p>Discovery takes about four hours of your team's time over two weeks.</p></div>
+      <div><h3>You're in New Zealand. How does that work?</h3><p>Everything runs remotely: video interviews, screen-shares and access to your tools. My mornings are your afternoons in the US, so we overlap every working day, and work keeps moving while you sleep.</p></div>
+      <div><h3>$2,500 for a plan?</h3><p>It's credited to your build if you go ahead, and the plan is yours either way.</p></div>
+      <div><h3>Who owns it?</h3><p>You do. It runs on your own accounts, and once the final invoice is paid, it's yours: the accounts, the prompts and the documentation. I keep admin access until then.</p></div>
+      <div><h3>Is it a bot? Will customers know?</h3><p>Where I build customer-facing automation, it's an automated assistant and it never pretends to be a person. It signs off as your business and hands over to a real person when it should, or whenever a customer asks.</p></div>
     </div>
-    <p class="fine" style="margin-top:22px">I started with home services, where the proof is, and I take on clinics and professional firms one at a time.</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="alt" id="faq">
-  <div class="wrap" style="max-width:840px">
-    <span class="eyebrow">Questions</span>
-    <h2>Straight answers.</h2>
-    <details><summary>Could we just hire a developer?</summary><p>You can, and the plan is yours either way. A developer builds what you tell them. I work out what's worth building first.</p></details>
-    <details><summary>We already tried AI.</summary><p>Most AI projects fail because nobody mapped the problem first. That's the step I do.</p></details>
-    <details><summary>We're too busy.</summary><p>Discovery takes about four hours of your team's time, spread over two weeks.</p></details>
-    <details><summary>$2,500 for a plan?</summary><p>It's credited to the build if you go ahead, and the plan is yours whether you hire me or not.</p></details>
-    <details><summary>Who owns it?</summary><p>You do. It runs on your own accounts, and once the final invoice is paid, it's yours: the accounts, the prompts and the documentation. I keep admin access until then.</p></details>
-    <details><summary>Is it a bot? Will customers know?</summary><p>Where I build customer-facing automation, it's an automated assistant and it never pretends to be a person. It signs off as your business and hands over to a real person when it should, or whenever a customer asks.</p></details>
-    <details><summary>What do the tools cost to run?</summary><p>They run on your accounts, and I'll give you the real numbers before you commit. Hosting costs very little.</p></details>
-  </div>
-</section>
-
-<div class="hazard" aria-hidden="true"></div>
-
-<!-- FINAL CTA -->
-<section class="final">
+<section class="apply" id="apply">
   <div class="wrap">
-    <h2>Find out where your business leaks.</h2>
-    <p>Request a fit call and I'll tell you straight whether discovery is worth it for you.</p>
-    <a class="btn" href="#audit">Request a fit call</a>
+    <div class="l">
+      <h2>Stop the leak.</h2>
+      <p>Apply for discovery. If there's a real problem worth fixing, we'll book a 20-minute fit call.</p>
+      <p class="s"><span class="todo">Only [X] spots each month.</span> Businesses doing $1M+ only.</p>
+    </div>
+    <div class="formbox">
+      <form id="applyForm" novalidate>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="f-biz">Business and website</label><input id="f-biz" name="company" type="text" autocomplete="organization" required></div>
+        <div class="f"><label for="f-rev">Yearly revenue</label><select id="f-rev" name="leads_per_month" required><option value="">Select…</option><option>Under $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select></div>
+        <div class="f"><label for="f-pain">What's your biggest headache right now?</label><textarea id="f-pain" name="biggest_leak" rows="3"></textarea></div>
+        <p class="consent" id="consentText">By applying you agree to be contacted by <span class="todo">[Your Brand]</span> by email and phone about your application. We won't share your details.</p>
+        <button class="btn" type="submit" id="submitBtn">Apply for discovery</button>
+        <p class="msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
+      </form>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <span class="todo">[Your Brand]</span> · <span class="todo">[City, State / Country]</span> · <span class="todo">[email]</span><br>
-    <a href="#" class="todo" style="text-decoration:none">[Privacy policy]</a> · <a href="#" class="todo" style="text-decoration:none">[Terms]</a>
-  </div>
+  <div class="wrap">© 2026 <span class="todo">[Your Brand]</span> · New Zealand · Working globally<br>
+  <a href="#" class="todo" style="text-decoration:none">[Privacy policy]</a> · <a href="#" class="todo" style="text-decoration:none">[Terms]</a></div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn plain block" href="#audit">Request a fit call</a></div>
-
 <script>
-  // ---- CONFIG: set these before launch ----
-  var CONFIG = {
-    // Lead destination. GHL: Inbound Webhook URL. Own handler: /api/lead
-    webhookUrl: "/api/lead",
-    thanksUrl: "thanks.html"
-  };
+  // ---- CONFIG ----
+  var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
-  var form = document.getElementById('auditForm');
-  var btn = document.getElementById('submitBtn');
-  var msg = document.getElementById('formMsg');
-  var step1 = document.getElementById('step1'), step2 = document.getElementById('step2');
-  var stepno = document.getElementById('stepno'), p2 = document.getElementById('p2');
-  var current = 1;
-
-  function show(n){
-    current = n;
-    step1.hidden = n !== 1; step2.hidden = n !== 2;
-    p2.className = n === 2 ? 'on' : '';
-    stepno.textContent = n === 1 ? 'Step 1 of 2 · Where do I reach you?' : 'Step 2 of 2 · About your business';
-    msg.style.display = 'none';
-  }
-  function stepValid(el){
-    var ok = true;
-    el.querySelectorAll('input,select,textarea').forEach(function(f){ if (ok && !f.checkValidity()) { f.reportValidity(); ok = false; } });
-    return ok;
-  }
-  document.getElementById('nextBtn').addEventListener('click', function(){ if (stepValid(step1)) { show(2); document.getElementById('company').focus(); } });
-  document.getElementById('backBtn').addEventListener('click', function(){ show(1); });
-
-  function getParams(){
-    var out = {}, p = new URLSearchParams(window.location.search);
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','gbraid','wbraid','msclkid'].forEach(function(k){ if(p.get(k)) out[k] = p.get(k); });
-    return out;
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    msg.style.display = 'none';
-    if (form.company_website.value) { return; }
-    if (current === 1) { if (stepValid(step1)) { show(2); } return; }
-    if (!stepValid(step2)) { return; }
-
-    var data = {};
-    new FormData(form).forEach(function(v,k){ if(k !== 'company_website') data[k] = v; });
-    data.page_url = window.location.href;
-    data.submitted_at = new Date().toISOString();
-    data.referrer = document.referrer || '';
-    data.consent_text = document.getElementById('consentText').textContent.trim();
-    data.consent_at = data.submitted_at;
-    var utm = getParams();
-    Object.keys(utm).forEach(function(k){ data[k] = utm[k]; });
-
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    if (!CONFIG.webhookUrl) {
-      console.warn('No webhookUrl set in CONFIG. Form data NOT sent anywhere:', data);
-      window.location.href = CONFIG.thanksUrl;
-      return;
-    }
-
-    // Form-encoded + no-cors keeps this a "simple" request, so it works from any host without CORS setup.
-    fetch(CONFIG.webhookUrl, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString()
-    }).then(function(){
-      window.location.href = CONFIG.thanksUrl;
-    }).catch(function(){
-      btn.disabled = false;
-      btn.textContent = 'Request my fit call';
-      msg.style.display = 'block';
-    });
-  });
-
-  // Mobile sticky CTA: show once the form has scrolled out of view
+  // ---- Leak calculator ----
   (function(){
-    var s = document.getElementById('sticky'), card = document.getElementById('audit');
-    if (!('IntersectionObserver' in window)) return;
-    new IntersectionObserver(function(en){
-      var passed = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
-      s.classList.toggle('show', passed);
-    }).observe(card);
+    var $ = function(id){ return document.getElementById(id); };
+    var money = function(n){ return '$' + Math.round(n).toLocaleString('en-US'); };
+    function calc(){
+      var leads = +$('leads').value, value = +$('value').value, close = +$('close').value, missed = +$('missed').value, hours = +$('hours').value;
+      $('v-leads').textContent = leads;
+      $('v-value').textContent = money(value);
+      $('v-close').textContent = close + '%';
+      $('v-missed').textContent = missed + '%';
+      $('v-hours').textContent = hours + ' hrs';
+      var lost = leads * 12 * (missed/100) * (close/100) * value;
+      var time = hours * 40 * 52;
+      $('o-lost').textContent = money(lost);
+      $('o-time').textContent = money(time);
+      $('o-total').textContent = money(lost + time);
+    }
+    ['leads','value','close','missed','hours'].forEach(function(id){ $(id).addEventListener('input', calc); });
+    calc();
+  })();
+
+  // ---- Application form -> /api/lead ----
+  (function(){
+    var form = document.getElementById('applyForm'), btn = document.getElementById('submitBtn'), msg = document.getElementById('formMsg');
+    function params(){
+      var out = {}, p = new URLSearchParams(window.location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','gbraid','wbraid','msclkid'].forEach(function(k){ if(p.get(k)) out[k] = p.get(k); });
+      return out;
+    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      msg.style.display = 'none';
+      if (form.company_website.value) { return; }
+      var bad = null;
+      form.querySelectorAll('[required]').forEach(function(f){ if (!bad && !f.checkValidity()) bad = f; });
+      if (bad) { bad.reportValidity(); return; }
+      var data = {};
+      new FormData(form).forEach(function(v,k){ if (k !== 'company_website') data[k] = v; });
+      data.sms_consent = 'contact-ok';
+      data.consent_text = document.getElementById('consentText').textContent.trim();
+      data.page_url = window.location.href;
+      data.submitted_at = new Date().toISOString();
+      data.consent_at = data.submitted_at;
+      data.referrer = document.referrer || '';
+      var u = params(); Object.keys(u).forEach(function(k){ data[k] = u[k]; });
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch(CONFIG.webhookUrl, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() })
+        .then(function(){ window.location.href = CONFIG.thanksUrl; })
+        .catch(function(){ btn.disabled = false; btn.textContent = 'Apply for discovery'; msg.style.display = 'block'; });
+    });
   })();
 </script>
 </body>

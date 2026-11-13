@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Leak Scorecard | [Your Brand]</title>
+<!-- TODO: delete the next line when you go live -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B0C0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- BASE PIXEL / TAG CODE GOES HERE -->
+<style>
+  :root{--bg:#0B0C0F;--panel:#15171C;--line:#2A2D35;--line2:#3A3D46;--text:#F4F1EA;--soft:#D9D4CA;--muted:#A8A399;--dim:#8C877E;--amber:#FFB020;--blue:#3B82F6;--ink:#121006}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh}
+  a{color:var(--amber)}
+  h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400}
+  .todo{background:rgba(255,176,32,.16);outline:1px dashed var(--amber);outline-offset:2px;color:var(--amber);padding:0 4px;border-radius:3px}
+  .wrap{max-width:760px;margin:0 auto;padding:24px}
+  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:8px 0 40px}
+  .brand{font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:1px;text-decoration:none;color:var(--text)}
+  .tag{font-size:14px;color:var(--dim);font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+  .k{margin-bottom:16px;color:var(--blue);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+  h1{font-size:clamp(56px,9vw,104px);line-height:.92}
+  h1 span{color:var(--blue)}
+  .lede{margin-top:24px;font-size:20px;color:var(--soft)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:60px;padding:0 36px;border:0;border-radius:999px;background:var(--amber);color:var(--ink);font-weight:700;font-size:20px;cursor:pointer;font-family:inherit;text-decoration:none}
+  .btn:hover{background:#FFC85C}
+  .btn:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .btn[disabled]{opacity:.6;cursor:wait}
+  .start{margin-top:36px}
+  .meta{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);font-weight:600;margin-bottom:10px}
+  .bar{height:8px;background:#1D2027;border-radius:999px;overflow:hidden}
+  .bar i{display:block;height:8px;background:var(--amber);border-radius:999px;transition:width .2s}
+  .q{margin:40px 0 28px;font-size:clamp(40px,6vw,64px);line-height:1}
+  .opts{display:flex;flex-direction:column;gap:12px}
+  .opt{min-height:64px;padding:14px 22px;text-align:left;border:2px solid var(--line);border-radius:16px;background:var(--panel);color:var(--text);font-size:18px;font-weight:500;cursor:pointer;font-family:inherit}
+  .opt:hover{border-color:var(--amber)}
+  .back{margin-top:20px;min-height:44px;padding:0 4px;border:0;background:none;color:var(--muted);font-size:16px;cursor:pointer;font-family:inherit}
+  .gate h2{font-size:clamp(48px,7vw,80px);line-height:.95;margin:0 0 16px}
+  .gate .e{color:var(--amber);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+  .gate .s{color:var(--muted);margin-bottom:28px}
+  .f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+  .f label{font-weight:600;font-size:15px}
+  .f input{min-height:52px;padding:0 16px;border-radius:12px;border:1px solid var(--line2);background:var(--panel);color:var(--text);font-size:17px;font-family:inherit}
+  .err{color:var(--amber);font-size:15px;font-weight:600;margin-bottom:12px;display:none}
+  .small{color:var(--dim);font-size:14px;margin-bottom:16px}
+  .hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
+  .res .lab{color:var(--muted);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+  .score{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end}
+  .score .n{font-family:"Bebas Neue",sans-serif;font-size:clamp(110px,18vw,180px);line-height:.85}
+  .score .n small{font-size:.35em;color:var(--dim)}
+  .score .g{padding-bottom:12px}
+  .score .g b{display:block;font-family:"Bebas Neue",sans-serif;font-size:40px;line-height:1;font-weight:400}
+  .score .g span{color:var(--muted);font-size:16px;display:block;max-width:360px}
+  .res h3{margin:48px 0 20px;font-size:48px;line-height:1}
+  .leak{display:flex;gap:18px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:14px}
+  .leak .r{flex:0 0 auto;width:48px;height:48px;border-radius:999px;background:var(--blue);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:28px}
+  .leak b{display:block;font-size:19px}
+  .leak span{color:var(--muted);font-size:16px}
+  .cta{margin-top:48px;background:var(--amber);color:var(--ink);border-radius:24px;padding:36px 32px}
+  .cta h3{margin:0 0 12px;font-size:clamp(40px,6vw,60px);line-height:.95}
+  .cta p{margin:0 0 24px;font-size:18px}
+  .cta a{display:inline-flex;align-items:center;min-height:56px;padding:0 30px;background:var(--bg);color:var(--text);border-radius:999px;text-decoration:none;font-weight:700}
+  .note{margin-top:16px;color:var(--dim);font-size:14px}
+  [hidden]{display:none!important}
+  @media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="brand" href="index.html"><span class="todo">[Your Brand]</span></a><div class="tag">The Leak Scorecard</div></header>
+
+  <div id="intro">
+    <p class="k">Free · 3 minutes · 11 questions</p>
+    <h1>Where is your business <span>leaking</span>?</h1>
+    <p class="lede">Answer honestly. You'll get a score out of 100 and your top three leaks.</p>
+    <button class="btn start" type="button" id="begin">Start the scorecard</button>
+  </div>
+
+  <div id="quiz" hidden>
+    <div class="meta"><span id="qn"></span><span id="qa"></span></div>
+    <div class="bar"><i id="qbar" style="width:0"></i></div>
+    <h2 class="q" id="qt"></h2>
+    <div class="opts" id="qo"></div>
+    <button class="back" type="button" id="back" hidden>Back</button>
+  </div>
+
+  <div class="gate" id="gate" hidden>
+    <p class="e">Your report is ready</p>
+    <h2>Where should I send it?</h2>
+    <p class="s">You'll see it right here, and get a copy by email.</p>
+    <form id="gateForm" novalidate>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="f"><label for="g-name">First name</label><input id="g-name" name="name" type="text" autocomplete="given-name" required></div>
+      <div class="f"><label for="g-email">Email</label><input id="g-email" name="email" type="email" autocomplete="email" required></div>
+      <p class="err" id="gerr" role="alert"></p>
+      <p class="small" id="consentText">By continuing you agree to get your report and a couple of short emails on fixing the leaks from <span class="todo">[Your Brand]</span>. Unsubscribe any time.</p>
+      <button class="btn" type="submit" id="gbtn" style="width:100%">Show my leaks</button>
+    </form>
+  </div>
+
+  <div class="res" id="res" hidden>
+    <p class="lab" id="rlab"></p>
+    <div class="score">
+      <div class="n" id="rscore"></div>
+      <div class="g"><b id="rgrade"></b><span id="rline"></span></div>
+    </div>
+    <h3>Your top three leaks</h3>
+    <div id="rleaks"></div>
+    <div class="cta">
+      <h3>Now you know what's leaking.</h3>
+      <p>Apply for discovery and I'll show you how to fix it, and which leak to plug first.</p>
+      <a href="index.html#apply">Apply for discovery</a>
+    </div>
+    <p class="note">This score is a quick self-check from your own answers, not an audit. Discovery finds the real picture.</p>
+    <button class="back" type="button" id="restart">Start again</button>
+  </div>
+</div>
+
+<script>
+  var CONFIG = { webhookUrl: "/api/lead" };
+  var QS = [
+    { area:'About you', text:'What is your yearly revenue?', revenue:true, options:[['Under $1M',0],['$1M to $3M',0],['$3M to $10M',0],['$10M+',0]] },
+    { area:'Speed', text:'How fast does a new lead hear back from you?', title:'Slow first response', what:'Leads cool off fast. Every hour before first contact cuts the odds of winning the job.', options:[['Within 5 minutes',10],['Same day',5],['Next day or later',0]] },
+    { area:'Follow-up', text:'Does every quote get chased until you get a yes or a no?', title:'Quotes going cold', what:'Open quotes with no follow-up are money already earned and left on the table.', options:[['Always',10],['Sometimes',5],['Rarely',0]] },
+    { area:'Tools', text:'Do your CRM, job system and phones share data automatically?', title:'Tools that don’t talk', what:'Every handoff between systems is a place for leads, notes and jobs to fall through.', options:[['Yes, fully',10],['Partly',5],['No, we copy and paste',0]] },
+    { area:'Admin', text:'How many staff hours a week go on copy-paste and admin?', title:'Admin eating your team', what:'Skilled people doing data entry is a quiet, permanent payroll leak.', options:[['Under 5',10],['5 to 15',5],['More than 15',0]] },
+    { area:'Numbers', text:'Do you know your cost per sold job, by channel?', title:'Flying blind on marketing', what:'Without cost per sold job, you can’t tell which spend makes money and which burns it.', options:[['Yes',10],['Roughly',5],['No',0]] },
+    { area:'Repeat work', text:'Do past customers get contacted to buy again, automatically?', title:'Past customers left alone', what:'Your cheapest sale is to someone who already trusts you. Most businesses never ask.', options:[['Yes',10],['Sometimes',5],['No',0]] },
+    { area:'Referrals', text:'Does every happy customer get asked for a review and a referral?', title:'Referrals never asked for', what:'Referred leads close best and cost nothing, but only if someone asks.', options:[['Always',10],['Sometimes',5],['Rarely',0]] },
+    { area:'Owner', text:'If you took a month off, would things slip?', title:'Everything runs through you', what:'When the owner is the system, growth stops where your hours do.', options:[['No, it runs without me',10],['A little',5],['Badly',0]] },
+    { area:'Spend', text:'Do you know what every tool and automation costs, and that each earns its keep?', title:'Paying for middlemen', what:'Per-task fees, unused seats and marked-up AI add up month after month.', options:[['Yes',10],['Roughly',5],['No',0]] },
+    { area:'AI', text:'Have you added AI or automation without a clear plan?', title:'AI without a plan', what:'Tools bought before the problem is mapped tend to cost more than they save.', options:[['No',10],['Some',5],['Yes, a fair bit',0]] }
+  ];
+  var $ = function(id){ return document.getElementById(id); };
+  var i = 0, answers = [], labels = [];
+
+  function show(which){ ['intro','quiz','gate','res'].forEach(function(id){ $(id).hidden = id !== which; }); window.scrollTo(0,0); }
+  function renderQ(){
+    var q = QS[i];
+    $('qn').textContent = 'Question ' + (i+1) + ' of ' + QS.length;
+    $('qa').textContent = q.area;
+    $('qbar').style.width = Math.round(i / QS.length * 100) + '%';
+    $('qt').textContent = q.text;
+    var box = $('qo'); box.innerHTML = '';
+    q.options.forEach(function(o){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.textContent = o[0];
+      b.addEventListener('click', function(){
+        answers[i] = o[1]; labels[i] = o[0];
+        if (i + 1 < QS.length) { i++; renderQ(); } else { show('gate'); $('g-name').focus(); }
+      });
+      box.appendChild(b);
+    });
+    $('back').hidden = i === 0;
+  }
+  $('begin').addEventListener('click', function(){ i = 0; show('quiz'); renderQ(); });
+  $('back').addEventListener('click', function(){ if (i > 0) { i--; renderQ(); } });
+  $('restart').addEventListener('click', function(){ i = 0; answers = []; labels = []; show('intro'); });
+
+  function compute(){
+    var score = 0, scored = [];
+    QS.forEach(function(q,k){ if (q.revenue) return; var pts = typeof answers[k] === 'number' ? answers[k] : 0; score += pts; scored.push({k:k,pts:pts}); });
+    scored.sort(function(a,b){ return a.pts - b.pts || a.k - b.k; });
+    var top = scored.slice(0,3).map(function(x){ return QS[x.k]; });
+    var grade = score >= 75 ? 'Tight ship' : score >= 45 ? 'Leaking' : 'Springing leaks';
+    var line = score >= 75 ? 'You run a tight operation. The gains left are specific, which makes them easier to find.' : score >= 45 ? 'Solid business, real leaks. This is where most established businesses sit.' : 'Money is slipping out in several places. The upside of fixing it is big.';
+    var color = score >= 75 ? '#7BD88F' : score >= 45 ? '#FFB020' : '#3B82F6';
+    return {score:score, top:top, grade:grade, line:line, color:color};
+  }
+
+  $('gateForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, err = $('gerr'); err.style.display = 'none';
+    if (f.company_website.value) return;
+    var name = f.name.value.trim(), email = f.email.value.trim();
+    if (!name) { err.textContent = 'Add your first name so I know who the report is for.'; err.style.display = 'block'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'That email doesn’t look right. Check it and try again.'; err.style.display = 'block'; return; }
+    var r = compute();
+    var p = new URLSearchParams(window.location.search), data = {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','gbraid','wbraid','msclkid'].forEach(function(k){ if (p.get(k)) data[k] = p.get(k); });
+    data.name = name; data.email = email; data.company = 'Leak Scorecard';
+    data.leads_per_month = labels[0] || '';
+    data.biggest_leak = 'Scorecard ' + r.score + '/100 (' + r.grade + '). Top leaks: ' + r.top.map(function(t){ return t.title; }).join('; ');
+    data.sms_consent = 'email-ok';
+    data.consent_text = $('consentText').textContent.trim();
+    data.page_url = window.location.href; data.submitted_at = new Date().toISOString(); data.consent_at = data.submitted_at; data.referrer = document.referrer || '';
+    var btn = $('gbtn'); btn.disabled = true; btn.textContent = 'One moment…';
+    var done = function(){
+      $('rlab').textContent = name + ', here’s your leak score';
+      var sc = $('rscore'); sc.style.color = r.color; sc.innerHTML = ''; sc.appendChild(document.createTextNode(r.score)); var sm = document.createElement('small'); sm.textContent = '/100'; sc.appendChild(sm);
+      $('rgrade').textContent = r.grade; $('rline').textContent = r.line;
+      var box = $('rleaks'); box.innerHTML = '';
+      r.top.forEach(function(t,n){
+        var d = document.createElement('div'); d.className = 'leak';
+        var rk = document.createElement('div'); rk.className = 'r'; rk.textContent = n + 1;
+        var tx = document.createElement('div'); var b = document.createElement('b'); b.textContent = t.title; var s = document.createElement('span'); s.textContent = t.what; tx.appendChild(b); tx.appendChild(s);
+        d.appendChild(rk); d.appendChild(tx); box.appendChild(d);
+      });
+      btn.disabled = false; btn.textContent = 'Show my leaks';
+      show('res');
+    };
+    fetch(CONFIG.webhookUrl, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() }).then(done).catch(done);
+  });
+</script>
+</body>
+</html>

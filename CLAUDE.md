@@ -4,7 +4,8 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 
 ## Files
 
-- `public/index.html`: landing page with the "Request a fit call" form (self-contained: inline CSS and JS)
+- `public/index.html`: landing page: leak calculator, "Apply for discovery" form (self-contained: inline CSS and JS)
+- `public/scorecard.html`: the 11-question Leak Scorecard; collects name and email, then shows a score out of 100 and the top three leaks
 - `public/thanks.html`: post-submit page with the booking embed placeholder and "what happens next"
 - `src/worker.js`: serves the site and handles `POST /api/lead`, saving each lead to the Cloudflare D1 table in `db/schema.sql`
 - `wrangler.jsonc`: Cloudflare config (assets folder `public/`, D1 binding)
@@ -18,7 +19,7 @@ Positioning: "I find where your business leaks time and money, then build the sy
 
 Who it's for: established service businesses, roughly $1M+ a year, 5 to 50 staff, owner close to the work. Home services first (that's where the proof is), then clinics and professional firms one at a time.
 
-Funnel: landing page -> fit call (20 min) -> paid discovery -> build -> run + coach.
+Funnel: landing page (calculator, scorecard, application) -> fit call (20 min) -> paid discovery -> build -> run + coach.
 
 1. Discovery: $2,500, credited to the build, two weeks, about four hours of the client's team time. Owner kickoff, stakeholder interviews, tool and data audit, leak map, phased system plan with costs, handover call. The client keeps the plan either way.
 2. Build: from $5,000 per phase, 2 to 6 weeks per phase, quoted from discovery. Each phase goes live on its own.
@@ -32,6 +33,7 @@ Platform-agnostic: works with the client's own CRM and field software as long as
 
 - Never promise leads, rankings, traffic or specific revenue. The line is: "I don't sell leads. I stop you losing the ones you have."
 - Do not use the words "snapshot", "template" or "plug-and-play" to describe the service.
+- Never invent statistics. The calculator output is the visitor's own numbers, labeled an estimate; the scorecard shows a score and leaks, with no dollar figure.
 - Do not mention any real client by name (including Clark, Santa's Lights, Dunzo Gutters) and do not publish real screenshots or numbers without the owner confirming the client's permission.
 - Never invent statistics. Unknown numbers stay as `[X]` inside `<span class="todo">`.
 - SEO and blogging are intentionally NOT part of the offer. Do not add them.
@@ -40,7 +42,7 @@ Platform-agnostic: works with the client's own CRM and field software as long as
 
 ## Design
 
-Dark, high-contrast, direct. Background `#0e0f11`, amber accent `#ffb400`. Bebas Neue for headings, Barlow for body (Google Fonts). Numbered amber circle step lists (not plain bullets), hazard-stripe divider, card layouts. Plain, tradie-friendly US English. Avoid generic template-looking sections.
+Dark, high-contrast, direct. Background `#0B0C0F`, panels `#15171C`, amber `#FFB020` for actions, blue `#3B82F6` for the "leak" accent. Bebas Neue for headings, Inter for body (Google Fonts). Rotated blue marquee band, big numerals, calculator sliders. Plain English. Avoid generic template-looking sections.
 
 All placeholders use the `.todo` class (amber dashed highlight) so they cannot be missed. Check every change at 1280px and 390px widths and confirm no horizontal scroll.
 
@@ -50,7 +52,7 @@ All placeholders use the `.todo` class (amber dashed highlight) so they cannot b
 var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 ```
 
-- `webhookUrl`: the lead destination, currently `/api/lead` (the Worker in `src/worker.js`, which saves to D1). The form uses the same field names as before: `trade` holds the industry, `field_software` the main tools, `biggest_leak` where it hurts. For GoHighLevel use a workflow with an Inbound Webhook trigger. It posts form-encoded with `mode: 'no-cors'`, so no CORS setup is needed, but the response cannot be read.
+- `webhookUrl`: the lead destination, currently `/api/lead` (the Worker in `src/worker.js`, which saves to D1). The application form and scorecard reuse the existing columns: `company` = business and website, `leads_per_month` = yearly revenue band, `biggest_leak` = the headache (or the scorecard summary). Only `name` and `email` are required. For GoHighLevel use a workflow with an Inbound Webhook trigger. It posts form-encoded with `mode: 'no-cors'`, so no CORS setup is needed, but the response cannot be read.
 - Fields sent: name, company, phone, email, trade, leads_per_month, field_software, crm, biggest_leak, sms_consent, consent_text, consent_at, page_url, referrer, submitted_at, plus any `utm_*` params and ad click IDs (`fbclid`, `gclid`, `gbraid`, `wbraid`, `msclkid`) present in the landing URL.
 - Ads: conversion events fire on `thanks.html` (placeholder block at the bottom, commented out). Base pixel/tag code goes in the `<head>` of both pages. Leads must land in a CRM with attribution and instant reply, not a spreadsheet.
 - If `webhookUrl` is empty the form only logs to the console and redirects. Nothing is saved.
