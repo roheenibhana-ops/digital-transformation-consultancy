@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Lead Leak Audit for Contractors | [Your Brand]</title>
-<meta name="description" content="Your leads aren't the problem, your follow-up is. Get a free audit of where your contractor business is losing leads, and a custom system to fix it.">
+<title>Find Where Your Business Leaks Time and Money | [Your Brand]</title>
+<meta name="description" content="I find where your business leaks time and money, then build the system that fixes it. Discovery, build and ongoing support for established service businesses.">
 <!-- TODO: delete the next line when you go live -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0e0f11">
@@ -69,7 +69,7 @@
   .ticks li:before{content:"";position:absolute;left:0;top:.42em;width:16px;height:9px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
 
   .form-card{background:var(--card);border:1px solid #343940;border-radius:20px;padding:30px;box-shadow:0 0 0 6px rgba(255,180,0,.07),0 50px 80px -40px rgba(0,0,0,.9);scroll-margin-top:90px;position:relative}
-  .form-card:before{content:"FREE";position:absolute;top:-14px;right:24px;background:var(--amber);color:#111;font-weight:700;font-size:12px;letter-spacing:.14em;padding:5px 14px;border-radius:99px}
+  .form-card:before{content:"FREE CALL";position:absolute;top:-14px;right:24px;background:var(--amber);color:#111;font-weight:700;font-size:12px;letter-spacing:.14em;padding:5px 14px;border-radius:99px}
   .form-card h2{font-size:42px;margin-bottom:6px}
   .form-card .note{font-size:15px;margin-bottom:6px}
   .progress{display:flex;gap:8px;margin:16px 0 4px}
@@ -196,6 +196,7 @@
   .plan li:before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:3px solid var(--amber);border-bottom:3px solid var(--amber);transform:rotate(-45deg)}
   .plan.big .price{font-size:46px;padding-top:10px}
   .plan.big ul{align-content:start}
+  .plan.hot .tag{position:absolute;top:-14px;left:24px;margin:0;border:0;background:var(--amber);color:#111;padding:5px 12px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
   .fine{font-size:15px;margin-top:26px;max-width:52em}
 
   .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
@@ -265,7 +266,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><span class="todo">[Your Brand]</span></a>
-    <a class="btn plain" href="#audit">Free <span class="long">&nbsp;lead leak&nbsp;</span> audit</a>
+    <a class="btn plain" href="#audit">Request a <span class="long">fit </span>call</a>
   </div>
 </header>
 
@@ -275,21 +276,21 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">For established contractors</span>
-      <h1>You're not short on leads. <em>You're losing them.</em></h1>
-      <p class="sub">Customer texts at 7pm. Your crew's on a roof. The quote goes out and nobody follows up. I redesign how your business handles leads, build it around the tools you already use, and test it on real leads before you rely on it.</p>
+      <span class="eyebrow">For established service businesses</span>
+      <h1>Your business leaks time and money. <em>I find where, then build the fix.</em></h1>
+      <p class="sub">I'm a business analyst who builds. I map how your business really runs, find where leads, time and money drop out, and build the system that fixes it, on your own accounts and tested before you rely on it.</p>
       <ul class="ticks">
-        <li><strong>Built to answer every lead fast,</strong> day or night</li>
-        <li><strong>Quote follow-up</strong> that doesn't depend on anyone's memory</li>
-        <li><strong>Built custom</strong> around how your business actually runs</li>
+        <li><strong>A written plan you keep,</strong> whether or not you hire me to build it</li>
+        <li><strong>Built phase by phase,</strong> each one live on its own</li>
+        <li><strong>It's yours.</strong> Your accounts, your documentation, no lock-in</li>
       </ul>
     </div>
 
     <div class="form-card" id="audit">
-      <h2>Get your free lead leak audit</h2>
-      <p class="note">I'll review your last 60-90 days of leads and show you where they leaked and what it likely cost.</p>
+      <h2>Request a fit call</h2>
+      <p class="note">A 20-minute call to confirm there's a real problem worth solving and that we're a good fit.</p>
       <div class="progress" aria-hidden="true"><i class="on" id="p1"></i><i id="p2"></i></div>
-      <div class="stepno" id="stepno">Step 1 of 2 &middot; Where do I send it?</div>
+      <div class="stepno" id="stepno">Step 1 of 2 &middot; Where do I reach you?</div>
       <form id="auditForm" novalidate>
         <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
 
@@ -306,192 +307,142 @@
         <div class="step" id="step2" hidden>
           <label for="company">Business name</label>
           <input id="company" name="company" type="text" autocomplete="organization" required placeholder="Your business">
-          <div class="row">
-            <div>
-              <label for="trade">Trade</label>
-              <select id="trade" name="trade" required>
-                <option value="">Select…</option>
-                <option>Roofing</option>
-                <option>HVAC</option>
-                <option>Concrete</option>
-                <option>Solar</option>
-                <option>Builder / remodeler</option>
-                <option>Gutters / exterior</option>
-                <option>Landscaping</option>
-                <option>Other home services</option>
-              </select>
-            </div>
-            <div>
-              <label for="leads">Leads a month</label>
-              <select id="leads" name="leads_per_month" required>
-                <option value="">Select…</option>
-                <option>Under 40</option>
-                <option>40-80</option>
-                <option>80-150</option>
-                <option>150-300</option>
-                <option>300+</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="software">Job / field software</label>
-              <select id="software" name="field_software" required>
-                <option value="">Select…</option>
-                <option>Jobber</option>
-                <option>Housecall Pro</option>
-                <option>JobNimbus</option>
-                <option>ServiceTitan</option>
-                <option>AccuLynx</option>
-                <option>Other</option>
-                <option>None yet</option>
-              </select>
-            </div>
-            <div>
-              <label for="crm">CRM (if different)</label>
-              <input id="crm" name="crm" type="text" placeholder="HubSpot, GHL, none…">
-            </div>
-          </div>
-          <label for="leak">Where do you think you lose the most?</label>
-          <textarea id="leak" name="biggest_leak" placeholder="Slow first reply, quotes going quiet, after-hours leads, reps not following up…"></textarea>
+          <label for="trade">Industry</label>
+          <select id="trade" name="trade" required>
+            <option value="">Select…</option>
+            <option>Roofing</option>
+            <option>HVAC</option>
+            <option>Concrete</option>
+            <option>Solar</option>
+            <option>Builder / remodeler</option>
+            <option>Gutters / exterior</option>
+            <option>Landscaping</option>
+            <option>Other home services</option>
+            <option>Clinic / allied health</option>
+            <option>Professional services</option>
+            <option>Other</option>
+          </select>
+          <label for="software">Main tools you use</label>
+          <input id="software" name="field_software" type="text" placeholder="CRM, job software, phones, spreadsheets…">
+          <label for="leak">Where does it hurt most?</label>
+          <textarea id="leak" name="biggest_leak" placeholder="Leads going quiet, copy and pasting between tools, can't see the numbers, AI that didn't deliver…"></textarea>
 
-          <label class="check"><input type="checkbox" name="sms_consent" value="yes" required><span id="consentText">I agree to receive calls, texts and emails from <span class="todo">[Your Brand]</span> about my audit and related follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.</span></label>
+          <label class="check"><input type="checkbox" name="sms_consent" value="yes" required><span id="consentText">I agree to receive calls, texts and emails from <span class="todo">[Your Brand]</span> about my fit call and related follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.</span></label>
           <div class="btnrow">
             <button class="btn ghost" type="button" id="backBtn">Back</button>
-            <button class="btn" type="submit" id="submitBtn">Send me my free audit</button>
+            <button class="btn" type="submit" id="submitBtn">Request my fit call</button>
           </div>
         </div>
         <p class="form-msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
       </form>
-      <p class="secure">Free. No pitch deck. No obligation.</p>
+      <p class="secure">No pitch deck. No obligation.</p>
     </div>
   </div>
 </section>
 
 <!-- TICKER -->
-<div class="ticker" aria-label="Built around the tools you already use">
+<div class="ticker" aria-label="Who I work with">
   <div class="track">
-    <span>Roofing</span><span>HVAC</span><span>Concrete</span><span>Solar</span><span>Builders</span><span>Built around the tools you already use</span><span>Jobber</span><span>Housecall Pro</span><span>JobNimbus</span><span>ServiceTitan</span><span>HubSpot</span><span>GoHighLevel</span>
-    <span>Roofing</span><span>HVAC</span><span>Concrete</span><span>Solar</span><span>Builders</span><span>Built around the tools you already use</span><span>Jobber</span><span>Housecall Pro</span><span>JobNimbus</span><span>ServiceTitan</span><span>HubSpot</span><span>GoHighLevel</span>
+    <span>Home services</span><span>Clinics</span><span>Professional firms</span><span>Built around the tools you already use</span><span>CRM</span><span>Job software</span><span>Phones</span><span>Ads</span><span>Spreadsheets</span>
+    <span>Home services</span><span>Clinics</span><span>Professional firms</span><span>Built around the tools you already use</span><span>CRM</span><span>Job software</span><span>Phones</span><span>Ads</span><span>Spreadsheets</span>
   </div>
 </div>
 
-<!-- NO-REPLY PHONE -->
+<!-- THE PROBLEM -->
 <section>
-  <div class="wrap night">
-    <div>
-      <span class="eyebrow">A familiar night</span>
-      <h2>The lead didn't go cold. It went to someone who answered.</h2>
-      <p class="lead-in">You paid to get the call or the form. What happens in the next few minutes decides whether it becomes a job, and nobody's watching the phone.</p>
-      <span class="tag">Illustrative example, not real data</span>
-    </div>
-    <div class="phone" aria-label="Illustrative example of a lead message with no reply">
-      <div class="screen">
-        <div class="bar"><span>New message</span><span>7:02 PM</span></div>
-        <div class="bubble in">Hi, need a quote on a roof repair. Can someone call me tonight?
-          <div class="photo">PHOTO</div>
-          <small>7:02 PM</small>
-        </div>
-        <div class="notice">Your crew is on a job. Phones are in the truck.</div>
-        <div class="waiting"><b id="timer">00:00</b><span>No reply yet</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHERE LEADS LEAK -->
-<section class="alt">
   <div class="wrap">
-    <span class="eyebrow">Where the money goes</span>
-    <h2>Every lead takes the same trip. Most leak somewhere.</h2>
-    <p class="lead-in">What happens between that first message and a signed job is where the revenue disappears.</p>
-    <ol class="journey">
-      <li><span class="dot">1</span><b>Lead comes in</b></li>
-      <li class="leak"><span class="dot">2</span><b>First reply</b><small>Slow, or after hours</small></li>
-      <li class="leak"><span class="dot">3</span><b>Photos &amp; details</b><small>Nobody chases them</small></li>
-      <li><span class="dot">4</span><b>Quote goes out</b></li>
-      <li class="leak"><span class="dot">5</span><b>Quote follow-up</b><small>Goes quiet</small></li>
-      <li><span class="dot">6</span><b>Job sold</b></li>
-    </ol>
-    <ul class="pain">
-      <li>You paid for the lead and nobody called back for two days.</li>
-      <li>Quotes go out and die in someone's inbox.</li>
-      <li>Your best rep closes twice what the others do, because follow-up depends on who's having a good week.</li>
-      <li>Jobber here, texts there, a spreadsheet nobody trusts.</li>
-      <li>You spend nights doing admin that software should be doing.</li>
-    </ul>
-    <p class="callout">That's not a marketing problem. It's a system problem, and it's costing you jobs you already paid to win.</p>
+    <span class="eyebrow">The problem</span>
+    <h2>You're not short of tools. You're short of someone who knows how they fit together.</h2>
+    <div class="grid2">
+      <div class="feat"><i>01</i><h3>Tools don't talk</h3><p>Your CRM, job system, phones and ads each hold half the story, so your staff copy and paste between them.</p></div>
+      <div class="feat"><i>02</i><h3>Leads and customers slip</h3><p>Follow-up depends on someone remembering. Quotes go cold.</p></div>
+      <div class="feat"><i>03</i><h3>You pay middlemen forever</h3><p>Per-task automation fees and marked-up AI add up every month.</p></div>
+      <div class="feat"><i>04</i><h3>You can't see the numbers</h3><p>Nobody can say which channel or which ad actually makes money.</p></div>
+      <div class="feat"><i>05</i><h3>AI got bought first</h3><p>Tools were added before anyone asked what needed fixing.</p></div>
+      <div class="feat"><i>06</i><h3>It's costing you</h3><p>Not a tools problem. A "how it all fits together" problem, and it shows up in time and money.</p></div>
+    </div>
   </div>
 </section>
 
-<!-- AMBER STATEMENT -->
+<!-- STATEMENT -->
 <section class="band">
   <div class="wrap">
-    <p class="statement" style="margin:0">Anyone can ask an AI to build a website. <span>The hard part is knowing what your business needs,</span> wiring it into how you actually work, and making sure it doesn't drop a lead when you're busiest.</p>
-    <p>That's what I do. Every build is custom. I learn how your business runs, design the system around it, build it, and test it on real leads.</p>
+    <p class="statement" style="margin:0">Anyone can ask an AI to build something. <span>The hard part is knowing what your business needs,</span> and wiring it into how you actually work.</p>
+    <p>I ask the right questions, map how the business really runs, then use AI to build the fix fast. Every build is custom.</p>
   </div>
 </section>
 
-<!-- BEFORE / AFTER -->
-<section>
+<!-- THE OFFER: THREE STEPS -->
+<section class="alt" id="packages">
   <div class="wrap">
-    <span class="eyebrow">The difference</span>
-    <h2>Same leads. Different system.</h2>
-    <div class="vs">
-      <div class="before">
-        <h3>How it runs now</h3>
+    <span class="eyebrow">How it works</span>
+    <h2>Three steps. You see the plan before you commit to the build.</h2>
+    <p class="lead-in">Prices are starting points. Your exact build price comes from the plan we write in discovery.</p>
+    <div class="cards">
+      <div class="plan hot">
+        <span class="tag">Start here</span>
+        <h3>1. Discovery</h3>
+        <p class="for">Two weeks. About four hours of your team's time.</p>
+        <div class="price">$2,500</div>
+        <p class="support">Credited to the build if you go ahead</p>
         <ul>
-          <li>Replies depend on who sees the phone first</li>
-          <li>Photos and details get asked for, or forgotten</li>
-          <li>Quotes sit until somebody remembers</li>
-          <li>Software that doesn't talk to each other</li>
+          <li>Owner kickoff and stakeholder interviews</li>
+          <li>Tool and data audit</li>
+          <li>Leak map: where leads, time and money drop out</li>
+          <li>A phased system plan with costs</li>
+          <li>You keep the plan either way</li>
         </ul>
+        <a class="btn block" href="#audit">Request a fit call</a>
       </div>
-      <div class="after">
-        <h3>With a system built for you</h3>
+      <div class="plan">
+        <h3>2. Build</h3>
+        <p class="for">2 to 6 weeks per phase.</p>
+        <div class="price">$5,000 <small>from, per phase</small></div>
+        <p class="support">Quoted from the discovery plan</p>
         <ul>
-          <li>Every lead gets a reply, with a person looped in when it matters</li>
-          <li>Photos and job details requested automatically</li>
-          <li>Quote follow-up that runs every time</li>
+          <li>The plan built phase by phase</li>
+          <li>Each phase live on its own</li>
           <li>Your tools connected, so nobody types it twice</li>
+          <li>Automation and AI where they earn their place</li>
+          <li>Tested on real data before you rely on it</li>
         </ul>
+        <a class="btn block" href="#audit">Request a fit call</a>
+      </div>
+      <div class="plan">
+        <h3>3. Run + coach</h3>
+        <p class="for">Keep it running and improving.</p>
+        <div class="price">$1,500 <small>from, per month</small></div>
+        <p class="support">Ongoing</p>
+        <ul>
+          <li>Agents and scoreboard kept running</li>
+          <li>Fixes when platforms change</li>
+          <li>Tuned as your numbers come in</li>
+          <li>Monthly team coaching</li>
+        </ul>
+        <a class="btn block" href="#audit">Request a fit call</a>
       </div>
     </div>
+    <p class="fine"><span class="todo">[Payment terms and support term: confirm with the owner]</span> Software and tool costs (CRM, automation, AI, hosting) run on your own accounts and I'll give you the real numbers before you commit. I don't promise leads, rankings or traffic.</p>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="alt" id="how">
+<!-- WHAT HAPPENS IN DISCOVERY -->
+<section id="how">
   <div class="wrap split">
     <div class="sticky-h">
-      <span class="eyebrow">How it works</span>
-      <h2>Five steps. No surprises.</h2>
-      <p class="lead-in">You see the problem first. You only pay once you've seen the plan.</p>
-      <a class="btn" href="#audit" style="margin-top:22px">Start with the free audit</a>
+      <span class="eyebrow">Inside discovery</span>
+      <h2>Two weeks. You walk away with a plan you own.</h2>
+      <p class="lead-in">About four hours of your team's time, spread over two weeks.</p>
+      <a class="btn" href="#audit" style="margin-top:22px">Request a fit call</a>
     </div>
     <ol class="steps">
-      <li><div><h3>Free lead leak audit <span class="free">Free</span></h3><p>I look at your last 60-90 days of leads and show you where they leaked and what it likely cost.</p></div></li>
-      <li><div><h3>Discovery &amp; Design</h3><p>I map how your business really runs, then write a fixed-scope specification: every handoff, integration and alert, spelled out. You get a fixed price, and the fee is credited toward the build if you go ahead.</p></div></li>
-      <li><div><h3>Build</h3><p>Lead bots, CRM, field-software sync, pages and alerts, all designed around your process.</p></div></li>
-      <li><div><h3>Live test</h3><p>Real leads, handoffs checked, and your sign-off before anything goes live.</p></div></li>
-      <li><div><h3>Support</h3><p>I monitor it, fix it when platforms change, and tune it as your business does.</p></div></li>
+      <li><div><h3>Kickoff with the owner</h3><p>Your goals, your revenue, and where it hurts.</p></div></li>
+      <li><div><h3>Stakeholder interviews</h3><p>Office, sales and field staff: what they copy and paste, what slows them down, what slips.</p></div></li>
+      <li><div><h3>Tool and data audit</h3><p>CRM, job system, phones, ads, spreadsheets. What talks to what, and what it costs.</p></div></li>
+      <li><div><h3>Leak map</h3><p>A one-page view of where leads, time and money drop out.</p></div></li>
+      <li><div><h3>System plan</h3><p>A visual board with the fixes ranked by payoff, split into phases, with costs.</p></div></li>
+      <li><div><h3>Handover call</h3><p>We walk through it and I answer your questions. If you want the build, I quote it then.</p></div></li>
     </ol>
-  </div>
-</section>
-
-<!-- WHAT YOU GET -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">What you get</span>
-    <h2>A system that does the chasing for you.</h2>
-    <div class="grid2">
-      <div class="feat"><i>01</i><h3>Fast first reply</h3><p>Day or night. It asks for photos, reads their notes, and responds to their actual situation, not a canned "thanks for reaching out."</p></div>
-      <div class="feat"><i>02</i><h3>Quotes that get chased</h3><p>Follow-up after the quote goes out, every time, without relying on anyone's memory. It reads the call notes and the quote, so it asks about what matters to that customer, not just "checking in."</p></div>
-      <div class="feat"><i>03</i><h3>Your software talking</h3><p>Your field software and CRM synced (Jobber, Housecall Pro, JobNimbus, HubSpot, or whatever you use, provided it has an API), so nobody types the same thing twice.</p></div>
-      <div class="feat"><i>04</i><h3>"Waiting on us" alerts</h3><p>If a customer message sits unanswered, the right person gets pinged before the lead goes to the next guy.</p></div>
-      <div class="feat"><i>05</i><h3>Your own stack</h3><p>Your website, hosting, domain, tracking and AI assistant set up properly, on your own accounts, so you control it and pay almost nothing to run it.</p></div>
-      <div class="feat"><i>06</i><h3>Your team uses it</h3><p>A walkthrough video and a one-page guide, so it sticks after I'm gone from the day-to-day.</p></div>
-    </div>
   </div>
 </section>
 
@@ -500,78 +451,23 @@
   <div class="wrap">
     <span class="eyebrow">Proof</span>
     <h2 class="todo" style="display:inline-block">[Proof headline]</h2>
-    <p class="lead-in" style="margin-top:14px"><span class="todo">[One or two lines on a real build. Only publish after the client confirms permission.]</span></p>
-    <!-- TODO: replace every [X] with real numbers, and get the client's OK before publishing anything from their account. Do not name the client. -->
+    <p class="lead-in" style="margin-top:14px"><span class="todo">[One or two lines on real builds. Publish only what the client has confirmed.]</span></p>
+    <!-- TODO: fill each card from real work. Do not name clients and do not publish numbers or screenshots without the client's written OK. -->
     <div class="stats">
-      <div class="stat"><b class="todo">[X]</b><span>leads in one week</span></div>
-      <div class="stat"><b class="todo">[X]%</b><span>answered in under <span class="todo">[X]</span> minutes</span></div>
-      <div class="stat"><b class="todo">[X]</b><span>quotes followed up automatically</span></div>
+      <div class="stat"><b class="todo">[X]</b><span>A home services company: <span class="todo">[problem found]</span>, <span class="todo">[what was built]</span></span></div>
+      <div class="stat"><b class="todo">[X]</b><span>A second business on the same engine: <span class="todo">[problem found]</span>, <span class="todo">[what was built]</span></span></div>
+      <div class="stat"><b class="todo">[X]</b><span>A health app built end to end: <span class="todo">[what it does]</span></span></div>
     </div>
     <div class="shots">
-      <div class="shot">Screenshot: bot replying to a new lead<br>(names and numbers redacted)</div>
-      <div class="shot">Screenshot: photos received, pipeline updated<br>(redacted)</div>
-      <div class="shot">Screenshot: scoreboard / "waiting on us"<br>(redacted)</div>
+      <div class="shot">Screenshot: the leak map<br>(redacted)</div>
+      <div class="shot">Screenshot: the system plan<br>(redacted)</div>
+      <div class="shot">Screenshot: the live scoreboard<br>(redacted)</div>
     </div>
-  </div>
-</section>
-
-<!-- ENGAGEMENTS -->
-<section id="packages">
-  <div class="wrap">
-    <span class="eyebrow">Investment</span>
-    <h2>Three typical engagements.</h2>
-    <p class="lead-in">Every build is custom. These are starting points, and your exact price is set in your written specification before you commit to the build.</p>
-    <div class="cards">
-      <div class="plan">
-        <h3>Foundation</h3>
-        <p class="for">Smaller teams that need the core fixed properly.</p>
-        <div class="price">$5,000 <small>from</small></div>
-        <p class="support">Support from $1,000/mo</p>
-        <ul>
-          <li>Requirements and process mapping</li>
-          <li>CRM set up, synced to your field software</li>
-          <li>Core lead bot: instant reply, photos, booking</li>
-          <li>"Waiting on us" alert</li>
-          <li>Up to 3 landing pages</li>
-          <li>Your AI assistant set up</li>
-        </ul>
-        <a class="btn block" href="#audit">Start with the audit</a>
-      </div>
-      <div class="plan hot">
-        <span class="tagp">Most popular</span>
-        <h3>Growth</h3>
-        <p class="for">Established teams with real lead volume.</p>
-        <div class="price">$9,500 <small>from</small></div>
-        <p class="support">Support from $1,500/mo</p>
-        <ul>
-          <li>Everything in Foundation</li>
-          <li>Full bot flow: notes, quote follow-up, objections</li>
-          <li>Website and your full stack on your own accounts</li>
-          <li>Up to 2 ad funnels with matched landing pages</li>
-          <li>1 extra integration</li>
-        </ul>
-        <a class="btn block" href="#audit">Start with the audit</a>
-      </div>
-      <div class="plan big">
-        <h3>Something bigger?</h3>
-        <p class="for">Multi-crew or multi-brand operations.</p>
-        <div class="price">Let's talk</div>
-        <p class="support">Scoped and priced to fit</p>
-        <ul>
-          <li>Custom flows per brand or service</li>
-          <li>Live KPI scoreboard</li>
-          <li>Several integrations</li>
-          <li>Built around how your operation runs</li>
-        </ul>
-        <a class="btn block" href="#audit">Start with the audit</a>
-      </div>
-    </div>
-    <p class="fine"><span class="todo">[Payment terms: confirm with the owner]</span> Discovery &amp; Design is $1,500 and is credited toward your build if you go ahead. Software and tool costs (CRM, automation, AI, hosting) run on your own accounts and I'll give you the real numbers before you commit. I don't promise leads, rankings or traffic.</p>
   </div>
 </section>
 
 <!-- FIT -->
-<section class="alt">
+<section>
   <div class="wrap">
     <span class="eyebrow">Fit check</span>
     <h2>Is this for you?</h2>
@@ -579,34 +475,36 @@
       <div class="yes">
         <h3>This is for you if</h3>
         <ul>
-          <li>You run an established contractor business with a team and steady leads</li>
-          <li>Leads come in but follow-up is inconsistent</li>
-          <li>You want it done properly, not another tool to figure out</li>
+          <li>You run an established service business with a team and real revenue</li>
+          <li>You have tools and data, but they don't add up to a clear picture</li>
+          <li>You want it done properly, and you'll make time to explain how the business works</li>
         </ul>
       </div>
       <div class="no">
         <h3>This isn't for you if</h3>
         <ul>
-          <li>You want me to promise you leads. I don't sell leads, I stop you losing the ones you have</li>
-          <li>You want the cheapest option</li>
-          <li>You can't spare a few hours to explain how your business works</li>
+          <li>You're a startup with no revenue yet</li>
+          <li>You only want ads run</li>
+          <li>You want new tech without changing how you work</li>
         </ul>
       </div>
     </div>
+    <p class="fine" style="margin-top:22px">I started with home services, where the proof is, and I take on clinics and professional firms one at a time.</p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
+<section class="alt" id="faq">
   <div class="wrap" style="max-width:840px">
     <span class="eyebrow">Questions</span>
     <h2>Straight answers.</h2>
-    <details><summary>Is it a bot? Will customers know?</summary><p>It's an automated assistant, and it never pretends to be a person. It writes in your brand's voice, signs off as your business, and hands over to a real person when it should, or whenever a customer asks. Anything it can't answer gets flagged so someone on your team replies.</p></details>
-    <details><summary>What if I don't use Jobber?</summary><p>I work with the tools you already have. If it has an API, we can usually connect it, and I'll tell you straight in the audit if it can't. If you don't have a CRM, I'll set one up.</p></details>
+    <details><summary>Could we just hire a developer?</summary><p>You can, and the plan is yours either way. A developer builds what you tell them. I work out what's worth building first.</p></details>
+    <details><summary>We already tried AI.</summary><p>Most AI projects fail because nobody mapped the problem first. That's the step I do.</p></details>
+    <details><summary>We're too busy.</summary><p>Discovery takes about four hours of your team's time, spread over two weeks.</p></details>
+    <details><summary>$2,500 for a plan?</summary><p>It's credited to the build if you go ahead, and the plan is yours whether you hire me or not.</p></details>
     <details><summary>Who owns it?</summary><p>You do. It runs on your own accounts, and once the final invoice is paid, it's yours: the accounts, the prompts and the documentation. I keep admin access until then.</p></details>
+    <details><summary>Is it a bot? Will customers know?</summary><p>Where I build customer-facing automation, it's an automated assistant and it never pretends to be a person. It signs off as your business and hands over to a real person when it should, or whenever a customer asks.</p></details>
     <details><summary>What do the tools cost to run?</summary><p>They run on your accounts, and I'll give you the real numbers before you commit. Hosting costs very little.</p></details>
-    <details><summary>Do I need to be technical?</summary><p>No. I do the setup, testing and handover, and you get a walkthrough video and a one-page guide for your team.</p></details>
-    <details><summary>What do I do after launch?</summary><p>You run your business. I monitor the system, fix it when platforms change, and tune it as your numbers come in, under a support plan.</p></details>
   </div>
 </section>
 
@@ -615,9 +513,9 @@
 <!-- FINAL CTA -->
 <section class="final">
   <div class="wrap">
-    <h2>Every day you wait is another lead that went to the next guy.</h2>
-    <p>Get the free audit and see exactly where your leads are leaking.</p>
-    <a class="btn" href="#audit">Get my free lead leak audit</a>
+    <h2>Find out where your business leaks.</h2>
+    <p>Request a fit call and I'll tell you straight whether discovery is worth it for you.</p>
+    <a class="btn" href="#audit">Request a fit call</a>
   </div>
 </section>
 
@@ -630,7 +528,7 @@
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn plain block" href="#audit">Get my free lead leak audit</a></div>
+<div class="sticky" id="sticky"><a class="btn plain block" href="#audit">Request a fit call</a></div>
 
 <script>
   // ---- CONFIG: set these before launch ----
@@ -651,7 +549,7 @@
     current = n;
     step1.hidden = n !== 1; step2.hidden = n !== 2;
     p2.className = n === 2 ? 'on' : '';
-    stepno.textContent = n === 1 ? 'Step 1 of 2 · Where do I send it?' : 'Step 2 of 2 · About your business';
+    stepno.textContent = n === 1 ? 'Step 1 of 2 · Where do I reach you?' : 'Step 2 of 2 · About your business';
     msg.style.display = 'none';
   }
   function stepValid(el){
@@ -704,17 +602,10 @@
       window.location.href = CONFIG.thanksUrl;
     }).catch(function(){
       btn.disabled = false;
-      btn.textContent = 'Send me my free audit';
+      btn.textContent = 'Request my fit call';
       msg.style.display = 'block';
     });
   });
-
-  // Illustrative "no reply" timer
-  (function(){
-    var el = document.getElementById('timer'), s = 0;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = '14:07'; return; }
-    setInterval(function(){ s++; var m = Math.floor(s/60), r = s%60; el.textContent = (m<10?'0':'')+m+':'+(r<10?'0':'')+r; }, 1000);
-  })();
 
   // Mobile sticky CTA: show once the form has scrolled out of view
   (function(){

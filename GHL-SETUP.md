@@ -1,5 +1,7 @@
 # GHL build sheet: Lead Leak Audit funnel
 
+> **Superseded:** this sheet was written for the earlier free "Lead Leak Audit" funnel. The offer is now paid discovery (see CLAUDE.md). Kept for reference only.
+>
 > **Status:** deferred. GoHighLevel is not being used until there are paying customers. This sheet is kept for when it is adopted.
 
 Build this in YOUR agency account, in a fresh sub-account (not inside any client's). Plain workflow steps only. No GHL AI agents (usage billing can balloon). Verify merge tags in GHL's picker; names can differ slightly.

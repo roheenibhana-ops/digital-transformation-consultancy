@@ -1,31 +1,32 @@
-# Project: lead-audit funnel
+# Project: discovery funnel
 
-Static two-page funnel for a done-for-you digital transformation consultancy that sells to established US home-services contractors (roofing, HVAC, concrete, solar, builders). It is hosted on Cloudflare Pages from this GitHub repo. No build step, no framework.
+Static two-page funnel for a business analyst who builds. It sells a paid discovery to established service businesses (home services first, then clinics and professional firms). Hosted on Cloudflare (Workers with static assets) from this GitHub repo. No build step, no framework.
 
 ## Files
 
-- `public/index.html`: landing page with the free "Lead Leak Audit" form (self-contained: inline CSS and JS)
-- `public/thanks.html`: post-submit page with booking embed placeholder and "what happens next"
-- `wrangler.jsonc`: Cloudflare config; serves the `public/` folder
+- `public/index.html`: landing page with the "Request a fit call" form (self-contained: inline CSS and JS)
+- `public/thanks.html`: post-submit page with the booking embed placeholder and "what happens next"
+- `src/worker.js`: serves the site and handles `POST /api/lead`, saving each lead to the Cloudflare D1 table in `db/schema.sql`
+- `wrangler.jsonc`: Cloudflare config (assets folder `public/`, D1 binding)
 - `CLAUDE.md`: this brief
 - `README.md`: deploy steps
-- `GHL-SETUP.md`: GHL build sheet (custom fields, pipeline, calendar, workflows, follow-up copy)
+- `GHL-SETUP.md`: old GHL build sheet for the previous free-audit funnel; GHL is deferred, kept for reference
 
 ## The offer (keep copy consistent with this)
 
-The owner is a consultant, not a template seller. Positioning: "I redesign how your business handles leads, build it around the tools you already use, and test it on real leads before you rely on it." Every build is custom.
+Positioning: "I find where your business leaks time and money, then build the system that fixes it." The owner is a business analyst who builds: not a marketing agency, not a prompt engineer. Every build is custom.
 
-Process: free audit -> paid Discovery & Design, a fixed-scope specification ($1,500, credited if they sign) -> build -> live test -> support.
+Who it's for: established service businesses, roughly $1M+ a year, 5 to 50 staff, owner close to the work. Home services first (that's where the proof is), then clinics and professional firms one at a time.
 
-Typical engagements (final price always set in the written specification):
+Funnel: landing page -> fit call (20 min) -> paid discovery -> build -> run + coach.
 
-- Foundation: from $5,000, support from $1,000/mo
-- Growth (most popular): from $9,500, support from $1,500/mo
-- Bigger or multi-brand work: no published price. Shown as "Something bigger? Let's talk" and scoped on the audit call (the $15,000 / $2,500-per-month tier was dropped from the page)
+1. Discovery: $2,500, credited to the build, two weeks, about four hours of the client's team time. Owner kickoff, stakeholder interviews, tool and data audit, leak map, phased system plan with costs, handover call. The client keeps the plan either way.
+2. Build: from $5,000 per phase, 2 to 6 weeks per phase, quoted from discovery. Each phase goes live on its own.
+3. Run + coach: from $1,500 a month. Agents and scoreboard kept running and improved, plus monthly team coaching.
 
-Platform-agnostic: works with the client's own CRM and field software (Jobber, Housecall Pro, JobNimbus, ServiceTitan, HubSpot, GoHighLevel, etc.) as long as there is a usable API. If no CRM exists, one is set up.
+Everything runs on the client's own accounts. Once the final invoice is paid it is theirs (accounts, prompts, documentation). Admin access stays with the owner until then. No lock-in.
 
-Target client: established contractor, $1M+ revenue, a team, 80+ leads a month, owner reachable. Not one-man operators.
+Platform-agnostic: works with the client's own CRM and field software as long as there is a usable API.
 
 ## Hard rules
 
@@ -46,10 +47,10 @@ All placeholders use the `.todo` class (amber dashed highlight) so they cannot b
 ## Config (bottom of index.html)
 
 ```js
-var CONFIG = { webhookUrl: "", thanksUrl: "thanks.html" };
+var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 ```
 
-- `webhookUrl`: the lead destination. For GoHighLevel use a workflow with an Inbound Webhook trigger. It posts form-encoded with `mode: 'no-cors'`, so no CORS setup is needed, but the response cannot be read.
+- `webhookUrl`: the lead destination, currently `/api/lead` (the Worker in `src/worker.js`, which saves to D1). The form uses the same field names as before: `trade` holds the industry, `field_software` the main tools, `biggest_leak` where it hurts. For GoHighLevel use a workflow with an Inbound Webhook trigger. It posts form-encoded with `mode: 'no-cors'`, so no CORS setup is needed, but the response cannot be read.
 - Fields sent: name, company, phone, email, trade, leads_per_month, field_software, crm, biggest_leak, sms_consent, consent_text, consent_at, page_url, referrer, submitted_at, plus any `utm_*` params and ad click IDs (`fbclid`, `gclid`, `gbraid`, `wbraid`, `msclkid`) present in the landing URL.
 - Ads: conversion events fire on `thanks.html` (placeholder block at the bottom, commented out). Base pixel/tag code goes in the `<head>` of both pages. Leads must land in a CRM with attribution and instant reply, not a spreadsheet.
 - If `webhookUrl` is empty the form only logs to the console and redirects. Nothing is saved.

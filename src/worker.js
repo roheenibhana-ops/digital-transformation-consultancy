@@ -6,7 +6,7 @@ const FIELDS = [
   'fbclid','gclid','gbraid','wbraid','msclkid'
 ];
 const DATES = ['consent_at', 'submitted_at'];
-const REQUIRED = ['name', 'company', 'phone', 'email', 'trade', 'leads_per_month', 'field_software', 'sms_consent'];
+const REQUIRED = ['name', 'company', 'phone', 'email', 'trade', 'sms_consent'];
 
 export default {
   async fetch(request, env) {
