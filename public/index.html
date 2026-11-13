@@ -256,7 +256,7 @@
   <div class="wrap">
     <div class="box">
       <div class="tx">
-        <p class="k">Not ready to apply?</p>
+        <p class="k">Not ready for a call?</p>
         <h2>Take the free Leak Scorecard.</h2>
         <p>11 questions, 3 minutes. Get your score out of 100 and your top three leaks.</p>
       </div>
@@ -325,7 +325,6 @@
       <div class="card"><div class="no">02</div><h3>Build</h3><p>The plan, built phase by phase. Each phase goes live on its own, so you see results early.</p><div class="price">From $5,000 a phase</div></div>
       <div class="card"><div class="no">03</div><h3>Run + coach</h3><p>I keep your agents and scoreboard running and coach your team to get better every month.</p><div class="price">From $1,500 a month</div></div>
     </div>
-    <p class="fine"><span class="todo">[Payment terms and support term: confirm with the owner]</span> Software and tool costs (CRM, automation, AI, hosting) run on your own accounts and I'll give you the real numbers before you commit. I don't promise leads, rankings or traffic.</p>
   </div>
 </section>
 
@@ -349,8 +348,7 @@
       <div><h3>We're flat out.</h3><p>Discovery takes about four hours of your team's time over two weeks.</p></div>
       <div><h3>You're in New Zealand. How does that work?</h3><p>Everything runs remotely: video interviews, screen-shares and access to your tools. My mornings are your afternoons in the US, so we overlap every working day, and work keeps moving while you sleep.</p></div>
       <div><h3>$2,500 for a plan?</h3><p>It's credited to your build, and one plugged leak usually pays for it.</p></div>
-      <div><h3>Who owns it?</h3><p>You do. It runs on your own accounts, and once the final invoice is paid, it's yours: the accounts, the prompts and the documentation. I keep admin access until then.</p></div>
-      <div><h3>Is it a bot? Will customers know?</h3><p>Where I build customer-facing automation, it's an automated assistant and it never pretends to be a person. It signs off as your business and hands over to a real person when it should, or whenever a customer asks.</p></div>
+      
     </div>
   </div>
 </section>
@@ -363,6 +361,7 @@
       <p class="s"><span class="todo">Only [X] spots each month.</span> Businesses doing $1M+ only.</p>
     </div>
     <div class="formbox">
+      <div id="sentBox" hidden style="padding:40px 0;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--amber)">Got it.</div><p style="margin:12px 0 0;color:var(--muted)">I'll review it and be in touch within one business day.</p></div>
       <form id="applyForm" novalidate>
         <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
         <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
@@ -370,7 +369,6 @@
         <div class="f"><label for="f-biz">Business and website</label><input id="f-biz" name="company" type="text" autocomplete="organization" required></div>
         <div class="f"><label for="f-rev">Yearly revenue</label><select id="f-rev" name="leads_per_month" required><option value="">Select…</option><option>Under $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select></div>
         <div class="f"><label for="f-pain">What's your biggest headache right now?</label><textarea id="f-pain" name="biggest_leak" rows="3"></textarea></div>
-        <p class="consent" id="consentText">By applying you agree to be contacted by <span class="todo">[Your Brand]</span> by email and phone about your application. We won't share your details.</p>
         <button class="btn" type="submit" id="submitBtn">Apply for discovery</button>
         <p class="msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
       </form>
@@ -435,7 +433,6 @@
       var data = {};
       new FormData(form).forEach(function(v,k){ if (k !== 'company_website') data[k] = v; });
       data.sms_consent = 'contact-ok';
-      data.consent_text = document.getElementById('consentText').textContent.trim();
       data.page_url = window.location.href;
       data.submitted_at = new Date().toISOString();
       data.consent_at = data.submitted_at;
@@ -443,7 +440,7 @@
       var u = params(); Object.keys(u).forEach(function(k){ data[k] = u[k]; });
       btn.disabled = true; btn.textContent = 'Sending…';
       fetch(CONFIG.webhookUrl, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() })
-        .then(function(){ window.location.href = CONFIG.thanksUrl; })
+        .then(function(){ form.hidden = true; document.getElementById('sentBox').hidden = false; })
         .catch(function(){ btn.disabled = false; btn.textContent = 'Apply for discovery'; msg.style.display = 'block'; });
     });
   })();
