@@ -410,7 +410,7 @@
     calc();
   })();
 
-  // ---- Hypothetical $500k-a-year leak ticker ----
+  // ---- Live ticker: the real $500k-a-year leak figure, counted per second since the page opened ----
   (function(){
     var el = document.getElementById('leakNow'), t0 = Date.now();
     function tick(){ el.textContent = '$' + ((Date.now() - t0) / 1000 * 500000 / 31536000).toFixed(2); }

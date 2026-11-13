@@ -33,7 +33,7 @@ Platform-agnostic: works with the client's own CRM and field software as long as
 
 - Never promise leads, rankings, traffic or specific revenue. The line is: "I don't sell leads. I stop you losing the ones you have."
 - Do not use the words "snapshot", "template" or "plug-and-play" to describe the service.
-- Owner's instruction (Nov 2026): the homepage and scorecard follow the owner's mockup exactly, including the named client findings (Santa's Lights, Dunzo Gutters), the hypothetical $500k-a-year live counter, and the scorecard's rough yearly cost. Do not change these without being asked.
+- Owner's instruction (Nov 2026): the homepage and scorecard follow the owner's mockup exactly, including the named client findings (Santa's Lights, Dunzo Gutters), the live counter built on the real $500k-a-year leak figure, and the scorecard's rough yearly cost. Do not change these without being asked.
 - Do not mention any real client by name (including Clark, Santa's Lights, Dunzo Gutters) and do not publish real screenshots or numbers without the owner confirming the client's permission.
 - Never invent statistics. Unknown numbers stay as `[X]` inside `<span class="todo">`.
 - SEO and blogging are intentionally NOT part of the offer. Do not add them.
