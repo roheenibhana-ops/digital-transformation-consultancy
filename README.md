@@ -1,66 +1,40 @@
-# Lead audit funnel: deploy guide
+# Discovery funnel: deploy guide
 
-Static site. Two files do the work: `public/index.html` and `public/thanks.html`. Cloudflare serves the `public/` folder straight from GitHub (config in `wrangler.jsonc`).
+Static site on Cloudflare (Workers with static assets), deployed from this repo. No build step.
 
-> **Current plan:** GoHighLevel is deferred until there are paying customers. Leads will go to a small Cloudflare Worker that stores them in a D1 database (`src/worker.js`, table in `db/schema.sql`). `GHL-SETUP.md` is kept for when GHL is adopted. Columns are named after the form fields so a later GHL import is a straight CSV upload.
+- `public/index.html`: landing page (leak calculator, application form)
+- `public/scorecard.html`: the Leak Scorecard
+- `public/thanks.html`: thank-you and booking page (placeholder embed)
+- `src/worker.js`: saves form submissions to a D1 table via `POST /api/lead`
+- `db/schema.sql`: the `leads` table
+- `wrangler.jsonc`: Cloudflare config (serves `public/`, binds the D1 database `leads`)
+- `GHL-SETUP.md`: old GoHighLevel build sheet, kept for reference only
 
-## 1. Put it on GitHub
+## Deploy
 
-```bash
-cd funnel
-git init
-git add .
-git commit -m "Initial funnel"
-git branch -M main
-git remote add origin https://github.com/<you>/<repo>.git
-git push -u origin main
+1. Push to `main`. Cloudflare redeploys automatically (Workers & Pages project `digital-transformation-consultancy`, build command blank, deploy command `npx wrangler deploy`).
+2. The D1 database is created once in the Cloudflare dashboard (Storage & databases, D1) and the table is created by pasting `db/schema.sql` into its Console. Its ID is in `wrangler.jsonc`.
+3. Other branches get preview URLs.
+
+## Viewing leads
+
+Cloudflare dashboard, D1, `leads`, Console:
+
+```sql
+SELECT * FROM leads ORDER BY id DESC;
 ```
 
-Make the repo private.
+Column use: `company` = business and website, `leads_per_month` = yearly revenue band, `biggest_leak` = the headache (or the scorecard summary).
 
-## 2. Deploy on Cloudflare
+## Before launch
 
-Using the Workers flow (Workers & Pages -> Create -> Import a repository): leave Build command blank, Deploy command `npx wrangler deploy`. The project name must match `name` in `wrangler.jsonc`. The classic Pages flow also works: build output directory `public`.
+- [ ] Fill every amber `.todo` placeholder
+- [ ] Booking embed on `thanks.html` (if used)
+- [ ] Written OK from clients for any named findings
+- [ ] Test submission from the live site, then delete the test rows
+- [ ] Remove `noindex` from `index.html` and `scorecard.html` (keep it on `thanks.html`)
+- [ ] Check at 1280px and 390px, no horizontal scroll
 
-Original Pages steps:
+## Custom domain
 
-1. Cloudflare dashboard -> Workers & Pages -> Create -> Pages -> Connect to Git.
-2. Pick the repo, branch `main`.
-3. Framework preset: None. Build command: leave blank. Build output directory: `public`.
-4. Save and deploy. You get a `*.pages.dev` URL straight away.
-
-Every push to `main` redeploys automatically. Other branches get preview URLs.
-
-## 3. Connect the lead destination
-
-**GoHighLevel:** Automation -> Workflows -> Create -> trigger "Inbound Webhook" -> copy the webhook URL -> paste into `CONFIG.webhookUrl` at the bottom of `public/index.html`. Submit the form once, then use the workflow's test data to map the fields (name, company, phone, email, trade, leads_per_month, field_software, crm, biggest_leak, sms_consent, consent_text, consent_at, referrer, plus utm_* and fbclid/gclid for ad attribution; map the ad fields to custom fields so you can report on source). Add actions: create/update contact, create opportunity, send confirmation, notify you.
-
-**No CRM:** ask Claude Code to build a small Cloudflare Worker that receives the form POST, stores the lead (D1 or KV), and emails you through an email API.
-
-## 4. Booking
-
-Paste your calendar embed (GHL, Cal.com or Calendly) into `thanks.html` where the placeholder is.
-
-## 5. Custom domain
-
-Pages project -> Custom domains -> add your domain. If the domain is on Cloudflare, DNS is set up automatically.
-
-## 6. Before launch
-
-- [ ] Webhook set and tested end to end (lead appears in the CRM with all fields)
-- [ ] Calendar embed added
-- [ ] All `.todo` placeholders filled or removed (search for `class="todo"` and `[X]`)
-- [ ] Client permission obtained for any proof numbers or screenshots
-- [ ] Consent checkbox wording reviewed before texting leads
-- [ ] GHL workflows built per `GHL-SETUP.md` and tested with your own phone
-- [ ] `noindex` removed from `index.html` (keep it on `thanks.html`)
-- [ ] Check at mobile width (390px)
-
-## 7. Start these early (they take days)
-
-- A2P 10DLC registration for the sending number, if texting leads
-- SPF and DKIM on the sending domain before any outreach email
-
-## Working with Claude Code
-
-Open the repo in Claude Code. `CLAUDE.md` gives it the offer, the rules and the design system, so you can just say what to change.
+Workers & Pages project, Settings, Domains & Routes, add the domain.

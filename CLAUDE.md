@@ -59,13 +59,13 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 ## Open TODOs
 
-1. Set `webhookUrl` and send one test submission end to end.
-2. Add the booking calendar embed to `thanks.html`.
-3. Replace brand, location, email, privacy and terms placeholders.
-4. Fill proof stats and add redacted screenshots (only after client permission).
-5. Remove the `noindex` line from index.html at launch.
-6. The form has a required, unchecked consent checkbox (`sms_consent`). Have its wording reviewed (lawyer/A2P) and fill the `[Your Brand]` in it before texting leads.
-7. Optional: Cloudflare Worker that stores each lead in Supabase and forwards to GHL.
+1. Replace the amber placeholders: brand name, "[X] spots" limit, privacy, terms, footer details.
+2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
+3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) before launch.
+4. Add base pixel/tag code to the `<head>` of all three pages when ads start.
+5. Remove the `noindex` line from `index.html` and `scorecard.html` at launch (keep it on `thanks.html`).
+6. Send one real test submission from the live site (application form and scorecard) and delete the rows from the D1 `leads` table.
+7. Write down what a build phase and the monthly run + coach include, so scope stays fixed.
 
 ## Possible next work
 
