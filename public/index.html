@@ -118,6 +118,19 @@
   .who .r p.first{font-size:20px;color:var(--soft)}
   .who .quote{padding:18px 22px;background:var(--bg);border-radius:14px;font-family:"Bebas Neue",sans-serif;font-size:clamp(28px,3vw,36px);line-height:1.05;letter-spacing:.5px;color:var(--text)!important}
   .who .quote span{color:var(--amber)}
+  .flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:none}
+  .flow li{position:relative;padding:14px 14px 16px;border:1px solid var(--line2);border-radius:12px;background:var(--bg);display:flex;flex-direction:column;gap:4px}
+  .flow li:not(:last-child)::after{content:"";position:absolute;top:26px;right:-11px;width:10px;height:2px;background:var(--blue)}
+  .flow i{font-style:normal;font-family:"Bebas Neue",sans-serif;font-size:30px;line-height:1;color:var(--blue)}
+  .flow b{font-size:15px;line-height:1.25;color:var(--text)}
+  .flow span{font-size:13.5px;line-height:1.4;color:var(--soft)}
+  @media(max-width:1100px){
+    .flow{grid-template-columns:1fr}
+    .flow li{flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+    .flow li:not(:last-child)::after{display:none}
+    .flow i{min-width:22px}
+    .flow span{flex-basis:100%;padding-left:36px}
+  }
   .tags{display:flex;flex-wrap:wrap;gap:10px}
   .tags span{padding:8px 14px;border:1px solid var(--line2);border-radius:999px;font-size:15px}
 
@@ -351,7 +364,13 @@
         <p class="first">I'm a business analyst first, with nine years in the role, and I use the same method to build my own startups. My job is to get inside how your business really runs: video calls with the people doing the work, screen-shares of their day, your call recordings and your numbers. I find what's really broken, not what looks broken from the owner's chair.</p>
         <p>Then I design the fix and build it, using modern tools to do in weeks what used to take a dev team months. Agencies sell you tactics. Developers build what you tell them. I work out what's worth building, then build it. I look at the business as a whole, not just the task. Not every problem needs automating. I'll tell you when it's unnecessary.</p>
         <p class="quote">I'll tell you when your idea won't work.<br><span>Then I'll show you what will.</span></p>
-        <div class="tags"><span>Stakeholder interviews</span><span>Process mapping</span><span>Requirements</span><span>System design</span><span>Custom build</span></div>
+        <ol class="flow">
+          <li><i>1</i><b>Stakeholder interviews</b><span>Talk to the people doing the work.</span></li>
+          <li><i>2</i><b>Process mapping</b><span>See how a job really flows.</span></li>
+          <li><i>3</i><b>Requirements</b><span>Write down what must be true.</span></li>
+          <li><i>4</i><b>System design</b><span>Plan the fix, phase by phase.</span></li>
+          <li><i>5</i><b>Custom build</b><span>Build it, if it's worth it.</span></li>
+        </ol>
         <div class="cta-row" style="margin-top:8px"><a class="btn" href="#apply">Apply for discovery</a></div>
       </div>
     </div>
