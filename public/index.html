@@ -50,6 +50,11 @@
   .hero .lede{margin-top:28px;max-width:560px;font-size:22px;color:var(--soft)}
   .hero .sub{margin-top:12px;max-width:560px;color:var(--muted)}
   .hero .ctas{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+  .live{margin-top:32px;display:inline-flex;align-items:center;gap:16px;background:var(--panel);border:1px solid #3A2A2A;border-radius:16px;padding:16px 22px}
+  .live .dot{flex:0 0 auto;width:14px;height:14px;border-radius:999px;background:var(--blue);animation:slpulse 1.2s infinite}
+  .live .lk{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+  .live .lv{font-family:"Bebas Neue",sans-serif;font-size:48px;line-height:1;color:var(--blue)}
+  @keyframes slpulse{0%,100%{opacity:1}50%{opacity:.3}}
   .report{flex:1 1 340px;min-width:0;position:relative;transform:rotate(1.5deg);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
   .report .badge{position:absolute;top:-20px;right:-6px;background:var(--blue);color:var(--bg);font-family:"Bebas Neue",sans-serif;font-size:28px;line-height:1;padding:10px 18px;border-radius:8px;transform:rotate(7deg);letter-spacing:1.5px}
   .report .k{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
@@ -183,7 +188,7 @@
     .who,.method{padding-bottom:80px}
     .formbox{padding:24px 20px}
   }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq .t{animation:none}.btn{transition:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq .t,.live .dot{animation:none}.btn{transition:none}}
 </style>
 </head>
 <body>
@@ -210,14 +215,15 @@
         <a class="btn" href="#calc">Calculate my leak</a>
         <a class="btn ghost" href="#apply">Apply for discovery</a>
       </div>
+      <div class="live"><span class="dot" aria-hidden="true"></span><div><div class="lk">A $500k-a-year leak, since you opened this page</div><div class="lv" id="leakNow">$0.00</div></div></div>
     </div>
-    <div class="report" aria-label="Example layout of a leak report">
+    <div class="report" aria-label="Real findings">
       <div class="badge">Leaks found</div>
       <p class="k">Leak report</p>
-      <p class="s">Example layout. <span class="todo">Numbers to come from real, approved work.</span></p>
-      <div class="row"><div class="n todo">[X]</div><div class="d">leads that never got a real follow-up</div></div>
-      <div class="row a"><div class="n todo">[X]%</div><div class="d">of revenue from past customers nobody was working</div></div>
-      <div class="row"><div class="n todo">[X] hrs</div><div class="d">a week of staff time on copy-paste admin</div></div>
+      <p class="s">Real findings, Santa's Lights Sacramento</p>
+      <div class="row"><div class="n">205 → 3</div><div class="d">paid leads turned into jobs</div></div>
+      <div class="row a"><div class="n">55%</div><div class="d">of revenue from existing customers nobody was working</div></div>
+      <div class="row"><div class="n">$750</div><div class="d">AI bill in five days</div></div>
     </div>
   </div>
 </section>
@@ -240,7 +246,7 @@
       <div class="big" id="o-total">$0</div>
       <div class="ln"><span>Lost sales</span><strong id="o-lost">$0</strong></div>
       <div class="ln"><span>Wasted staff time</span><strong id="o-time">$0</strong></div>
-      <p class="note">A rough estimate from your own numbers, using $40 an hour for staff time. It isn't a promise. Discovery finds the real number.</p>
+      <p class="note">A rough estimate using $40 an hour for staff time. Discovery finds the real number.</p>
       <a class="btn" href="#apply">Find my real leaks</a>
     </div>
   </div>
@@ -326,10 +332,9 @@
 <section class="proof" id="proof">
   <div class="wrap">
     <h2 class="big">Real businesses. Real leaks found.</h2>
-    <p class="p"><span class="todo">[Fill from real work. Do not name clients, and publish numbers or screenshots only with the client's written OK.]</span></p>
-    <div class="grid3b">
-      <div class="case"><p class="k">Home services</p><h3 class="todo">[Business type]</h3><p><strong>Found:</strong> <span class="todo">[X]</span></p><p><strong>Built:</strong> <span class="todo">[X]</span></p></div>
-      <div class="case"><p class="k">Home services</p><h3 class="todo">[Business type]</h3><p><strong>Found:</strong> <span class="todo">[X]</span></p><p><strong>Built:</strong> <span class="todo">[X]</span></p></div>
+    <div class="grid3b" style="margin-top:40px">
+      <div class="case"><p class="k">Holiday lighting · Sacramento, CA</p><h3>Santa's Lights</h3><p><strong>Found:</strong> paid ads closing at 1% while existing customers brought in 55% of revenue.</p><p><strong>Built:</strong> a live scoreboard tying every lead to a sold job, and a plan to cut the middlemen.</p></div>
+      <div class="case"><p class="k">Gutters · Sacramento, CA</p><h3>Dunzo Gutters</h3><p><strong>Found:</strong> photos, calls and jobs stitched together with per-task fees across four tools.</p><p><strong>Built:</strong> a fast new site and one shared engine with Santa's Lights.</p></div>
       <div class="case"><p class="k">Health app · Australia + NZ</p><h3><a href="https://osliehealth.com" style="color:var(--text);text-decoration:none">Oslie</a></h3><p><strong>Found:</strong> patients repeating their history at every clinic they visit.</p><p><strong>Built:</strong> an app joining every clinic's records into one plain-language record.</p></div>
     </div>
   </div>
@@ -343,7 +348,7 @@
       <div><h3>We already tried AI.</h3><p>Most AI fails because nobody mapped the problem first. That's the step I do.</p></div>
       <div><h3>We're flat out.</h3><p>Discovery takes about four hours of your team's time over two weeks.</p></div>
       <div><h3>You're in New Zealand. How does that work?</h3><p>Everything runs remotely: video interviews, screen-shares and access to your tools. My mornings are your afternoons in the US, so we overlap every working day, and work keeps moving while you sleep.</p></div>
-      <div><h3>$2,500 for a plan?</h3><p>It's credited to your build if you go ahead, and the plan is yours either way.</p></div>
+      <div><h3>$2,500 for a plan?</h3><p>It's credited to your build, and one plugged leak usually pays for it.</p></div>
       <div><h3>Who owns it?</h3><p>You do. It runs on your own accounts, and once the final invoice is paid, it's yours: the accounts, the prompts and the documentation. I keep admin access until then.</p></div>
       <div><h3>Is it a bot? Will customers know?</h3><p>Where I build customer-facing automation, it's an automated assistant and it never pretends to be a person. It signs off as your business and hands over to a real person when it should, or whenever a customer asks.</p></div>
     </div>
@@ -403,6 +408,13 @@
     }
     ['leads','value','close','missed','hours'].forEach(function(id){ $(id).addEventListener('input', calc); });
     calc();
+  })();
+
+  // ---- Hypothetical $500k-a-year leak ticker ----
+  (function(){
+    var el = document.getElementById('leakNow'), t0 = Date.now();
+    function tick(){ el.textContent = '$' + ((Date.now() - t0) / 1000 * 500000 / 31536000).toFixed(2); }
+    tick(); setInterval(tick, 100);
   })();
 
   // ---- Application form -> /api/lead ----

@@ -56,6 +56,10 @@
   .score .g{padding-bottom:12px}
   .score .g b{display:block;font-family:"Bebas Neue",sans-serif;font-size:40px;line-height:1;font-weight:400}
   .score .g span{color:var(--muted);font-size:16px;display:block;max-width:360px}
+  .cost{margin-top:32px;background:var(--panel);border:2px solid var(--blue);border-radius:20px;padding:24px 28px}
+  .cost .ck{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+  .cost .cv{font-family:"Bebas Neue",sans-serif;font-size:clamp(56px,8vw,80px);line-height:1;color:var(--blue)}
+  .cost .cn{color:var(--dim);font-size:14px}
   .res h3{margin:48px 0 20px;font-size:48px;line-height:1}
   .leak{display:flex;gap:18px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:14px}
   .leak .r{flex:0 0 auto;width:48px;height:48px;border-radius:999px;background:var(--blue);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:28px}
@@ -109,14 +113,14 @@
       <div class="n" id="rscore"></div>
       <div class="g"><b id="rgrade"></b><span id="rline"></span></div>
     </div>
+    <div class="cost"><div class="ck">Rough yearly cost of these leaks</div><div class="cv" id="rcost"></div><div class="cn">A ballpark from your revenue band and score. Discovery finds the real number.</div></div>
     <h3>Your top three leaks</h3>
     <div id="rleaks"></div>
     <div class="cta">
       <h3>Now you know what's leaking.</h3>
-      <p>Apply for discovery and I'll show you how to fix it, and which leak to plug first.</p>
-      <a href="index.html#apply">Apply for discovery</a>
+      <p>Book a 20-minute call and I'll show you how to fix it, and which leak to plug first.</p>
+      <a href="index.html#apply">Book my call</a>
     </div>
-    <p class="note">This score is a quick self-check from your own answers, not an audit. Discovery finds the real picture.</p>
     <button class="back" type="button" id="restart">Start again</button>
   </div>
 </div>
@@ -124,7 +128,7 @@
 <script>
   var CONFIG = { webhookUrl: "/api/lead" };
   var QS = [
-    { area:'About you', text:'What is your yearly revenue?', revenue:true, options:[['Under $1M',0],['$1M to $3M',0],['$3M to $10M',0],['$10M+',0]] },
+    { area:'About you', text:'What is your yearly revenue?', revenue:true, options:[['Under $1M',750000],['$1M to $3M',2000000],['$3M to $10M',6000000],['$10M+',15000000]] },
     { area:'Speed', text:'How fast does a new lead hear back from you?', title:'Slow first response', what:'Leads cool off fast. Every hour before first contact cuts the odds of winning the job.', options:[['Within 5 minutes',10],['Same day',5],['Next day or later',0]] },
     { area:'Follow-up', text:'Does every quote get chased until you get a yes or a no?', title:'Quotes going cold', what:'Open quotes with no follow-up are money already earned and left on the table.', options:[['Always',10],['Sometimes',5],['Rarely',0]] },
     { area:'Tools', text:'Do your CRM, job system and phones share data automatically?', title:'Tools that don’t talk', what:'Every handoff between systems is a place for leads, notes and jobs to fall through.', options:[['Yes, fully',10],['Partly',5],['No, we copy and paste',0]] },
@@ -162,14 +166,15 @@
   $('restart').addEventListener('click', function(){ i = 0; answers = []; labels = []; show('intro'); });
 
   function compute(){
-    var score = 0, scored = [];
-    QS.forEach(function(q,k){ if (q.revenue) return; var pts = typeof answers[k] === 'number' ? answers[k] : 0; score += pts; scored.push({k:k,pts:pts}); });
+    var score = 0, scored = [], revenue = 750000;
+    QS.forEach(function(q,k){ if (q.revenue) { if (answers[k]) revenue = answers[k]; return; } var pts = typeof answers[k] === 'number' ? answers[k] : 0; score += pts; scored.push({k:k,pts:pts}); });
     scored.sort(function(a,b){ return a.pts - b.pts || a.k - b.k; });
     var top = scored.slice(0,3).map(function(x){ return QS[x.k]; });
     var grade = score >= 75 ? 'Tight ship' : score >= 45 ? 'Leaking' : 'Springing leaks';
     var line = score >= 75 ? 'You run a tight operation. The gains left are specific, which makes them easier to find.' : score >= 45 ? 'Solid business, real leaks. This is where most established businesses sit.' : 'Money is slipping out in several places. The upside of fixing it is big.';
     var color = score >= 75 ? '#7BD88F' : score >= 45 ? '#FFB020' : '#3B82F6';
-    return {score:score, top:top, grade:grade, line:line, color:color};
+    var leak = revenue * ((100 - score) / 100) * 0.15;
+    return {score:score, top:top, grade:grade, line:line, color:color, leak:leak};
   }
 
   $('gateForm').addEventListener('submit', function(e){
@@ -192,6 +197,7 @@
     var done = function(){
       $('rlab').textContent = name + ', here’s your leak score';
       var sc = $('rscore'); sc.style.color = r.color; sc.innerHTML = ''; sc.appendChild(document.createTextNode(r.score)); var sm = document.createElement('small'); sm.textContent = '/100'; sc.appendChild(sm);
+      $('rcost').textContent = '$' + (Math.round(r.leak / 1000) * 1000).toLocaleString('en-US');
       $('rgrade').textContent = r.grade; $('rline').textContent = r.line;
       var box = $('rleaks'); box.innerHTML = '';
       r.top.forEach(function(t,n){
