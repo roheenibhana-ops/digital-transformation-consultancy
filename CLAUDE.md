@@ -7,6 +7,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 - `public/index.html`: landing page: leak calculator, "Apply for discovery" form (self-contained: inline CSS and JS)
 - `public/scorecard.html`: the 11-question Leak Scorecard; collects name and email, then shows a score out of 100 and the top three leaks
 - `public/privacy.html` and `public/terms.html`: plain-English privacy policy and terms, linked from the footers. Contact email info@planfirststudio.com; governing law is worded generically
+- `public/robots.txt`, `public/sitemap.xml`, `public/img/og.png`: crawl hints and the social share image (LinkedIn link previews). Canonical and Open Graph tags point at planfirststudio.com
 - `public/thanks.html`: post-submit page with the booking embed placeholder and "what happens next"
 - `src/worker.js`: serves the site and handles `POST /api/lead`, saving each lead to the Cloudflare D1 table in `db/schema.sql`
 - `wrangler.jsonc`: Cloudflare config (assets folder `public/`, D1 binding)
