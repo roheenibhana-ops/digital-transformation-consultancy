@@ -75,7 +75,20 @@
   <div class="wrap">
     <div class="book" id="book">
       <h2>Book your 20-minute fit call</h2>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/planfirststudio/new-meeting?hide_gdpr_banner=1&amp;background_color=15171c&amp;text_color=f4f1ea&amp;primary_color=ffb020" style="min-width:300px;height:720px;margin-top:18px"></div>
+      <div class="calendly-inline-widget" id="cal" data-url="https://calendly.com/planfirststudio/new-meeting?hide_gdpr_banner=1&amp;background_color=15171c&amp;text_color=f4f1ea&amp;primary_color=ffb020" style="min-width:300px;height:720px;margin-top:18px"></div>
+      <script>
+        // Prefill the booking form with the name and email they just gave in the application.
+        (function(){
+          try {
+            var l = JSON.parse(sessionStorage.getItem('pfs_lead') || 'null');
+            if (!l) return;
+            var el = document.getElementById('cal'), url = el.getAttribute('data-url');
+            if (l.name) url += '&name=' + encodeURIComponent(l.name);
+            if (l.email) url += '&email=' + encodeURIComponent(l.email);
+            el.setAttribute('data-url', url);
+          } catch(e) {}
+        })();
+      </script>
       <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <p style="margin-top:12px;font-size:15px">Calendar not loading? <a href="https://calendly.com/planfirststudio/new-meeting" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
     </div>
