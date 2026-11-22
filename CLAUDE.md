@@ -38,7 +38,7 @@ Platform-agnostic: works with the client's own CRM and field software as long as
 - Never invent statistics. Unknown numbers stay as `[X]` inside `<span class="todo">`.
 - SEO and blogging are intentionally NOT part of the offer. Do not add them.
 - Keep `<meta name="robots" content="noindex, nofollow">` on index.html until the owner says to launch. Keep it permanently on thanks.html.
-- Company name is undecided. Leave the `[Your Brand]` placeholders until the owner provides a name.
+- Company name: Plan First Studio (planfirststudio.com). The brand placeholder has been replaced everywhere on the site.
 
 ## Design
 
@@ -59,7 +59,7 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 ## Open TODOs
 
-1. Replace the amber placeholders: brand name, "[X] spots" limit, privacy, terms, footer details.
+1. Replace the amber placeholders: "[X] spots" limit, privacy, terms, footer details (city, email).
 2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
 3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) before launch.
 4. Add base pixel/tag code to the `<head>` of all three pages when ads start.
