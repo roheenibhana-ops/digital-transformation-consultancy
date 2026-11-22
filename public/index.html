@@ -235,6 +235,21 @@
   .msg{margin-top:12px;color:var(--amber);font-size:15px;display:none}
   footer{padding:32px 0;color:var(--dim);font-size:14px}
   footer a{color:var(--dim)}
+  footer.foot{padding:64px 0 32px;border-top:1px solid var(--line);background:var(--bg);color:var(--muted);font-size:15px}
+  .foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:40px}
+  .foot-brand .brand{margin-bottom:14px}
+  .foot-brand p{color:var(--muted);max-width:30em;margin-bottom:10px}
+  .foot-brand .foot-line{color:var(--text);font-weight:600}
+  .foot-brand .btn{margin-top:10px}
+  .foot h4{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:20px;letter-spacing:1.5px;color:var(--amber);margin-bottom:12px}
+  .foot nav,.foot-contact{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .foot nav a{color:var(--soft);text-decoration:none}
+  .foot nav a:hover{color:var(--amber)}
+  .foot-contact .todo{width:fit-content}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--dim)}
+  .foot-bottom a{color:var(--dim)}
+  @media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+  @media(max-width:560px){.foot-grid{grid-template-columns:1fr}footer.foot{padding-bottom:100px}}
 
   @media (max-width:520px){.pill .long{display:none}.brand{font-size:26px}.brand .logo{width:32px;height:32px}}
   @media (max-width:900px){
@@ -401,7 +416,7 @@
   </div>
 </section>
 
-<section class="method">
+<section class="method" id="method">
   <div class="wrap">
     <p class="eyebrow">The method</p>
     <h2 class="big">Most people skip straight to build.</h2>
@@ -481,7 +496,7 @@
   </div>
 </section>
 
-<section class="faq">
+<section class="faq" id="faq">
   <div class="wrap">
     <h2 class="big">Straight answers</h2>
     <div class="faqg">
@@ -519,9 +534,40 @@
 
 </main>
 
-<footer>
-  <div class="wrap">© 2026 Plan First Studio<br>
-  <a href="privacy.html" style="text-decoration:none">Privacy</a> · <a href="terms.html" style="text-decoration:none">Terms</a></div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#FFB020"/><path d="M16 38V10.5h9.5a8.5 8.5 0 0 1 0 17H16" fill="none" stroke="#121006" stroke-width="5.5"/><circle cx="25" cy="19" r="2.6" fill="#3B82F6"/></svg><span>Plan First Studio</span></a>
+        <p>I find where your business leaks time and money, then build the system that fixes it.</p>
+        <p class="foot-line">I don't sell leads. I stop you losing the ones you have.</p>
+        <a class="btn" href="#apply">Apply for discovery</a>
+      </div>
+      <nav aria-label="The work">
+        <h4>The work</h4>
+        <a href="#method">How it works</a>
+        <a href="#packages">What it costs</a>
+        <a href="#proof">Real findings</a>
+        <a href="#faq">Questions</a>
+      </nav>
+      <nav aria-label="Try it">
+        <h4>Try it</h4>
+        <a href="#calc">Leak calculator</a>
+        <a href="scorecard.html">Leak Scorecard</a>
+        <a href="#apply">Apply for discovery</a>
+      </nav>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <span class="todo">[email]</span>
+        <span class="todo">[City, State]</span>
+        <span>I reply within one business day.</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Plan First Studio</span>
+      <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
 </footer>
 
 <div class="sticky" id="sticky"><a class="btn" href="#apply">Apply for discovery</a></div>
