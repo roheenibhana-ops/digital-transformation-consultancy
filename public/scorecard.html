@@ -111,7 +111,7 @@
       <div class="f"><label for="g-name">First name</label><input id="g-name" name="name" type="text" autocomplete="given-name" required></div>
       <div class="f"><label for="g-email">Email</label><input id="g-email" name="email" type="email" autocomplete="email" required></div>
       <p class="err" id="gerr" role="alert"></p>
-      <p class="small" id="consentText">No spam. Just your report, and a couple of short emails on plugging the leaks. Unsubscribe any time.</p>
+      <p class="small" id="consentText">Your report, plus a short email series on plugging the leaks. Unsubscribe any time.</p>
       <button class="btn" type="submit" id="gbtn" style="width:100%">Show my leaks</button>
     </form>
   </div>
@@ -199,6 +199,8 @@
     data.name = name; data.email = email; data.company = 'Leak Scorecard';
     data.leads_per_month = labels[0] || '';
     data.biggest_leak = 'Scorecard ' + r.score + '/100 (' + r.grade + '). Top leaks: ' + r.top.map(function(t){ return t.title; }).join('; ');
+    data.leak_score = String(r.score);
+    r.top.slice(0,3).forEach(function(t,i){ data['top_leak_' + (i+1)] = t.title; });
     data.sms_consent = 'email-ok';
     data.consent_text = $('consentText').textContent.trim();
     data.page_url = window.location.href; data.submitted_at = new Date().toISOString(); data.consent_at = data.submitted_at; data.referrer = document.referrer || '';

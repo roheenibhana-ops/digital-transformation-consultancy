@@ -9,7 +9,7 @@ const DATES = ['consent_at', 'submitted_at'];
 const REQUIRED = ['name', 'email'];
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname !== '/api/lead') return env.ASSETS.fetch(request);
     if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
@@ -39,6 +39,40 @@ export default {
       console.error('D1 insert failed', e);
       return new Response('Could not save', { status: 502 });
     }
+    // Optional: add the person to the email tool so its automations can start.
+    // Does nothing until MAILERLITE_API_KEY is set as a Worker secret.
+    if (env.MAILERLITE_API_KEY) {
+      const extra = {};
+      for (const k of ['leak_score', 'top_leak_1', 'top_leak_2', 'top_leak_3']) {
+        const v = form.get(k); if (v) extra[k] = String(v).slice(0, 200);
+      }
+      ctx.waitUntil(addToEmailTool(env, row, extra));
+    }
     return new Response('ok');
   }
 };
+
+// MailerLite: create or update the subscriber and put them in the right group.
+// Scorecard completions go to the scorecard group, applications to the applied group.
+async function addToEmailTool(env, row, extra) {
+  try {
+    const isScorecard = row.company === 'Leak Scorecard';
+    const group = isScorecard ? env.MAILERLITE_GROUP_SCORECARD : env.MAILERLITE_GROUP_APPLIED;
+    const parts = (row.name || '').trim().split(/\s+/);
+    const fields = { name: parts[0] || '', last_name: parts.slice(1).join(' '), source: isScorecard ? 'scorecard' : 'application' };
+    if (!isScorecard && row.company) fields.company = row.company;
+    if (row.biggest_leak && !isScorecard) fields.biggest_leak = row.biggest_leak;
+    Object.assign(fields, extra);
+    const body = { email: row.email, fields };
+    if (group) body.groups = [group];
+    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + env.MAILERLITE_API_KEY, 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) console.error('Email tool error', res.status, await res.text());
+  } catch (e) {
+    console.error('Email tool failed', e);
+  }
+}
+
