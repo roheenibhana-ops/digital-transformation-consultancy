@@ -6,6 +6,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 
 - `public/index.html`: landing page: leak calculator, "Apply for discovery" form (self-contained: inline CSS and JS)
 - `public/scorecard.html`: the 11-question Leak Scorecard; collects name and email, then shows a score out of 100 and the top three leaks
+- `public/privacy.html` and `public/terms.html`: plain-English privacy policy and terms, linked from the footers. Placeholders left for contact email, city/state and governing-law state
 - `public/thanks.html`: post-submit page with the booking embed placeholder and "what happens next"
 - `src/worker.js`: serves the site and handles `POST /api/lead`, saving each lead to the Cloudflare D1 table in `db/schema.sql`
 - `wrangler.jsonc`: Cloudflare config (assets folder `public/`, D1 binding)
@@ -59,7 +60,7 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 ## Open TODOs
 
-1. Replace the amber placeholders: privacy, terms, footer details (city, email).
+1. Replace the amber placeholders: footer and legal-page details (city/state, contact email, governing-law state).
 2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
 3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) before launch.
 4. Add base pixel/tag code to the `<head>` of all three pages when ads start.

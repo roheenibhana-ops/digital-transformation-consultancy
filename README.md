@@ -5,6 +5,7 @@ Static site on Cloudflare (Workers with static assets), deployed from this repo.
 - `public/index.html`: landing page (leak calculator, application form)
 - `public/scorecard.html`: the Leak Scorecard
 - `public/thanks.html`: thank-you and booking page (placeholder embed)
+- `public/privacy.html`, `public/terms.html`: legal pages linked from the footers
 - `src/worker.js`: saves form submissions to a D1 table via `POST /api/lead`
 - `db/schema.sql`: the `leads` table
 - `wrangler.jsonc`: Cloudflare config (serves `public/`, binds the D1 database `leads`)
