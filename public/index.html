@@ -211,6 +211,33 @@
   .tmn blockquote{font-family:Inter,sans-serif;font-size:clamp(19px,2.2vw,24px);line-height:1.5;font-weight:500;color:var(--text)}
   .tmn figcaption{margin-top:18px;display:flex;flex-direction:column;gap:2px;font-size:15px;color:var(--muted)}
   .tmn figcaption b{color:var(--amber);font-size:16px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .sys{margin:44px auto 0;max-width:980px;padding:28px;background:var(--bg);border:1px solid var(--line);border-radius:20px}
+  .sys-k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+  .sys-row{display:grid;grid-template-columns:1fr 36px 1.05fr 36px 1fr;align-items:center;gap:10px}
+  .sys ul{list-style:none;display:grid;gap:8px}
+  .sys li{padding:10px 14px;border-radius:12px;display:flex;flex-direction:column;gap:2px;line-height:1.3}
+  .sys li b{font-size:15px;color:var(--text)}
+  .sys li span{font-size:13.5px;color:var(--muted)}
+  .sys-in li{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.45)}
+  .sys-out li{background:var(--panel);border:1px solid var(--line2)}
+  .sys-engine{padding:22px 18px;border-radius:16px;background:rgba(255,176,32,.12);border:2px solid var(--amber);display:flex;flex-direction:column;gap:6px;text-align:center}
+  .sys-engine b{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:30px;letter-spacing:1px;color:var(--amber)}
+  .sys-engine span{font-size:14.5px;color:var(--soft)}
+  .sys-arr{height:2px;background:var(--dim);position:relative}
+  .sys-arr:after{content:"";position:absolute;right:-1px;top:-4px;border-left:8px solid var(--dim);border-top:5px solid transparent;border-bottom:5px solid transparent}
+  .sys-cap{margin-top:20px;font-size:14px;color:var(--muted)}
+  @media(max-width:900px){
+    .grid2{grid-template-columns:1fr}
+    .sys{padding:20px}
+    .sys-row{grid-template-columns:1fr}
+    .sys ul{grid-template-columns:1fr 1fr}
+    .sys li{padding:9px 11px}
+    .sys li b{font-size:14px}
+    .sys li span{font-size:12.5px}
+    .sys-arr{height:28px;width:2px;margin:0 auto}
+    .sys-arr:after{right:auto;left:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--dim);border-bottom:0}
+  }
   .shot{margin:40px auto 0;max-width:880px}
   .shot a{display:block}
   .shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#FAF6EE}
@@ -383,12 +410,11 @@
       <div class="step bad"><div class="s">Common failure</div><h3>Data, not answers</h3><p>A dashboard full of figures, with no decision behind any of them.</p></div>
       <div class="step bad"><div class="s">Common failure</div><h3>Fixes stacked on fixes</h3><p>Each one added to the last until nobody can explain how it all works.</p></div>
     </div>
-    <figure class="shot"><a href="img/scoreboard-production.jpg" target="_blank" rel="noopener"><img src="img/scoreboard-production.jpg" alt="Warehouse screen showing season production at 67 percent of target, install speed in hours and jobs finished this week" loading="lazy" width="1500" height="1155"></a><figcaption>The opposite: one screen, one question. Where the season stands, on the warehouse TV.</figcaption></figure>
     <div class="cta-row"><a class="btn" href="#apply">Get it right the first time</a><span class="hint">That's the part I do first.</span></div>
   </div>
 </section>
 
-<section class="who">
+<section class="who" id="who">
   <div class="wrap">
     <div class="box">
       <div class="l">
@@ -427,35 +453,6 @@
   </div>
 </section>
 
-<section class="method" id="method">
-  <div class="wrap">
-    <p class="eyebrow">The method</p>
-    <h2 class="big">Most people skip straight to build.</h2>
-    <p class="p">That's why so much automation work flops. I do it in order.</p>
-    <div class="grid">
-      <div class="step"><div class="s">Step 1</div><h3>Gather</h3><p>Talk to your people, pull your numbers, map how work really flows.</p></div>
-      <div class="step"><div class="s">Step 2</div><h3>Solve</h3><p>Find the real problems and rank the fixes by what they're worth.</p></div>
-      <div class="step"><div class="s">Step 3</div><h3>Design</h3><p>Plan the system before a line of code: what connects, what's automated, who does what.</p></div>
-      <div class="step"><div class="s">Step 4</div><h3>Build</h3><p>Then build it fast, phase by phase, tested on your real data.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="fam">
-  <div class="wrap">
-    <h2>Sound familiar?</h2>
-    <div class="grid">
-      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>Your tools don't talk.</strong> <span>Your team copies and pastes between them all day.</span></div></div>
-      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>Quotes go cold.</strong> <span>Follow-up depends on someone remembering.</span></div></div>
-      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You pay middlemen forever.</strong> <span>Per-task fees and marked-up add-ons, every month.</span></div></div>
-      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You can't see the numbers.</strong> <span>Nobody knows which ad actually makes money.</span></div></div>
-      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>You bought tools before a plan.</strong> <span>Nobody asked what needed fixing first.</span></div></div>
-      <div class="it"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><div><strong>It all runs through you.</strong> <span>If you stepped away for a month, things would slip.</span></div></div>
-    </div>
-    <div class="cta-row"><a class="btn dark" href="#apply">Apply for discovery</a></div>
-  </div>
-</section>
-
 <section class="sample">
   <div class="wrap">
     <p class="eyebrow">What you get</p>
@@ -479,8 +476,28 @@
         <div class="ph"><div class="t">5 · Marketing agents</div><ul><li>Social, Google, neighbors, partners</li></ul></div>
       </div>
     </div>
-    <figure class="shot"><a href="img/plan-board-1.jpg" target="_blank" rel="noopener"><img src="img/plan-board-1.jpg" alt="The plan board from discovery: where the money comes from by channel, what is leaking, and the new system with the tools connected through one engine" loading="lazy" width="1500" height="1398"></a><figcaption>The real board, not a mock-up: where the money comes from, what's leaking, and the system designed to fix it.</figcaption></figure>
-    <figure class="shot"><a href="img/plan-board-2.jpg" target="_blank" rel="noopener"><img src="img/plan-board-2.jpg" alt="The rest of the plan board: marketing and partnerships, the phased build plan, what the owner gets, and coaching for the marketing team" loading="lazy" width="1500" height="1187"></a><figcaption>The rest of it: the phased build plan, what the owner gets, and coaching for the team.</figcaption></figure>
+    <div class="sys" role="group" aria-label="The new system: your tools connect through one engine you own">
+      <p class="sys-k">The system designed in discovery</p>
+      <div class="sys-row">
+        <ul class="sys-in">
+          <li><b>GHL</b><span>leads, pipeline, SMS</span></li>
+          <li><b>Jobber</b><span>quotes, jobs, revenue</span></li>
+          <li><b>Meta Ads</b><span>spend per ad</span></li>
+          <li><b>CompanyCam</b><span>crew job photos</span></li>
+          <li><b>Quo</b><span>calls + transcripts</span></li>
+        </ul>
+        <div class="sys-arr" aria-hidden="true"></div>
+        <div class="sys-engine"><b>The engine</b><span>Syncs GHL &harr; Jobber</span><span>Runs the agents</span><span>No Zapier, no Agent Studio</span></div>
+        <div class="sys-arr" aria-hidden="true"></div>
+        <ul class="sys-out">
+          <li><b>Claude</b><span>writes replies, scores leads</span></li>
+          <li><b>One database</b><span>all the data, one place</span></li>
+          <li><b>Live scoreboard</b><span>cost per sold job</span></li>
+          <li><b>Website</b><span>off the old platform, on Cloudflare</span></li>
+        </ul>
+      </div>
+      <p class="sys-cap">Your tools connect through one engine you own, instead of paying a middleman to move data between them.</p>
+    </div>
     <div class="cta-row"><a class="btn" href="#apply">Get a plan like this for your business</a></div>
   </div>
 </section>
@@ -500,10 +517,9 @@
 <section class="proof" id="proof">
   <div class="wrap">
     <h2 class="big">Real businesses. Real leaks found.</h2>
-    <div class="grid3b" style="margin-top:40px">
+    <div class="grid2" style="margin-top:40px">
       <div class="case"><p class="k">Holiday lighting · Sacramento, CA</p><h3>Santa's Lights</h3><p><strong>Found:</strong> paid ads closing at 1% while existing customers brought in 55% of revenue.</p><p><strong>Built:</strong> a live scoreboard tying every lead to a sold job, and a plan to cut the middlemen.</p></div>
       <div class="case"><p class="k">Gutters · Sacramento, CA</p><h3>Dunzo Gutters</h3><p><strong>Found:</strong> photos, calls and jobs stitched together with per-task fees across four tools.</p><p><strong>Built:</strong> a fast new site and one shared engine with Santa's Lights.</p></div>
-      <div class="case"><p class="k">Health app · Australia + NZ</p><h3><a href="https://osliehealth.com" style="color:var(--text);text-decoration:none">Oslie</a></h3><p><strong>Found:</strong> patients repeating their history at every clinic they visit.</p><p><strong>Built:</strong> an app joining every clinic's records into one plain-language record.</p></div>
     </div>
     <figure class="tmn">
       <blockquote>&ldquo;What gives me a lot of value, so it's no more work, is the messages that get sent when a form gets filled out and when the job gets approved. Automations and having one place to store all leads. That's the biggest difference that has helped the business.&rdquo;</blockquote>
@@ -563,7 +579,7 @@
       </div>
       <nav aria-label="The work">
         <h4>The work</h4>
-        <a href="#method">How it works</a>
+        <a href="#who">How it works</a>
         <a href="#packages">What it costs</a>
         <a href="#proof">Real findings</a>
         <a href="#faq">Questions</a>
