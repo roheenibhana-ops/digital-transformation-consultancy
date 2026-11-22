@@ -19,7 +19,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 
 Positioning: "I find where your business leaks time and money, then build the system that fixes it." The owner is a business analyst who builds: not a marketing agency, not a prompt engineer. Every build is custom.
 
-Who it's for: established service businesses, roughly $1M+ a year, 5 to 50 staff, owner close to the work. Home services first (that's where the proof is), then clinics and professional firms one at a time.
+Who it's for: established service businesses, roughly $500k+ a year, 5 to 50 staff, owner close to the work. Home services first (that's where the proof is), then clinics and professional firms one at a time.
 
 Funnel: landing page (calculator, scorecard, application) -> fit call (20 min) -> paid discovery -> build -> run + coach.
 

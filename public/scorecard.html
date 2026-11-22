@@ -137,7 +137,7 @@
 <script>
   var CONFIG = { webhookUrl: "/api/lead" };
   var QS = [
-    { area:'About you', text:'What is your yearly revenue?', revenue:true, options:[['Under $1M',750000],['$1M to $3M',2000000],['$3M to $10M',6000000],['$10M+',15000000]] },
+    { area:'About you', text:'What is your yearly revenue?', revenue:true, options:[['$500k to $1M',750000],['$1M to $3M',2000000],['$3M to $10M',6000000],['$10M+',15000000]] },
     { area:'Speed', text:'How fast does a new lead hear back from you?', title:'Slow first response', what:'Leads cool off fast. Every hour before first contact cuts the odds of winning the job.', options:[['Within 5 minutes',10],['Same day',5],['Next day or later',0]] },
     { area:'Follow-up', text:'Does every quote get chased until you get a yes or a no?', title:'Quotes going cold', what:'Open quotes with no follow-up are money already earned and left on the table.', options:[['Always',10],['Sometimes',5],['Rarely',0]] },
     { area:'Tools', text:'Do your CRM, job system and phones share data automatically?', title:'Tools that don’t talk', what:'Every handoff between systems is a place for leads, notes and jobs to fall through.', options:[['Yes, fully',10],['Partly',5],['No, we copy and paste',0]] },
