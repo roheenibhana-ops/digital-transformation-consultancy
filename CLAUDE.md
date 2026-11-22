@@ -59,7 +59,7 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 ## Open TODOs
 
-1. Replace the amber placeholders: "[X] spots" limit, privacy, terms, footer details (city, email).
+1. Replace the amber placeholders: privacy, terms, footer details (city, email).
 2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
 3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) before launch.
 4. Add base pixel/tag code to the `<head>` of all three pages when ads start.
