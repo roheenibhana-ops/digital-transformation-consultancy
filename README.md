@@ -33,7 +33,7 @@ Column use: `company` = business and website, `leads_per_month` = yearly revenue
 - [ ] Booking embed on `thanks.html` (if used)
 - [ ] Written OK from clients for any named findings
 - [ ] Test submission from the live site, then delete the test rows
-- [ ] Remove `noindex` from `index.html` and `scorecard.html` (keep it on `thanks.html`)
+- [x] `noindex` removed from `index.html` and `scorecard.html` at launch (kept on `thanks.html`)
 - [ ] Check at 1280px and 390px, no horizontal scroll
 
 ## Custom domain

@@ -39,7 +39,7 @@ Platform-agnostic: works with the client's own CRM and field software as long as
 - Do not mention any real client by name (including Clark, Santa's Lights, Dunzo Gutters) and do not publish real screenshots or numbers without the owner confirming the client's permission.
 - Never invent statistics. Unknown numbers stay as `[X]` inside `<span class="todo">`.
 - SEO and blogging are intentionally NOT part of the offer. Do not add them.
-- Keep `<meta name="robots" content="noindex, nofollow">` on index.html until the owner says to launch. Keep it permanently on thanks.html.
+- The site is live at planfirststudio.com and indexable (launched Nov 2026). Keep `<meta name="robots" content="noindex, nofollow">` permanently on thanks.html.
 - Company name: Plan First Studio (planfirststudio.com). The brand placeholder has been replaced everywhere on the site.
 
 ## Design
@@ -61,11 +61,10 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 ## Open TODOs
 
-1. Replace the amber placeholders: nothing left on the legal pages (governing law is worded as "where Plan First Studio is established"; name the state or country once the business is formed). Contact email is info@planfirststudio.com (set up forwarding in Cloudflare Email Routing).
+1. Name the state or country in the terms' governing-law line once the business is formed (it currently says "where Plan First Studio is established"). Contact email is info@planfirststudio.com (forwarding is set up in Cloudflare Email Routing).
 2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
 3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) and for the scoreboard screenshots in the proof section (`public/img/`: name and dollar figures are blurred) before launch.
 4. Add base pixel/tag code to the `<head>` of all three pages when ads start.
-5. Remove the `noindex` line from `index.html` and `scorecard.html` at launch (keep it on `thanks.html`).
 6. Send one real test submission from the live site (application form and scorecard) and delete the rows from the D1 `leads` table.
 7. Write down what a build phase and the monthly run + coach include, so scope stays fixed.
 
