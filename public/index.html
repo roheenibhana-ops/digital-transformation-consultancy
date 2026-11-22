@@ -201,6 +201,15 @@
   .case p{color:var(--muted);font-size:16px;margin-bottom:12px}
   .case p:last-child{margin-bottom:0}
   .case strong{color:var(--text)}
+  .shots{margin-top:64px}
+  .shots-k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+  .shots-h{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1;margin-bottom:24px}
+  .shots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+  .shots figure{margin:0}
+  .shots img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#FAF6EE}
+  .shots figcaption{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.45}
+  .shots-wide{margin-top:28px!important;max-width:980px}
+  @media(max-width:900px){.shots-grid{grid-template-columns:1fr}}
 
   .faq{padding:96px 0}
   .faqg details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
@@ -470,6 +479,16 @@
       <div class="case"><p class="k">Holiday lighting · Sacramento, CA</p><h3>Santa's Lights</h3><p><strong>Found:</strong> paid ads closing at 1% while existing customers brought in 55% of revenue.</p><p><strong>Built:</strong> a live scoreboard tying every lead to a sold job, and a plan to cut the middlemen.</p></div>
       <div class="case"><p class="k">Gutters · Sacramento, CA</p><h3>Dunzo Gutters</h3><p><strong>Found:</strong> photos, calls and jobs stitched together with per-task fees across four tools.</p><p><strong>Built:</strong> a fast new site and one shared engine with Santa's Lights.</p></div>
       <div class="case"><p class="k">Health app · Australia + NZ</p><h3><a href="https://osliehealth.com" style="color:var(--text);text-decoration:none">Oslie</a></h3><p><strong>Found:</strong> patients repeating their history at every clinic they visit.</p><p><strong>Built:</strong> an app joining every clinic's records into one plain-language record.</p></div>
+    </div>
+    <div class="shots">
+      <p class="shots-k">What it looks like</p>
+      <h3 class="shots-h">The plain screens people actually use.</h3>
+      <div class="shots-grid">
+        <figure><a href="img/scoreboard-production.jpg" target="_blank" rel="noopener"><img src="img/scoreboard-production.jpg" alt="Warehouse screen showing season production at 67 percent of target, install speed in hours and jobs finished this week" loading="lazy" width="1500" height="1155"></a><figcaption>Production: where the season stands, on the warehouse TV.</figcaption></figure>
+        <figure><a href="img/scoreboard-labor.jpg" target="_blank" rel="noopener"><img src="img/scoreboard-labor.jpg" alt="Labor efficiency screen comparing labor cost share this season with last season" loading="lazy" width="1500" height="1185"></a><figcaption>Labor efficiency, against target and last season.</figcaption></figure>
+        <figure><a href="img/scoreboard-today.jpg" target="_blank" rel="noopener"><img src="img/scoreboard-today.jpg" alt="Today screen of a business scoreboard with work completed against goal, close rate, labor rate, install speed and margin. Dollar figures are hidden." loading="lazy" width="1500" height="1256"></a><figcaption>Today: the numbers the owner checks first. Dollar figures hidden.</figcaption></figure>
+      </div>
+      <figure class="shots-wide"><a href="img/oslie-clinician-view.jpg" target="_blank" rel="noopener"><img src="img/oslie-clinician-view.jpg" alt="Oslie clinician view with a 30-second briefing showing safety alerts, where clinicians disagree, and what needs attention" loading="lazy" width="1500" height="983"></a><figcaption>Oslie: a 30-second briefing a clinician reads before calling the patient in. Demo data.</figcaption></figure>
     </div>
   </div>
 </section>

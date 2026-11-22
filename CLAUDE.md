@@ -62,7 +62,7 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 1. Replace the amber placeholders: footer and legal-page details (city/state, contact email, governing-law state).
 2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
-3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) before launch.
+3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) and for the scoreboard screenshots in the proof section (`public/img/`: name and dollar figures are blurred; the Oslie screen has clinician and clinic names blurred) before launch.
 4. Add base pixel/tag code to the `<head>` of all three pages when ads start.
 5. Remove the `noindex` line from `index.html` and `scorecard.html` at launch (keep it on `thanks.html`).
 6. Send one real test submission from the live site (application form and scorecard) and delete the rows from the D1 `leads` table.
