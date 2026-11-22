@@ -85,6 +85,9 @@
             var el = document.getElementById('cal'), url = el.getAttribute('data-url');
             if (l.name) url += '&name=' + encodeURIComponent(l.name);
             if (l.email) url += '&email=' + encodeURIComponent(l.email);
+            // Custom questions in Calendly, in this order: 1 = business and website, 2 = biggest headache
+            if (l.company) url += '&a1=' + encodeURIComponent(l.company);
+            if (l.leak) url += '&a2=' + encodeURIComponent(l.leak);
             el.setAttribute('data-url', url);
           } catch(e) {}
         })();

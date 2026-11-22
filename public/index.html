@@ -646,7 +646,7 @@
       var u = params(); Object.keys(u).forEach(function(k){ data[k] = u[k]; });
       btn.disabled = true; btn.textContent = 'Sending…';
       fetch(CONFIG.webhookUrl, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() })
-        .then(function(){ try { sessionStorage.setItem('pfs_lead', JSON.stringify({ name: data.name || '', email: data.email || '' })); } catch(e){} form.hidden = true; document.getElementById('sentBox').hidden = false; })
+        .then(function(){ try { sessionStorage.setItem('pfs_lead', JSON.stringify({ name: data.name || '', email: data.email || '', company: data.company || '', leak: data.biggest_leak || '' })); } catch(e){} form.hidden = true; document.getElementById('sentBox').hidden = false; })
         .catch(function(){ btn.disabled = false; btn.textContent = 'Apply for discovery'; msg.style.display = 'block'; });
     });
   })();
