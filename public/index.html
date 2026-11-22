@@ -530,7 +530,8 @@
         <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
         <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="f"><label for="f-biz">Business and website</label><input id="f-biz" name="company" type="text" autocomplete="organization" required></div>
+        <div class="f"><label for="f-biz">Business name</label><input id="f-biz" name="company" type="text" autocomplete="organization" required></div>
+        <div class="f"><label for="f-web">Website</label><input id="f-web" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" required></div>
         <div class="f"><label for="f-rev">Yearly revenue</label><select id="f-rev" name="leads_per_month" required><option value="">Select…</option><option>$500k to $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select></div>
         <div class="f"><label for="f-pain">What's your biggest headache right now?</label><textarea id="f-pain" name="biggest_leak" rows="3"></textarea></div>
         <button class="btn" type="submit" id="submitBtn">Apply for discovery</button>
@@ -638,6 +639,7 @@
       if (bad) { bad.reportValidity(); return; }
       var data = {};
       new FormData(form).forEach(function(v,k){ if (k !== 'company_website') data[k] = v; });
+      if (data.website) { data.company = (data.company || '') + ' · ' + data.website; } delete data.website;
       data.sms_consent = 'contact-ok';
       data.page_url = window.location.href;
       data.submitted_at = new Date().toISOString();
