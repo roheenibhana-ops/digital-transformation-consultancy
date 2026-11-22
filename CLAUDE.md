@@ -62,7 +62,7 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 ## Open TODOs
 
 1. Name the state or country in the terms' governing-law line once the business is formed (it currently says "where Plan First Studio is established"). Contact email is info@planfirststudio.com (forwarding is set up in Cloudflare Email Routing).
-2. Add the booking calendar embed to `thanks.html` (the application form currently shows a success message in place, so `thanks.html` is not linked from it; use it if you add a booking step).
+2. The Calendly embed (calendly.com/planfirststudio/new-meeting) is on `thanks.html`. The application form currently shows a success message in place, so `thanks.html` is not linked from it; send people there (or use the Calendly link directly in emails) if you add a booking step.
 3. Get the clients' written OK for the named findings on the homepage (Santa's Lights, Dunzo Gutters) and for the scoreboard screenshots in the proof section (`public/img/`: name and dollar figures are blurred) before launch.
 4. Add base pixel/tag code to the `<head>` of all three pages when ads start.
 6. Send one real test submission from the live site (application form and scorecard) and delete the rows from the D1 `leads` table.
