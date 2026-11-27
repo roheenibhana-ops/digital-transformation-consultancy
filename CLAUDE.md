@@ -19,7 +19,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 
 Positioning: "I find where your business leaks time and money, then build the system that fixes it." The owner is a business analyst who builds: not a marketing agency, not a prompt engineer. Every build is custom.
 
-Who it's for: established service businesses, roughly $500k+ a year, 5 to 50 staff, owner close to the work. Home services first (that's where the proof is), then clinics and professional firms one at a time.
+Who it's for: high-ticket home service companies (roofers, concreters, builders and remodelers, plus gutters, exterior and lighting, HVAC and solar), roughly $500k+ a year, 5 to 50 staff, owner close to the work. Jobs are quoted and the quote follow-up is where money leaks. This is the only market for now (decision Nov 2026): do not broaden copy to clinics, firms or "any service business" without being asked.
 
 Funnel: landing page (calculator, scorecard, application) -> fit call (20 min) -> paid discovery -> build -> run + coach.
 
@@ -70,6 +70,6 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 
 ## Possible next work
 
-- Vertical variants (roofing, HVAC, real estate): swap headline, pain list and proof section only. Keep structure.
+- Trade-specific variants (roofing, concrete, builders): swap the eyebrow, pain list and proof section only. Keep structure.
 - Cloudflare Worker form handler as a no-CRM fallback (receive POST, store lead, email the owner).
 - Follow-up email and text sequence copy for form submitters.
