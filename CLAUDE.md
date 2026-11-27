@@ -19,7 +19,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 
 ## The offer (keep copy consistent with this)
 
-Positioning: "I find where your business leaks time and money, then build the system that fixes it." The owner is a business analyst who builds: not a marketing agency, not a prompt engineer. Every build is custom.
+Positioning: "I find where quote requests go cold and jobs slip away, then build the app that fixes it." Everything lives in one app on the client's own accounts, so any quote request can be traced from first message to signed job. (Older wording: "I find where your business leaks time and money, then build the system that fixes it.") The owner is a business analyst who builds: not a marketing agency, not a prompt engineer. Every build is custom.
 
 Who it's for: high-ticket home service companies (roofers, concreters, builders and remodelers, plus gutters, exterior and lighting, HVAC and solar), roughly $500k+ a year, 5 to 50 staff, owner close to the work. Jobs are quoted and the quote follow-up is where money leaks. This is the only market for now (decision Nov 2026): do not broaden copy to clinics, firms or "any service business" without being asked.
 
