@@ -271,8 +271,16 @@
   .formbox{flex:999 1 480px;min-width:0;background:var(--bg);color:var(--text);border-radius:20px;padding:32px;scroll-margin-top:20px}
   .f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
   .f label{font-weight:600;font-size:15px}
-  .f input,.f select,.f textarea{min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--line2);background:var(--panel);color:var(--text);font-size:16px;font-family:inherit}
-  .f textarea{padding:12px 14px;resize:vertical;min-height:90px}
+  .f input,.f select,.f textarea{width:100%;box-sizing:border-box;height:54px;padding:0 16px;border-radius:12px;border:1px solid var(--line2);background:var(--panel);color:var(--text);font-size:16px;line-height:1.2;font-family:inherit;-webkit-appearance:none;appearance:none}
+  .f select{padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none' stroke='%23A8A399' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+  .f textarea{height:auto;min-height:120px;padding:14px 16px;resize:vertical}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  .next{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px;max-width:30em}
+  .next li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;font-size:17px;line-height:1.35}
+  .next li:before{counter-increment:nx;content:counter(nx);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--amber);font-family:"Bebas Neue",sans-serif;font-size:24px;line-height:1}
+  .next{counter-reset:nx}
+  .next b{display:block;font-weight:700}
+  @media(max-width:700px){.frow{grid-template-columns:1fr}}
   .hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
   .consent{margin:0 0 16px;font-size:13px;color:var(--dim)}
   .formbox .btn{width:100%}
@@ -564,17 +572,28 @@
       <h2>Stop the leak.</h2>
       <p>Apply for discovery. If there's a real problem worth fixing, we'll book a 20-minute fit call.</p>
       <p class="s">Only 10 spots each month. High-ticket home service businesses doing $500k+ only.</p>
+      <ol class="next">
+        <li><div><b>I read your application.</b>Within one business day.</div></li>
+        <li><div><b>We book a 20-minute fit call.</b>Only if there's a real problem worth fixing.</div></li>
+        <li><div><b>Paid discovery.</b>$2,500, credited in full to your build. You keep the plan either way.</div></li>
+      </ol>
     </div>
     <div class="formbox">
       <div id="sentBox" hidden style="padding:40px 0;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--amber)">Got it.</div><p style="margin:12px 0 0;color:var(--muted)">I'll review it and be in touch within one business day.</p><p style="margin:22px 0 0"><a class="btn" href="thanks.html#book">Want to move faster? Book a 20-minute call</a></p></div>
       <form id="applyForm" novalidate>
         <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="frow">
         <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="frow">
         <div class="f"><label for="f-biz">Business name</label><input id="f-biz" name="company" type="text" autocomplete="organization" required></div>
         <div class="f"><label for="f-web">Website</label><input id="f-web" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" required></div>
+        </div>
+        <div class="frow">
         <div class="f"><label for="f-trade">Your trade</label><select id="f-trade" name="trade" required><option value="">Select…</option><option>Roofing</option><option>Concrete</option><option>Builder, remodeler or basement finishing</option><option>Gutters</option><option>Exterior or lighting</option><option>HVAC or plumbing</option><option>Landscaping</option><option>Solar</option><option>Other home service</option></select></div>
         <div class="f"><label for="f-rev">Yearly revenue</label><select id="f-rev" name="leads_per_month" required><option value="">Select…</option><option>$500k to $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select></div>
+        </div>
         <div class="f"><label for="f-pain">What's your biggest headache right now?</label><textarea id="f-pain" name="biggest_leak" rows="3"></textarea></div>
         <button class="btn" type="submit" id="submitBtn">Apply for discovery</button>
         <p class="msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
