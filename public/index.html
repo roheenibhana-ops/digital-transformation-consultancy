@@ -243,6 +243,19 @@
     .sys-arr{height:28px;width:2px;margin:0 auto}
     .sys-arr:after{right:auto;left:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--dim);border-bottom:0}
   }
+  .logos{padding:48px 0 8px}
+  .lg-k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+  .lg-view{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .lg-track{list-style:none;display:flex;gap:16px;width:max-content;animation:lgscroll 55s linear infinite}
+  .lg-view:hover .lg-track{animation-play-state:paused}
+  .lg{flex:none;height:84px;padding:0 26px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center}
+  .lg img{display:block;height:52px;width:auto}
+  .lgt{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;min-width:200px}
+  .lgt b{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:28px;letter-spacing:1px;line-height:1;color:#0B1A33}
+  .lgt span{font-size:13px;font-weight:600;color:#5b6472}
+  @keyframes lgscroll{to{transform:translateX(-50%)}}
+  @media(max-width:560px){.logos{padding-top:36px}.lg{height:72px;padding:0 20px}.lg img{height:44px}.lgt b{font-size:24px}}
+  @media (prefers-reduced-motion:reduce){.lg-track{animation:none}.lg-view{overflow-x:auto}}
   .trades{padding:56px 0 8px}
   .tr-k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
   .tr-grid{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
@@ -378,6 +391,11 @@
 </section>
 
 <div class="marq" aria-hidden="true"><div class="t"><span>Leads nobody called back • Office copy-paste • Middleman fees • Ads you can't tie to a job • Estimates gone cold • Apps that don't talk •</span><span>Leads nobody called back • Office copy-paste • Middleman fees • Ads you can't tie to a job • Estimates gone cold • Apps that don't talk •</span></div></div>
+
+<section class="logos" aria-label="Businesses I have built for">
+  <div class="wrap"><p class="lg-k">Businesses I've built for</p></div>
+  <div class="lg-view"><ul class="lg-track"><li class="lg"><img src="img/clients/santas-lights.png" alt="Santa's Lights" height="52"></li><li class="lg"><img src="img/clients/dunzo-gutters.png" alt="Dunzo Gutters" height="52"></li><li class="lg"><img src="img/clients/pro-worx.png" alt="Pro-Worx Construction" height="52"></li><li class="lg lgt"><b>Alex Yu Team</b><span>Newport Beach, CA</span></li><li class="lg lgt"><b>Legacy Real Estate Team</b><span>Chandler, AZ</span></li><li class="lg"><img src="img/clients/santas-lights.png" alt="Santa's Lights" height="52"></li><li class="lg"><img src="img/clients/dunzo-gutters.png" alt="Dunzo Gutters" height="52"></li><li class="lg"><img src="img/clients/pro-worx.png" alt="Pro-Worx Construction" height="52"></li><li class="lg lgt"><b>Alex Yu Team</b><span>Newport Beach, CA</span></li><li class="lg lgt"><b>Legacy Real Estate Team</b><span>Chandler, AZ</span></li><li aria-hidden="true" class="lg"><img src="img/clients/santas-lights.png" alt="Santa's Lights" height="52"></li><li aria-hidden="true" class="lg"><img src="img/clients/dunzo-gutters.png" alt="Dunzo Gutters" height="52"></li><li aria-hidden="true" class="lg"><img src="img/clients/pro-worx.png" alt="Pro-Worx Construction" height="52"></li><li aria-hidden="true" class="lg lgt"><b>Alex Yu Team</b><span>Newport Beach, CA</span></li><li aria-hidden="true" class="lg lgt"><b>Legacy Real Estate Team</b><span>Chandler, AZ</span></li><li aria-hidden="true" class="lg"><img src="img/clients/santas-lights.png" alt="Santa's Lights" height="52"></li><li aria-hidden="true" class="lg"><img src="img/clients/dunzo-gutters.png" alt="Dunzo Gutters" height="52"></li><li aria-hidden="true" class="lg"><img src="img/clients/pro-worx.png" alt="Pro-Worx Construction" height="52"></li><li aria-hidden="true" class="lg lgt"><b>Alex Yu Team</b><span>Newport Beach, CA</span></li><li aria-hidden="true" class="lg lgt"><b>Legacy Real Estate Team</b><span>Chandler, AZ</span></li></ul></div>
+</section>
 
 <section class="trades" aria-label="Who this is for">
   <div class="wrap">
@@ -553,8 +571,7 @@
       <div class="case"><p class="k">Gutters · Sacramento, CA</p><h3>Dunzo Gutters</h3><p><strong>Found:</strong> photos, calls and jobs scattered across four apps, with a fee every time they connected.</p><p><strong>Built:</strong> a fast new website, and one shared connection with Santa's Lights.</p></div>
       <div class="case"><p class="k">Home renovation &middot; Lindon, UT</p><h3>Pro-Worx Construction</h3><p><strong>Built:</strong> a new website with a 7-question project quiz that sends every answer straight into the sales pipeline, plus the same automatic follow-up as Santa's Lights.</p><p><strong>Result:</strong> more leads started coming in from search, and none of them go unanswered.</p></div>
     </div>
-        <p class="also"><b>Also worked with:</b> <span>Alex Yu, Alex Yu Team at First Team Real Estate, Newport Beach, CA</span> <i>&middot;</i> <span>Tyler Blair, Legacy Real Estate Team, Chandler, AZ</span></p>
-    <figure class="tmn">
+        <figure class="tmn">
       <blockquote>&ldquo;What gives me a lot of value, so it's no more work, is the messages that get sent when a form gets filled out and when the job gets approved. Automations and having one place to store all leads. That's the biggest difference that has helped the business.&rdquo;</blockquote>
       <figcaption><b>Clark Partridge</b><span>Owner and CEO, Dunzo Gutters and Santa's Lights, Sacramento, CA</span></figcaption>
     </figure>
