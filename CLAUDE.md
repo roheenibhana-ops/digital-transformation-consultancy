@@ -44,7 +44,7 @@ Platform-agnostic: works with the client's own CRM and field software as long as
 
 ## Design
 
-Dark, high-contrast, direct. Background `#0B0C0F`, panels `#15171C`, amber `#FFB020` for actions, blue `#3B82F6` for the "leak" accent. Green `#34D399` for the good stuff: the fix, results and proof (build plan, "Built:" and "Result:" labels, testimonial, "what will work" line). Bebas Neue for headings, Inter for body (Google Fonts). Rotated blue marquee band, big numerals, calculator sliders. Plain English. Avoid generic template-looking sections.
+Dark, high-contrast, direct. Background `#0B0C0F`, panels `#15171C`, amber `#FFB020` for actions, blue `#3B82F6` for the "leak" accent. Bebas Neue for headings, Inter for body (Google Fonts). Rotated blue marquee band, big numerals, calculator sliders. Plain English. Avoid generic template-looking sections.
 
 All placeholders use the `.todo` class (amber dashed highlight) so they cannot be missed. Check every change at 1280px and 390px widths and confirm no horizontal scroll.
 
