@@ -59,6 +59,7 @@ var CONFIG = { webhookUrl: "/api/lead", thanksUrl: "thanks.html" };
 - Fields sent: name, company, phone, email, trade, leads_per_month, field_software, crm, biggest_leak, sms_consent, consent_text, consent_at, page_url, referrer, submitted_at, plus any `utm_*` params and ad click IDs (`fbclid`, `gclid`, `gbraid`, `wbraid`, `msclkid`) present in the landing URL.
 - Ads: conversion events fire on `thanks.html` (placeholder block at the bottom, commented out). Base pixel/tag code goes in the `<head>` of both pages. Leads must land in a CRM with attribution and instant reply, not a spreadsheet.
 - If `webhookUrl` is empty the form only logs to the console and redirects. Nothing is saved.
+- Anti-spam: the application form has a honeypot plus a "quick check" quiz. `GET /api/check` returns a random question; the answers live only in `src/worker.js` (`CHECKS`) and `POST /api/lead` rejects a wrong or missing answer with 400 (the scorecard is exempt and uses the honeypot only). If spam still gets through, upgrade to Cloudflare Turnstile.
 
 ## Open TODOs
 

@@ -8,9 +8,23 @@ const FIELDS = [
 const DATES = ['consent_at', 'submitted_at'];
 const REQUIRED = ['name', 'email'];
 
+// Anti-spam quiz for the application form. The answers live here, not in the page.
+const CHECKS = [
+  { id: 'a', q: 'What do you swing to drive a nail?', a: ['hammer', 'a hammer'] },
+  { id: 'b', q: 'What color is a stop sign?', a: ['red'] },
+  { id: 'c', q: 'How many sides does a stop sign have?', a: ['8', 'eight'] },
+  { id: 'd', q: 'What is 6 + 3?', a: ['9', 'nine'] },
+  { id: 'e', q: 'Which is hotter, ice or fire?', a: ['fire'] },
+  { id: 'f', q: 'What is 10 minus 4?', a: ['6', 'six'] }
+];
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/check' && request.method === 'GET') {
+      const c = CHECKS[Math.floor(Math.random() * CHECKS.length)];
+      return new Response(JSON.stringify({ id: c.id, q: c.q }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
+    }
     if (url.pathname !== '/api/lead') return env.ASSETS.fetch(request);
     if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
 
@@ -29,6 +43,13 @@ export default {
     for (const k of DATES) if (row[k] && isNaN(Date.parse(row[k]))) delete row[k];
     for (const k of REQUIRED) if (!row[k]) return new Response('Missing ' + k, { status: 400 });
     if (!/^\S+@\S+\.\S+$/.test(row.email)) return new Response('Bad email', { status: 400 });
+
+    // The application form must pass the quick check. The scorecard has its own honeypot only.
+    if (row.company !== 'Leak Scorecard') {
+      const c = CHECKS.find(x => x.id === form.get('check_id'));
+      const ans = String(form.get('check_answer') || '').trim().toLowerCase();
+      if (!c || !c.a.includes(ans)) return new Response('Check failed', { status: 400 });
+    }
 
     try {
       const cols = Object.keys(row);

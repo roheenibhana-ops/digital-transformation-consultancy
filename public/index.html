@@ -595,6 +595,7 @@
         <div class="f"><label for="f-rev">Yearly revenue</label><select id="f-rev" name="leads_per_month" required><option value="">Select…</option><option>$500k to $1M</option><option>$1M to $3M</option><option>$3M to $10M</option><option>$10M+</option></select></div>
         </div>
         <div class="f"><label for="f-pain">What's your biggest headache right now?</label><textarea id="f-pain" name="biggest_leak" rows="3"></textarea></div>
+        <div class="f" id="checkRow" hidden><label for="f-check" id="checkQ">Quick check</label><input id="f-check" name="check" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
         <button class="btn" type="submit" id="submitBtn">Apply for discovery</button>
         <p class="msg" id="formMsg" role="alert">Something went wrong sending that. Please try again in a minute.</p>
       </form>
@@ -686,6 +687,16 @@
   // ---- Application form -> /api/lead ----
   (function(){
     var form = document.getElementById('applyForm'), btn = document.getElementById('submitBtn'), msg = document.getElementById('formMsg');
+    var checkId = '', defMsg = msg.textContent;
+    // Anti-spam quiz: the question comes from the Worker, which holds the answers.
+    function loadCheck(){
+      fetch('/api/check', { cache:'no-store' }).then(function(r){ return r.json(); }).then(function(c){
+        checkId = c.id; document.getElementById('checkQ').textContent = 'Quick check: ' + c.q;
+        var inp = document.getElementById('f-check'); inp.value = ''; inp.required = true;
+        document.getElementById('checkRow').hidden = false;
+      }).catch(function(){});
+    }
+    loadCheck();
     function params(){
       var out = {}, p = new URLSearchParams(window.location.search);
       ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','gbraid','wbraid','msclkid'].forEach(function(k){ if(p.get(k)) out[k] = p.get(k); });
@@ -699,7 +710,8 @@
       form.querySelectorAll('[required]').forEach(function(f){ if (!bad && !f.checkValidity()) bad = f; });
       if (bad) { bad.reportValidity(); return; }
       var data = {};
-      new FormData(form).forEach(function(v,k){ if (k !== 'company_website') data[k] = v; });
+      new FormData(form).forEach(function(v,k){ if (k !== 'company_website' && k !== 'check') data[k] = v; });
+      data.check_id = checkId; data.check_answer = (document.getElementById('f-check').value || '').trim();
       if (data.website) { data.company = (data.company || '') + ' · ' + data.website; } delete data.website;
       data.sms_consent = 'contact-ok';
       data.page_url = window.location.href;
@@ -708,9 +720,12 @@
       data.referrer = document.referrer || '';
       var u = params(); Object.keys(u).forEach(function(k){ data[k] = u[k]; });
       btn.disabled = true; btn.textContent = 'Sending…';
-      fetch(CONFIG.webhookUrl, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() })
-        .then(function(){ try { sessionStorage.setItem('pfs_lead', JSON.stringify({ name: data.name || '', email: data.email || '', company: data.company || '', leak: data.biggest_leak || '' })); } catch(e){} form.hidden = true; document.getElementById('sentBox').hidden = false; })
-        .catch(function(){ btn.disabled = false; btn.textContent = 'Apply for discovery'; msg.style.display = 'block'; });
+      var same = CONFIG.webhookUrl.charAt(0) === '/';
+      var opts = { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() };
+      if (!same) { opts.mode = 'no-cors'; }
+      fetch(CONFIG.webhookUrl, opts)
+        .then(function(r){ if (same && !r.ok) { throw r; } try { sessionStorage.setItem('pfs_lead', JSON.stringify({ name: data.name || '', email: data.email || '', company: data.company || '', leak: data.biggest_leak || '' })); } catch(e){} form.hidden = true; document.getElementById('sentBox').hidden = false; })
+        .catch(function(err){ btn.disabled = false; btn.textContent = 'Apply for discovery'; msg.textContent = (err && err.status === 400) ? "That quick check answer isn't right. Here's a new question, have another go." : defMsg; msg.style.display = 'block'; if (err && err.status === 400) { loadCheck(); } });
     });
   })();
 </script>
