@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- BASE PIXEL / TAG CODE GOES HERE (Meta, Google, etc.). Add the same block to thanks.html and scorecard.html -->
 <style>
-  :root{--bg:#0B0C0F;--panel:#15171C;--panel2:#1D2027;--line:#2A2D35;--line2:#3A3D46;--text:#F4F1EA;--soft:#D9D4CA;--muted:#A8A399;--dim:#8C877E;--amber:#FFB020;--blue:#3B82F6;--ink:#121006}
+  :root{--bg:#0B0C0F;--panel:#15171C;--panel2:#1D2027;--line:#2A2D35;--line2:#3A3D46;--text:#F4F1EA;--soft:#D9D4CA;--muted:#A8A399;--dim:#8C877E;--amber:#FFB020;--blue:#3B82F6;--green:#34D399;--ink:#121006}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;overflow-x:hidden}
   body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -125,7 +125,7 @@
   .who .r p{color:var(--muted)}
   .who .r p.first{font-size:20px;color:var(--soft)}
   .who .quote{padding:18px 22px;background:var(--bg);border-radius:14px;font-family:"Bebas Neue",sans-serif;font-size:clamp(28px,3vw,36px);line-height:1.05;letter-spacing:.5px;color:var(--text)!important}
-  .who .quote span{color:var(--amber)}
+  .who .quote span{color:var(--green)}
   .who .test{margin:4px 0;padding:2px 0 2px 18px;border-left:3px solid var(--blue);font-size:clamp(19px,1.9vw,22px);line-height:1.4;font-weight:600;color:#6FA3FF!important}
   .flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:none}
   .flow li{position:relative;padding:14px 14px 16px;border:1px solid var(--line2);border-radius:12px;background:var(--bg);display:flex;flex-direction:column;gap:4px}
@@ -179,8 +179,8 @@
   @media (max-width:520px){.lk{flex-wrap:wrap}.lk>div:nth-child(2){flex:1 1 0;min-width:0}.lk .pay{margin-left:50px}.board{padding:22px 18px}}
   .lk .pay{margin-left:auto;flex:0 0 auto;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,176,32,.14);color:var(--amber)}
   .lk .pay.m{background:rgba(59,130,246,.16);color:var(--blue)}
-  .ph{border-left:4px solid var(--amber);background:var(--panel);border-radius:0 14px 14px 0;padding:16px 18px;margin-bottom:12px}
-  .ph .t{font-family:"Bebas Neue",sans-serif;font-size:26px;letter-spacing:1px;color:var(--amber);line-height:1}
+  .ph{border-left:4px solid var(--green);background:var(--panel);border-radius:0 14px 14px 0;padding:16px 18px;margin-bottom:12px}
+  .ph .t{font-family:"Bebas Neue",sans-serif;font-size:26px;letter-spacing:1px;color:var(--green);line-height:1}
   .ph ul{margin:8px 0 0 18px;color:var(--muted);font-size:15px}
   .ph .c{margin-top:8px;font-size:14px;color:var(--soft)}
   .steps3{padding:96px 0}
@@ -207,10 +207,11 @@
   .case p{color:var(--muted);font-size:16px;margin-bottom:12px}
   .case p:last-child{margin-bottom:0}
   .case strong{color:var(--text)}
-  .tmn{margin:48px auto 0;padding:34px 36px;max-width:880px;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:16px}
+  .case strong.g{color:var(--green)}
+  .tmn{margin:48px auto 0;padding:34px 36px;max-width:880px;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:16px}
   .tmn blockquote{font-family:Inter,sans-serif;font-size:clamp(19px,2.2vw,24px);line-height:1.5;font-weight:500;color:var(--text)}
   .tmn figcaption{margin-top:18px;display:flex;flex-direction:column;gap:2px;font-size:15px;color:var(--muted)}
-  .tmn figcaption b{color:var(--amber);font-size:16px}
+  .tmn figcaption b{color:var(--green);font-size:16px}
   .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .sys{margin-top:20px}
   .sys-row{display:grid;grid-template-columns:1fr 36px 1.05fr 36px 1fr;align-items:center;gap:10px}
@@ -220,8 +221,8 @@
   .sys li span{font-size:13.5px;color:var(--muted)}
   .sys-in li{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.45)}
   .sys-out li{background:var(--panel);border:1px solid var(--line2)}
-  .sys-engine{padding:22px 18px;border-radius:16px;background:rgba(255,176,32,.12);border:2px solid var(--amber);display:flex;flex-direction:column;gap:6px;text-align:center}
-  .sys-engine b{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:30px;letter-spacing:1px;color:var(--amber)}
+  .sys-engine{padding:22px 18px;border-radius:16px;background:rgba(52,211,153,.10);border:2px solid var(--green);display:flex;flex-direction:column;gap:6px;text-align:center}
+  .sys-engine b{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:30px;letter-spacing:1px;color:var(--green)}
   .sys-engine span{font-size:14.5px;color:var(--soft)}
   .sys-arr{height:2px;background:var(--dim);position:relative}
   .sys-arr:after{content:"";position:absolute;right:-1px;top:-4px;border-left:8px solid var(--dim);border-top:5px solid transparent;border-bottom:5px solid transparent}
@@ -518,9 +519,9 @@
     <h2 class="big">Real home service businesses. Real leaks found.</h2>
     <p class="p">Here's what I found, and built, for three companies a lot like yours.</p>
     <div class="grid3b" style="margin-top:40px">
-      <div class="case"><p class="k">Holiday lighting · Sacramento, CA</p><h3>Santa's Lights</h3><p><strong>Found:</strong> paid ads closing at 1% while past customers brought in 55% of the money.</p><p><strong>Built:</strong> a live scoreboard that ties every lead to a sold job, a plan to cut the middleman fees, and automatic texts that chase estimates and pass the customer to a real person when it matters.</p></div>
-      <div class="case"><p class="k">Gutters · Sacramento, CA</p><h3>Dunzo Gutters</h3><p><strong>Found:</strong> photos, calls and jobs scattered across four apps, with a fee every time they connected.</p><p><strong>Built:</strong> a fast new website, and one shared connection with Santa's Lights.</p></div>
-      <div class="case"><p class="k">Home renovation &middot; Lindon, UT</p><h3>Pro-Worx Construction</h3><p><strong>Built:</strong> a new website with a 7-question project quiz that sends every answer straight into the sales pipeline, plus the same automatic follow-up as Santa's Lights.</p><p><strong>Result:</strong> more leads started coming in from search, and none of them go unanswered.</p></div>
+      <div class="case"><p class="k">Holiday lighting · Sacramento, CA</p><h3>Santa's Lights</h3><p><strong>Found:</strong> paid ads closing at 1% while past customers brought in 55% of the money.</p><p><strong class="g">Built:</strong> a live scoreboard that ties every lead to a sold job, a plan to cut the middleman fees, and automatic texts that chase estimates and pass the customer to a real person when it matters.</p></div>
+      <div class="case"><p class="k">Gutters · Sacramento, CA</p><h3>Dunzo Gutters</h3><p><strong>Found:</strong> photos, calls and jobs scattered across four apps, with a fee every time they connected.</p><p><strong class="g">Built:</strong> a fast new website, and one shared connection with Santa's Lights.</p></div>
+      <div class="case"><p class="k">Home renovation &middot; Lindon, UT</p><h3>Pro-Worx Construction</h3><p><strong class="g">Built:</strong> a new website with a 7-question project quiz that sends every answer straight into the sales pipeline, plus the same automatic follow-up as Santa's Lights.</p><p><strong class="g">Result:</strong> more leads started coming in from search, and none of them go unanswered.</p></div>
     </div>
     <figure class="tmn">
       <blockquote>&ldquo;What gives me a lot of value, so it's no more work, is the messages that get sent when a form gets filled out and when the job gets approved. Automations and having one place to store all leads. That's the biggest difference that has helped the business.&rdquo;</blockquote>
@@ -551,7 +552,7 @@
       <p class="s">Only 10 spots each month. High-ticket home service businesses doing $500k+ only.</p>
     </div>
     <div class="formbox">
-      <div id="sentBox" hidden style="padding:40px 0;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--amber)">Got it.</div><p style="margin:12px 0 0;color:var(--muted)">I'll review it and be in touch within one business day.</p><p style="margin:22px 0 0"><a class="btn" href="thanks.html#book">Want to move faster? Book a 20-minute call</a></p></div>
+      <div id="sentBox" hidden style="padding:40px 0;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--green)">Got it.</div><p style="margin:12px 0 0;color:var(--muted)">I'll review it and be in touch within one business day.</p><p style="margin:22px 0 0"><a class="btn" href="thanks.html#book">Want to move faster? Book a 20-minute call</a></p></div>
       <form id="applyForm" novalidate>
         <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
         <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
