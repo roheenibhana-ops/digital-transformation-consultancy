@@ -23,6 +23,8 @@ Positioning: "I find where your business leaks time and money, then build the sy
 
 Who it's for: high-ticket home service companies (roofers, concreters, builders and remodelers, plus gutters, exterior and lighting, HVAC and solar), roughly $500k+ a year, 5 to 50 staff, owner close to the work. Jobs are quoted and the quote follow-up is where money leaks. This is the only market for now (decision Nov 2026): do not broaden copy to clinics, firms or "any service business" without being asked.
 
+Hook (Nov 2026): "Are you losing money on quote requests?" Lead with losing jobs after a quote is requested (slow replies, no follow-up). Underneath, the owner can automate and fix any other issue, but the hook stays this one. Ads are hand-drawn style statics that link to /scorecard.
+
 Funnel: landing page (calculator, scorecard, application) -> fit call (20 min) -> paid discovery -> build -> run + coach.
 
 1. Discovery: $2,500, credited to the build, two weeks, about four hours of the client's team time. Owner kickoff, stakeholder interviews, tool and data audit, leak map, phased system plan with costs, handover call. The client keeps the plan either way.
