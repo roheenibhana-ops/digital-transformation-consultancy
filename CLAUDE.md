@@ -9,6 +9,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 - `public/privacy.html` and `public/terms.html`: plain-English privacy policy and terms, linked from the footers. Contact email info@planfirststudio.com; governing law is worded generically
 - `public/robots.txt`, `public/sitemap.xml`, `public/img/og.png`: crawl hints and the social share image (LinkedIn link previews). Canonical and Open Graph tags point at planfirststudio.com
 - `public/img/trades/`: eight free stock photos from Pexels (Pexels License: free for commercial use, no attribution needed; do not imply the people shown endorse the business). Photo IDs: roofing 33404248, concrete 37121405, builders 33405084, gutters 35153375, lighting 1472673, HVAC 5463575, landscaping 5231236, solar 9875418
+- `public/img/clients/`: client logos in the scrolling "Businesses I've built for" strip on the landing page (Santa's Lights, Dunzo Gutters, Pro-Worx Construction, Alex Yu Team, Form + Function, Legacy Real Estate Team, Peninsula Osteopaths, A Better Way Realty). Supplied by the owner; Peninsula's logo is white so it sits on a dark tile. Jana Adams Homes was left out on purpose
 - `public/thanks.html`: post-submit page with the booking embed placeholder and "what happens next"
 - `src/worker.js`: serves the site and handles `POST /api/lead`, saving each lead to the Cloudflare D1 table in `db/schema.sql`
 - `wrangler.jsonc`: Cloudflare config (assets folder `public/`, D1 binding)
