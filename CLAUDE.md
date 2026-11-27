@@ -8,7 +8,7 @@ Static two-page funnel for a business analyst who builds. It sells a paid discov
 - `public/scorecard.html`: the 11-question Leak Scorecard; collects name and email, then shows a score out of 100 and the top three leaks
 - `public/privacy.html` and `public/terms.html`: plain-English privacy policy and terms, linked from the footers. Contact email info@planfirststudio.com; governing law is worded generically
 - `public/robots.txt`, `public/sitemap.xml`, `public/img/og.png`: crawl hints and the social share image (LinkedIn link previews). Canonical and Open Graph tags point at planfirststudio.com
-- `public/img/trades/`: seven free stock photos from Pexels (Pexels License: free for commercial use, no attribution needed; do not imply the people shown endorse the business). Photo IDs: roofing 33404248, concrete 37121405, builders 33405084, gutters 35153375, lighting 1472673, HVAC 5463575, solar 9875418
+- `public/img/trades/`: eight free stock photos from Pexels (Pexels License: free for commercial use, no attribution needed; do not imply the people shown endorse the business). Photo IDs: roofing 33404248, concrete 37121405, builders 33405084, gutters 35153375, lighting 1472673, HVAC 5463575, plumbing 29226620, solar 9875418
 - `public/thanks.html`: post-submit page with the booking embed placeholder and "what happens next"
 - `src/worker.js`: serves the site and handles `POST /api/lead`, saving each lead to the Cloudflare D1 table in `db/schema.sql`
 - `wrangler.jsonc`: Cloudflare config (assets folder `public/`, D1 binding)
