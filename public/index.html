@@ -240,14 +240,13 @@
     .sys-arr{height:28px;width:2px;margin:0 auto}
     .sys-arr:after{right:auto;left:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--dim);border-bottom:0}
   }
-  .trades{padding:56px 0 8px}
-  .tr-k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
-  .tr-grid{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-  .tr-grid li{flex:0 0 calc(25% - 10.5px);position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);aspect-ratio:4/3;background:var(--panel)}
-  .tr-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .tr-grid li span{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;font-size:16px;font-weight:700;line-height:1.2;color:var(--text);background:linear-gradient(to top,rgba(11,12,15,.92),rgba(11,12,15,0))}
-  @media(max-width:900px){.tr-grid li{flex-basis:calc(33.333% - 9.4px)}}
-  @media(max-width:560px){.tr-grid{gap:10px}.tr-grid li{flex-basis:calc(50% - 5px)}.tr-grid li:last-child:nth-child(odd){flex-basis:100%;aspect-ratio:16/9}.tr-grid li span{font-size:14.5px;padding:28px 12px 10px}.trades{padding-top:44px}}
+  .pband{padding:56px 0 8px}
+  .pband .tr-k{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+  .pb-grid{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .pb-grid li{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);aspect-ratio:16/7;background:var(--panel)}
+  .pb-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .pb-grid li span{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;font-size:16px;font-weight:700;line-height:1.2;color:var(--text);background:linear-gradient(to top,rgba(11,12,15,.92),rgba(11,12,15,0))}
+  @media(max-width:560px){.pband{padding-top:40px}.pb-grid{gap:10px}.pb-grid li{aspect-ratio:4/5}.pb-grid li span{font-size:14px;padding:26px 12px 10px}}
   .shot{margin:40px auto 0;max-width:880px}
   .shot.narrow{max-width:560px}
   .shot a{display:block}
@@ -376,13 +375,6 @@
 
 <div class="marq" aria-hidden="true"><div class="t"><span>Leads nobody called back • Office copy-paste • Middleman fees • Ads you can't tie to a job • Estimates gone cold • Apps that don't talk •</span><span>Leads nobody called back • Office copy-paste • Middleman fees • Ads you can't tie to a job • Estimates gone cold • Apps that don't talk •</span></div></div>
 
-<section class="trades" aria-label="Who this is for">
-  <div class="wrap">
-    <p class="tr-k">Built for owners like you</p>
-    <ul class="tr-grid"><li><img src="img/trades/roofing.jpg" alt="A roofer nailing asphalt shingles onto a roof" loading="lazy" width="640" height="480"><span>Roofing</span></li><li><img src="img/trades/concrete.jpg" alt="Workers screeding a freshly poured concrete slab" loading="lazy" width="640" height="480"><span>Concrete</span></li><li><img src="img/trades/builders.jpg" alt="The wood framing inside a house under construction" loading="lazy" width="640" height="480"><span>Builders and remodelers</span></li><li><img src="img/trades/gutters.jpg" alt="A pressure washer cleaning a roof gutter" loading="lazy" width="640" height="480"><span>Gutters</span></li><li><img src="img/trades/lighting.jpg" alt="Lights strung along the roofline of a house at night" loading="lazy" width="640" height="480"><span>Exterior lighting</span></li><li><img src="img/trades/hvac.jpg" alt="A technician servicing an outdoor air conditioning unit" loading="lazy" width="640" height="480"><span>HVAC</span></li><li><img src="img/trades/landscaping.jpg" alt="A worker rolling out fresh sod on a lawn" loading="lazy" width="640" height="480"><span>Landscaping</span></li><li><img src="img/trades/solar.jpg" alt="A worker lifting a solar panel into place on a roof" loading="lazy" width="640" height="480"><span>Solar</span></li></ul>
-  </div>
-</section>
-
 <section class="calc" id="calc">
   <div class="wrap">
     <div class="l">
@@ -418,6 +410,8 @@
   </div>
 </section>
 
+<div class="pband" aria-label="Home service trades"><div class="wrap"><p class="tr-k">Built for owners like you</p><ul class="pb-grid"><li><img src="img/trades/roofing.jpg" alt="A roofer nailing asphalt shingles onto a roof" loading="lazy" width="640" height="480"><span>Roofing</span></li><li><img src="img/trades/concrete.jpg" alt="Workers screeding a freshly poured concrete slab" loading="lazy" width="640" height="480"><span>Concrete</span></li></ul></div></div>
+
 <section class="claim">
   <div class="wrap">
     <h2>Anyone can use the tools.<br><span>Few know what to ask your business.</span></h2>
@@ -439,6 +433,8 @@
     <div class="cta-row"><a class="btn" href="#apply">Get it right the first time</a><span class="hint">That's the part I do first.</span></div>
   </div>
 </section>
+
+<div class="pband" aria-label="Home service trades"><div class="wrap"><ul class="pb-grid"><li><img src="img/trades/builders.jpg" alt="The wood framing inside a house under construction" loading="lazy" width="640" height="480"><span>Builders and remodelers</span></li><li><img src="img/trades/gutters.jpg" alt="A pressure washer cleaning a roof gutter" loading="lazy" width="640" height="480"><span>Gutters</span></li></ul></div></div>
 
 <section class="who" id="who">
   <div class="wrap">
@@ -479,6 +475,8 @@
     <div class="cta-row"><a class="btn" href="#apply">Tell me what you're trying to fix</a></div>
   </div>
 </section>
+
+<div class="pband" aria-label="Home service trades"><div class="wrap"><ul class="pb-grid"><li><img src="img/trades/lighting.jpg" alt="Lights strung along the roofline of a house at night" loading="lazy" width="640" height="480"><span>Exterior lighting</span></li><li><img src="img/trades/hvac.jpg" alt="A technician servicing an outdoor air conditioning unit" loading="lazy" width="640" height="480"><span>HVAC</span></li></ul></div></div>
 
 <section class="sample">
   <div class="wrap">
@@ -557,6 +555,8 @@
     <figure class="shot"><a href="img/quote-simulator.jpg" target="_blank" rel="noopener"><img src="img/quote-simulator.jpg" alt="Quote simulator showing a live estimated price range that updates as the visitor chooses options, with a step 4 of 5 progress bar" loading="lazy" width="1500" height="697"></a><figcaption>The customer side: a Sacramento gutter company shows a live price range as visitors choose options.</figcaption></figure>
   </div>
 </section>
+
+<div class="pband" aria-label="Home service trades"><div class="wrap"><ul class="pb-grid"><li><img src="img/trades/landscaping.jpg" alt="A worker rolling out fresh sod on a lawn" loading="lazy" width="640" height="480"><span>Landscaping</span></li><li><img src="img/trades/solar.jpg" alt="A worker lifting a solar panel into place on a roof" loading="lazy" width="640" height="480"><span>Solar</span></li></ul></div></div>
 
 <section class="faq" id="faq">
   <div class="wrap">
